@@ -1,0 +1,111 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/task-list";
+@import "patterns/related-items";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+tr:nth-child(even) {
+  background: #f1f1f1;
+}
+
+.govuk-table__body td,
+.govuk-table__body th {
+  padding: 10px 10px 10px 5px;
+  vertical-align: middle;
+}
+
+.govuk-notification {
+  border: 5px solid #1d70b8;
+}
+
+.govuk-notification p {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-notification {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-notification {
+    margin-bottom: 50px;
+  }
+}
+
+.filters-wrapper .govuk-radios {
+  padding: .5em 0;
+}
+
+.govuk-table__cell,
+.govuk-table__header {
+  padding-top: 0;
+}
+
+.govuk-extra-width-container,
+.govuk-width-overide .govuk-width-container {
+
+  max-width: 100%;
+  margin: 0 15px;
+
+}
+
+.govuk-table__cell-right {
+  text-align: center;
+}
+
+.filters-heading {
+  background: #f3f2f1;
+  padding: 8px 8px;
+}
+
+.filter .govuk-body {
+  margin-bottom: 0;
+}
+
+
+.filters-wrapper .govuk-form-group {
+  margin-bottom: 0;
+}
+
+.filter .govuk-form-group,
+.filter .govuk-radios {
+  padding: 0;
+  margin: 0;
+}
+
+.result-count {
+  font-size: 16px;
+}
+
+.ch-pagination-container .govuk-form-group {
+  margin-bottom: 0;
+}
+
+.ch-pagination__list{
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter-heading{
+  background: #f3f2f1;
+
+}
+
+.ch-pagination__list li{
+  padding: 0 8px
+}

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Add new word - Restricted words - Companies House Internal Service
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "all"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorWord == true or errorSuperrestricted == true %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+      {% endif %}
+      <h1 class="govuk-heading-xl">Add new word</h1>
+      <form action="/add-new-word" method="post">
+        {{ govukInput({
+       label: {
+         text: "New word"
+        },
+        id: "newWord",
+        name: "newWord",
+          classes: "govuk-input--width-20"
+      }) }}
+
+        {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "super-restricted-word",
+        name: "super-restricted-word",
+        fieldset: {
+          legend: {
+            text: "Is this a super restricted word?"
+          }
+        },
+        hint: {
+          text: "This is an exceptionally offensive word which will be checked in documents."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+         text: "Add new word"
+        }) }}
+          <a class="govuk-link" href="all">Cancel</a>
+        </div>
+      </form>
+      <p class="govuk-!-margin-top-9">
+        <a href="add-new-word-cross" class="govuk-link">**See error page**</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}

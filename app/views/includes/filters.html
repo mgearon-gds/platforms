@@ -1,0 +1,116 @@
+<div class="govuk-grid-column-one-third">
+  <section class="filters" id="filters">
+    <form action="/all" method="post" id="filter-form">
+      <h5 class="govuk-heading-m">Filter</h5>
+      <div role="widget" class="filter">
+        <div id="filter-crn" class="filters-wrapper govuk-!-margin-bottom-4" aria-hidden="true" aria-labelledby="filter-label-crn">
+          {{ govukCheckboxes({
+            idPrefix: "filter-word-type",
+            name: "filterWordType",
+            classes: "govuk-!-margin-bottom-4 govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                text: "Assigned to",
+                isPageHeading: false
+              }
+            },
+            items: [
+            {
+              value: "Denis Vishnu",
+              text: "Denis Vishnu",
+              checked: filterParams.status.referred.checked
+            },
+              {
+                value: "Sasha Willifrid",
+                text: "Sasha Willifrid",
+                checked: filterParams.status.referred.checked
+              },
+              {
+                value: "Orla Tegan",
+                text: "Orla Tegan",
+                checked: filterParams.status.accepted.checked
+              },
+              {
+                value: "Sasha Willifrid",
+                text: "Sasha Willifrid",
+                checked: filterParams.status.accepted.checked
+              },
+              {
+                value: "Not assigned",
+                text: "Not assigned",
+                checked: filterParams.status.accepted.checked
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+
+      <div role="widget" class="filter govuk-!-margin-bottom-4">
+        {{ govukCheckboxes({
+          idPrefix: "filter-status",
+          name: "filterStatus",
+          classes: "govuk-!-margin-bottom-4 govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Case status",
+              isPageHeading: false
+            },
+            classes: "filters-wrapper"
+          },
+          items: [
+          {
+            value: "Delayed",
+            text: "Delayed",
+            checked: filterParams.status.referred.checked
+          },
+            {
+              value: "Recieved",
+              text: "Recieved",
+              checked: filterParams.status.referred.checked
+            },
+            {
+              value: "Closed",
+              text: "Closed",
+              checked: filterParams.status.accepted.checked
+            }
+          ]
+        }) }}
+      </div>
+      <div role="widget" class="filter ">
+        {{ govukCheckboxes({
+          idPrefix: "filter-status",
+          name: "filterStatus",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Date recieved",
+              isPageHeading: false
+            },
+            classes: "filters-wrapper"
+          },
+          items: [
+          {
+            value: "Last 7 days",
+            text: "Last 7 days",
+            checked: filterParams.status.referred.checked
+          },
+            {
+              value: "Last 14 days",
+              text: "Last 14 days",
+              checked: filterParams.status.referred.checked
+            },
+            {
+              value: "Last 30 days",
+              text: "Last 30 days",
+              checked: filterParams.status.accepted.checked
+            }
+          ]
+        }) }}
+      </div>
+      {{ govukButton({
+        text: "Filter results",
+        classes: "govuk-!-margin-top-4 govuk-button--secondary"
+      }) }}
+    </form>
+  </section>
+</div>

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Word already on the list - Restricted words - Companies House Internal Service
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "all"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      {{ govukErrorSummary({
+        titleText: "Word already on the list",
+        errorList: [
+          {
+            text: "The word **WORD (uppercase)** was added by *name* on 25/2/20 at 12.15"
+          }
+        ]
+      }) }}
+      <h1 class="govuk-heading-xl">Add new word</h1>
+      {{ govukInput({
+       label: {
+         text: "New word"
+        },
+        id: "event-name",
+        name: "event-name"
+      }) }}
+      {{ govukButton({
+       text: "Add word",
+       href: "/all-success"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

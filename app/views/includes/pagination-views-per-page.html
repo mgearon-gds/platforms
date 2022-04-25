@@ -1,0 +1,64 @@
+<div class="table-per-page">
+  <form action="/all" method="GET" id="resultsPerPage">
+    {% if viewParams.perPage.value === 2 %}
+      {% set perPage2 = true %}
+    {% endif %}
+    {% if viewParams.perPage.value === 5 %}
+      {% set perPage5 = true %}
+    {% endif %}
+    {% if viewParams.perPage.value === 10 %}
+      {% set perPage10 = true %}
+    {% endif %}
+    {% if viewParams.perPage.value === 20 %}
+      {% set perPage20 = true %}
+    {% endif %}
+    {% if viewParams.perPage.value === 50 %}
+      {% set perPage50 = true %}
+    {% endif %}
+    {% if viewParams.perPage.value === 100 %}
+      {% set perPage100 = true %}
+    {% endif %}
+    {{ govukSelect({
+          id: "results-per-page",
+          classes: "table-per-page__input",
+          name: "resultsPerPage",
+          label: {
+            html: "Cases per page",
+            classes: "table-per-page__label"
+          },
+          items: [
+            {
+              value: "2",
+              text: "2",
+              selected: perPage2
+            },
+            {
+              value: "5",
+              text: "5",
+              selected: perPage5
+            },
+            {
+              value: "10",
+              text: "10",
+              selected: perPage10
+            },
+            {
+              value: "20",
+              text: "20",
+              selected: perPage20
+            },
+            {
+              value: "50",
+              text: "50",
+              selected: perPage50
+            },
+            {
+              value: "100",
+              text: "100",
+              selected: perPage100
+            }
+          ]
+        }) }}
+    <input type="hidden" name="sortParam" value="{{ viewParams.sort.active }}">
+  </form>
+</div>

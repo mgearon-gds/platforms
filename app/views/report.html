@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{word}}
+  - Restricted words - Companies House Internal Service
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "all"
+  }) }}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Report summary</h1>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">Export all data</a>
+      </p>
+    <h2 class="govuk-heading-m">Since 10 January 2021</h2>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-l govuk-!-margin-bottom-0">696</h3>
+        <p class="govuk-body">
+          cases
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-l govuk-!-margin-bottom-0">550</h3>
+        <p class="govuk-body">
+          closed cases
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-l govuk-!-margin-bottom-0">20</h3>
+        <p class="govuk-body">
+          delayed cases
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-m">Last 7 days</h2>
+    <p class="govuk-body">
+        Average time to close a case is 14 days
+    </p>
+    {{ govukTable({
+      caption: "Cases closed",
+captionClasses: "govuk-table__caption--s",
+firstCellIsHeader: true,
+  head: [
+    {
+      text: "Week"
+    },
+    {
+      text: "Average time to close"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "First 6 weeks"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ],
+    [
+      {
+        text: "Next 33 weeks"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ],
+    [
+      {
+        text: "Total estimated pay"
+      },
+      {
+        text: "£4,282.20"
+      }
+    ]
+  ]
+}) }}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-m">Last 30 days</h2>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-m">Last 90 days</h2>
+  </div>
+</div>
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+
+
+    </div>
+  </div>
+{% endblock %}

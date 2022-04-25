@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{word}}
+  - Restricted words - Companies House Internal Service
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "all"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Case number: 000000</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{word}}</h1>
+      <p class="govuk-body">
+        Sarah Phillps is currently assigned to the case — <a href="change-user">change <span class="govuk-visually-hidden">assignee</span></a>
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav>
+        <ul class="govuk-list govuk-list--spaced">
+          <li>
+            <a class="govuk-link" href="word">Overview</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="log">Activity log</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <h2 class="govuk-heading-l">Overview</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Date added on"
+            },
+            value: {
+              text: "27 June 2021"
+            }
+          },
+          {
+            key: {
+              text: "Last change made on"
+            },
+            value: {
+              text: "02 December 2021"
+            }
+          },
+          {
+            key: {
+              text: "Current status"
+            },
+            value: {
+              html: "<strong class='govuk-tag govuk-tag--yellow'>Delayed</strong>"
+            }
+          }
+        ]
+      }) }}
+      <h2 class="govuk-heading-l">Details</h2>
+      <h3 class="govuk-heading-s">School name and address</h3>
+      <p class="body">
+        Bristol Brunel Academy
+      </p>
+      <h3 class="govuk-heading-s">Local authority name and LA/ESTAB number</h3>
+      <p class="body">
+        Bristol, City of and E06000023
+      </p>
+      <h3 class="govuk-heading-s">School URN</h3>
+      <p class="body">
+        135300
+      </p>
+      <h3 class="govuk-heading-s">Name of headteacher</h3>
+      <p class="body">
+        	Mr Jon Jones
+      </p>
+      <h3 class="govuk-heading-s">School email address</h3>
+      <p class="body">
+        info@bristolbrunelacademy.co.uk
+      </p>
+      <h3 class="govuk-heading-s">Telephone number</h3>
+      <p class="body">
+        01495 631233
+      </p>
+      <h3 class="govuk-heading-s">Name of chair of the governing body</h3>
+      <p class="body">
+        text
+      </p>
+      <h3 class="govuk-heading-s">Email address</h3>
+      <p class="body">
+        jon.jones@bristolbrunelacademy.co.uk
+      </p>
+      <h3 class="govuk-heading-s">Date on which they wish to open as an academy</h3>
+      <p class="body">
+        text
+      </p>
+      <h3 class="govuk-heading-s">Application for a multi-academy trust or as a single academy trust</h3>
+      <p class="body">
+        Single academy trust
+      </p>
+      <h3 class="govuk-heading-s">Name of the school(s) they will be supporting and what support they will be providing</h3>
+      <p class="body">
+        text
+      </p>
+      <h3 class="govuk-heading-s">Names of the members of the trust and their experience and background</h3>
+      <p class="body">
+        text
+      </p>
+      <h3 class="govuk-heading-s">Total number of people on the board of trustees</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">Name of the chair of the trust and their experience and background</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">Name of the finance director and their experience and background</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">Name of the HR director and their experience and background</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">Name of the head of school improvement and their experience and background</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">Age range of the pupils</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">List of special educations needs that are provided for</h3>
+      <p class="body">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Multi-Sensory Impairment</li>
+          <li>Physical Disability</li>
+          <li>Hearing Impairment</li>
+        </ul>
+      </p>
+      <h3 class="govuk-heading-s">Number of pupil places for which the school is currently funded</h3>
+      <p class="body">
+        42
+      </p>
+      <h3 class="govuk-heading-s">Does the school have residential provision?</h3>
+      <p class="body">
+        No
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-l">Manage</h2>
+      {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Change case status"
+        },
+        items: [
+          {
+            value: "published",
+            text: "Closed"
+          },
+          {
+            value: "updated",
+            text: "Recieved",
+            selected: true
+          },
+          {
+            value: "views",
+            text: "Delayed"
+          }
+        ]
+      }) }}
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "Notes"
+        }
+      }) }}
+      {{ govukButton({
+        text: "Submit"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

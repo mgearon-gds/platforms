@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{word}}
+  - Restricted words - Companies House Internal Service
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "all"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Case number: 000000</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{word}}</h1>
+      <p class="govuk-body">
+        Sarah Phillps is currently assigned to the case — <a href="#">change <span class="govuk-visually-hidden">assignee</span></a>
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav>
+        <ul class="govuk-list govuk-list--spaced">
+          <li>
+            <a class="govuk-link" href="word">Overview</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="log">Activity log</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <h2 class="govuk-heading-l">Activity</h2>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Status change</h3>
+      <p class="govuk-body-s">
+        Lucy Connelly, <time>25 March 2022 at 11:10pm</time>
+      </p>
+      <p>
+        Status changed from recieved to accepted.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Note added</h3>
+      <p class="govuk-body-s">
+        Joseph Nguyen, 21 March 2022 at 7:06pm
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor est quis orci elementum tincidunt. Phasellus efficitur justo vitae dictum tempor. Donec id leo nisl. Vestibulum tempor sodales convallis. Mauris dictum enim risus, et aliquam magna ultrices in. Ut rhoncus tempus arcu, non convallis magna. Ut blandit, urna sed hendrerit elementum, justo eros mattis eros, quis pellentesque lacus leo id quam. Quisque mattis varius felis, et commodo tortor pharetra eu. In vehicula, mi in ornare vestibulum, lectus justo dictum ex, a blandit magna felis quis sem. Vivamus sed lobortis nulla.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Person assigned</h3>
+      <p class="govuk-body-s">
+        21 March 2022 at 7:06pm
+      </p>
+      <p>
+        Sasha Willifrid has been assigned to this case.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      {{govukTag({
+        text: "Waiting on",
+        classes: "govuk-tag--yellow"
+      })}}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Reminder sent</h3>
+      <p>
+        This case has not been assigned in over 7 days.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Application recieved</h3>
+      <p>
+        Application recieved through the online service on 7 Febuary 2022.
+      </p>
+    </div>
+  </div>
+{% endblock %}

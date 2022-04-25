@@ -1,0 +1,33 @@
+<nav class="ch-pagination" role="navigation" aria-label="Pagination Navigation">
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+  {% if pagination.pages.length > 0 %}
+    <ul class="ch-pagination__list govuk-body" role="navigation">
+      {% if pagination.currentPage > 1 %}
+        <li class="ch-pagination__item">
+          <a href="?page={{ pagination.previousPage }}{{ viewParams.total }}" class="ch-pagination__link ch-pagination-previous govuk-link--no-visited-state">Previous
+            <span class="govuk-visually-hidden">
+              set of pages</span></a>
+        </li>
+      {% endif %}
+      {% for page in pagination.pages %}
+        {% if page.number === pagination.currentPage %}
+          <li class="ch-pagination__item ch-pagination__item--active">
+            <span aria-current="true">{{ page.number }}</span>
+          </li>
+        {% else %}
+          <li class="ch-pagination__item">
+            <a href="?page={{ page.number }}{{ viewParams.total }}" class="ch-pagination__link govuk-link--no-visited-state" aria-label="Go to Page {{ page.number }}">
+              {{ page.number }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+      {% if pagination.currentPage < pagination.totalPages %}
+        <li class="ch-pagination__item">
+          <a href="?page={{ pagination.nextPage}}{{ viewParams.total }}" class="ch-pagination__link govuk-link--no-visited-state ch-pagination-next">Next
+            <span class="govuk-visually-hidden">
+              set of pages</span></a>
+        </li>
+      {% endif %}
+    </ul>
+  {% endif %}
+</nav>

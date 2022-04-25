@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Overview - Restricted words - Companies House Internal Service
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if status == 'success' %}
+        {% set html %}
+        <p class="govuk-notification-banner__heading">
+          You've added the word
+          {{wordAdded | upper}}.
+        </p>
+        {% endset %}
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'success'
+        }) }}
+      {% endif %}
+      <span class="govuk-caption-l">Special school application to convert to academy status service</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Applications</h1>
+
+      {{ govukButton({
+        text: "Add new case",
+        href: "add-new-word"
+      }) }}
+    </div>
+  </div>
+  {% if cases.length > 0 %}
+    <div class="govuk-grid-row">
+      {% include "includes/filters.html" %}
+
+      <div class="govuk-grid-column-two-thirds">
+        {{ govukInput({
+          label: {
+            text: "Search by application name or number",
+            classes: "govuk-label--m"
+          },
+          id: "event-name",
+          name: "event-name",
+          classes: "govuk-!-margin-bottom-1"
+        }) }}
+        {{ govukButton({
+  text: "Search",
+  classes: "govuk-button--secondary govuk-!-margin-bottom-6"
+}) }}
+        <h3 class="info result-count govuk-heading-m govuk-!-font-weight-regular" id="result-count" aria-live="assertive">{{length|safe}}</h3>
+
+            {% for case in cases %}
+            <section>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                  <h4 class="govuk-heading-s"><a href="word?word={{ case.word}}" class="govuk-link govuk-link--no-visited-state">{{ case.word }}</a></h4>
+</div>
+<div class="govuk-grid-column-one-half">
+
+                  <p class="govuk-body-s">000000</p>
+                  </div>
+                  </div>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                  <p class="govuk-body govuk-!-text-align-right">
+                    {% if case.status === "closed" %}
+                      <strong class="govuk-tag govuk-tag--green">
+                    {% elif case.status === "received" %}
+                      <strong class="govuk-tag govuk-tag--blue">
+                    {% else %}
+                      <strong class="govuk-tag govuk-tag--yellow">
+                    {% endif %}
+                    {{ case.status }}
+                      </strong>
+                    </p>
+
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <p class="govuk-body">
+                    Assigned to {{case.added}}
+                  </p>
+                  <p class="govuk-body govuk-!-margin-bottom-0">
+                  <!--{{ case.addedon }}-->
+                  Received on {{ ["02 April 2009", "05 November 2014", "22 August 2008", "28 Febuary 2018", "02 December 2016", "14 May 2008", "22 June 2019"] | random }} and last
+
+                  updated on {{ ["09 March 2013", "09 April 2004", "23 October 2017"] | random }}
+                  {{ case.removedon }}
+                  </p>
+              </div>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            </section>
+            {% endfor %}
+        <div class="govuk-grid-row ch-pagination-container">
+          <div class="govuk-grid-column-one-third">
+            {% include "includes/pagination-views-per-page.html" %}
+          </div>
+          <div class="govuk-grid-column-two-thirds">
+            {% include "includes/pagination-links.html" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="govuk-grid-row">
+      {% include "includes/filters.html" %}
+      <div class="govuk-grid-column-three-quarters column-results column-results--active">
+        <p>The word **WORD (uppercase)** is not on the restricted words list</p>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

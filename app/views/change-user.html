@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{word}}
+  - Restricted words - Companies House Internal Service
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "all"
+  }) }}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "Who to assign to this case?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+  text: "Sarah Phillps is currently assigned to the case"
+},
+  items: [
+    {
+      value: "england",
+      text: "Denis Vishnu"
+    },
+    {
+      value: "scotland",
+      text: "Sasha Willifrid"
+    },
+    {
+      value: "wales",
+      text: "Orla Tegan"
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Submit"
+}) }}
+    </div>
+  </div>
+{% endblock %}
