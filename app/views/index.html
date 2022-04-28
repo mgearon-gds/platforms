@@ -1,11 +1,14 @@
-{% extends "layout.html" %}
+{% extends "layout-signin.html" %}
 {% block pageTitle %}
-  Sign in to Companies House - Companies House Internal Service
+  Sign in - GOV.UK Case Management
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
       <h1 class="govuk-heading-xl">Sign in</h1>
+      <p class="govuk-body">
+        If you do not have an account, you can <a href="#" class="govuk-link">create one now</a>.
+        </p>
       {{ govukInput({
         label: {
           text: "Email address"
@@ -22,11 +25,11 @@
         name: "password"
       }) }}
       {{ govukButton({
-        text: "Sign in",
+        text: "Continue",
         href: 'all.html'
       }) }}
       <p>
-        <a href="#" class="govuk-link block govuk-body govuk-!-font-size-9">Forgotten your password?</a>
+        <a href="#" class="govuk-link block govuk-body govuk-!-font-size-9">Forgot your password?</a>
       </p>
     </div>
   </div>

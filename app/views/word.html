@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{word}}
-  - Restricted words - Companies House Internal Service
+  - GOV.UK Case Management
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
@@ -34,6 +34,9 @@
     </div>
     <div class="govuk-grid-column-three-quarters-from-desktop">
       <h2 class="govuk-heading-l">Overview</h2>
+      {% set reference %}
+        {{ ['Preparing papers for advisory board','Being reviewed by the advisory board','Transfer land ownership','Closing the case'] | random }}
+      {% endset -%}
       {{ govukSummaryList({
         rows: [
           {
@@ -58,6 +61,14 @@
             },
             value: {
               html: "<strong class='govuk-tag govuk-tag--yellow'>Delayed</strong>"
+            }
+          },
+          {
+            key: {
+              text: "Workflow stage"
+            },
+            value: {
+              html: reference
             }
           }
         ]
@@ -97,7 +108,7 @@
       </p>
       <h3 class="govuk-heading-s">Date on which they wish to open as an academy</h3>
       <p class="body">
-        text
+        28 August 2022
       </p>
       <h3 class="govuk-heading-s">Application for a multi-academy trust or as a single academy trust</h3>
       <p class="body">
@@ -109,15 +120,18 @@
       </p>
       <h3 class="govuk-heading-s">Names of the members of the trust and their experience and background</h3>
       <p class="body">
-        text
+        Bristol Brunel Academy
       </p>
       <h3 class="govuk-heading-s">Total number of people on the board of trustees</h3>
       <p class="body">
-        4
+        2
       </p>
       <h3 class="govuk-heading-s">Name of the chair of the trust and their experience and background</h3>
       <p class="body">
-        4
+        John Smith
+      </p>
+      <p class="govuk-body">
+          Jane Smith
       </p>
       <h3 class="govuk-heading-s">Name of the finance director and their experience and background</h3>
       <p class="body">
@@ -159,6 +173,9 @@
         label: {
           text: "Change case status"
         },
+        hint: {
+  text: "Current status is recieved"
+},
         items: [
           {
             value: "published",
@@ -175,6 +192,13 @@
           }
         ]
       }) }}
+      {{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload supporting documents"
+  }
+}) }}
       {{ govukTextarea({
         name: "more-detail",
         id: "more-detail",

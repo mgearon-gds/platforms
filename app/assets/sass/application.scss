@@ -16,15 +16,6 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-tr:nth-child(even) {
-  background: #f1f1f1;
-}
-
-.govuk-table__body td,
-.govuk-table__body th {
-  padding: 10px 10px 10px 5px;
-  vertical-align: middle;
-}
 
 .govuk-notification {
   border: 5px solid #1d70b8;
@@ -50,22 +41,7 @@ tr:nth-child(even) {
   padding: .5em 0;
 }
 
-.govuk-table__cell,
-.govuk-table__header {
-  padding-top: 0;
-}
 
-.govuk-extra-width-container,
-.govuk-width-overide .govuk-width-container {
-
-  max-width: 100%;
-  margin: 0 15px;
-
-}
-
-.govuk-table__cell-right {
-  text-align: center;
-}
 
 .filters-heading {
   background: #f3f2f1;
@@ -108,4 +84,60 @@ tr:nth-child(even) {
 
 .ch-pagination__list li{
   padding: 0 8px
+}
+
+.wrapper{
+  display: flex;
+}
+
+.search{
+  margin-left: 10px;
+}
+
+.one-line{
+  display: flex;
+  align-items: flex-end
+}
+
+.one-line p{
+  margin-left: 5px;
+  color: #505a5f
+}
+
+.govuk-header__product-name {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1;
+    display: inline-table;
+}
+
+@media print {
+    .govuk-header__product-name {
+        font-family: sans-serif;
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .govuk-header__product-name {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+}
+
+@media print {
+    .govuk-header__product-name {
+        font-size: 18pt;
+        line-height: 1;
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__content, .govuk-header__logo {
+        width: 50%;
+    }
 }

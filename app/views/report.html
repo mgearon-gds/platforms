@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{word}}
-  - Restricted words - Companies House Internal Service
+  Service Performance
+  - GOV.UK Case Management
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
@@ -12,7 +12,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l">Report summary</h1>
+    <h1 class="govuk-heading-l">Service performance</h1>
     <p class="govuk-body">
       <a class="govuk-link" href="#">Export all data</a>
       </p>
@@ -55,32 +55,64 @@ firstCellIsHeader: true,
       text: "Week"
     },
     {
-      text: "Average time to close"
+      text: "Closed cases"
     }
   ],
   rows: [
     [
       {
-        text: "First 6 weeks"
+        text: "26 May 2022"
       },
       {
-        text: "£109.80 per week"
+        text: "3 cases"
       }
     ],
     [
       {
-        text: "Next 33 weeks"
+        text: "25 May 2022"
       },
       {
-        text: "£109.80 per week"
+        text: "3 cases"
       }
     ],
     [
       {
-        text: "Total estimated pay"
+        text: "22 May 2022"
       },
       {
-        text: "£4,282.20"
+        text: "3 cases"
+      }
+    ],
+    [
+      {
+        text: "21 May 2022"
+      },
+      {
+        text: "2 cases"
+      }
+    ],
+    [
+      {
+        text: "20 May 2022"
+      },
+      {
+        text: "1 case"
+      }
+    ],
+    [
+      {
+        text: "19 May 2022"
+      },
+      {
+        text: "1 case"
+      }
+    ],
+    [
+      {
+        text: "18 May 2022"
+      },
+      {
+        text: "0 cases"
       }
     ]
   ]
