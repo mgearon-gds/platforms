@@ -4,15 +4,11 @@
   - GOV.UK Case Management
 {% endblock %}
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "all"
-  }) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Case number: 000000</span>
+      <span class="govuk-caption-xl">Case number: {{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{word}}</h1>
       <p class="govuk-body">
         Sarah Phillps is currently assigned to the case — <a href="change-user">change <span class="govuk-visually-hidden">assignee</span></a>
@@ -24,10 +20,16 @@
       <nav>
         <ul class="govuk-list govuk-list--spaced">
           <li>
-            <a class="govuk-link" href="word">Overview</a>
+            <a class="govuk-link" href="word?word={{word}}">Overview</a>
           </li>
           <li>
-            <a class="govuk-link" href="log">Activity log</a>
+            <a class="govuk-link" href="log?word={{word}}">Activity log</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="payment?word={{word}}">Payment</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="payment?word={{word}}">Contact customer</a>
           </li>
         </ul>
       </nav>

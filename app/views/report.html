@@ -4,10 +4,6 @@
   - GOV.UK Case Management
 {% endblock %}
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "all"
-  }) }}
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
@@ -52,7 +48,7 @@ captionClasses: "govuk-table__caption--s",
 firstCellIsHeader: true,
   head: [
     {
-      text: "Week"
+      text: "Day"
     },
     {
       text: "Closed cases"
@@ -116,6 +112,53 @@ firstCellIsHeader: true,
       }
     ]
   ]
+}) }}
+{{ govukTable({
+  caption: "Staff assigned to cases",
+captionClasses: "govuk-table__caption--s",
+firstCellIsHeader: true,
+head: [
+{
+  text: "Name"
+},
+{
+  text: "Cases assigned"
+}
+],
+rows: [
+[
+  {
+    text: "Denis Vishnu"
+  },
+  {
+    text: "8 cases"
+  }
+],
+[
+  {
+    text: "Orla Tegan"
+  },
+  {
+    text: "6 cases"
+  }
+],
+[
+  {
+    text: "Sasha Willifrid"
+  },
+  {
+    text: "5 cases"
+  }
+],
+[
+  {
+    text: "Sarah Phillps"
+  },
+  {
+    text: "8 cases"
+  }
+]
+]
 }) }}
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 <h2 class="govuk-heading-m">Last 30 days</h2>

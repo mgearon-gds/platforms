@@ -141,3 +141,24 @@ $govuk-assets-path: '/govuk/assets/';
         width: 50%;
     }
 }
+
+.border-top{
+  border-top: 10px solid #1d70b8
+}
+
+.govuk-header__navigation-list{
+  float: right;
+}
+
+.second-nav ul{
+  list-style: none;
+  display: flex;
+  font-family: sans-serif;
+  padding-left: 0;
+    border-bottom: 1px solid #b1b4b6;
+}
+
+.second-nav ul li{
+  padding-right: 18px;
+
+}

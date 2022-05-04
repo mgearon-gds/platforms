@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{word}}
+  - GOV.UK Case Management
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Case number: {{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{word}}</h1>
+      <p class="govuk-body">
+        Sarah Phillps is currently assigned to the case — <a href="change-user">change <span class="govuk-visually-hidden">assignee</span></a>
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav>
+        <ul class="govuk-list govuk-list--spaced">
+          <li>
+            <a class="govuk-link" href="word?word={{word}}">Overview</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="log?word={{word}}">Activity log</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="payment?word={{word}}">Payment</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="payment?word={{word}}">Contact customer</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <h2 class="govuk-heading-l">Payment</h2>
+      <p class="govuk-body govuk-!-font-weight-bold">
+        No payment has been received for this case.
+        </p>
+        {{ govukButton({
+          text: "Create payment link with GOV.UK Pay"
+        }) }}
+    </div>
+  </div>
+{% endblock %}

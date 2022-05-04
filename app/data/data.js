@@ -1,5 +1,5 @@
 module.exports = [
-  {word: 'Bedminster Down School', added: 'Sarah Phillps', addedon: '10 November 2016', removedon: '', status: 'received'},
+  {word: 'Bedminster Down School', added: '', addedon: '10 November 2016', removedon: '', status: 'not assigned'},
   {word: 'Bristol Brunel Academy', added: 'Denis Vishnu', addedon: '04/02/2012', removedon: '', status: 'received'},
   {word: 'Oasis Academy John Williams', added: 'Denis Vishnu', addedon: '19 November 2014', removedon: '', status: 'received'},
   {word: 'Bristol Metropolitan Academy', added: 'Orla Tegan', addedon: '10/01/2019', removedon: '', status: 'received'},

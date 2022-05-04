@@ -67,18 +67,18 @@
 
         <ul id="navigation" class="govuk-header__navigation-list">
           <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="all">
-              Cases
+            <a class="govuk-header__link" href="my-profile">
+              My profile
             </a>
           </li>
           <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="report">
-              Peformance
+            <a class="govuk-header__link" href="features">
+              Features
             </a>
           </li>
           <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="organisation-settings">
-              Organisation settings
+            <a class="govuk-header__link" href="documentation">
+              Documentation
             </a>
           </li>
           <li class="govuk-header__navigation-item">
@@ -91,12 +91,36 @@
   </div>
 </header>
 <div class="govuk-width-container">
-  {{ govukPhaseBanner({
-tag: {
-  text: "alpha"
-},
-html: 'This is a new service – your <a class="govuk-link" href="https://www.smartsurvey.co.uk/s/directors-feedback/">feedback</a> will help us to improve it.'
-}) }}
+
+
+{% if home %}
+    {% else %}
+<nav class="second-nav">
+<ul class="govuk-!-padding-bottom-4 govuk-!-padding-top-2">
+  <li>
+    <a href="overview" class="govuk-link">All services</a>
+    </li>
+  <li>
+    <a href="all" class="govuk-link">Overview</a>
+    </li>
+    <li>
+      <a href="#" class="govuk-link">Manage GOV.UK Form</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">All payments</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Notifications sent</a>
+          </li>
+          <li>
+            <a href="report" class="govuk-link">Performance</a>
+            </li>
+      <li>
+        <a href="workflow-builder" class="govuk-link">Case workflow</a>
+        </li>
+  </ul>
+  {% endif %}
+</nav>
 </div>
 {% endblock %}
 
@@ -104,6 +128,7 @@ html: 'This is a new service – your <a class="govuk-link" href="https://www.sm
 
 {% if useAutoStoreData %}
   {% block footer %}
+
     {{ govukFooter({
       meta: {
         items: [

@@ -6,9 +6,32 @@ require('./routes/core.js')(router)
 require('./routes/all.js')(router)
 
 // Word page on get
+
+router.get('/overview', function (req, res) {
+  res.render('overview', {
+    // To use the company data on that page use the following
+    home: "home"
+  })
+})
 router.get('/word', function (req, res) {
   var word = req.query.word
   res.render('word', {
+    // To use the company data on that page use the following
+    word: word
+  })
+})
+
+router.get('/payment', function (req, res) {
+  var word = req.query.word
+  res.render('payment', {
+    // To use the company data on that page use the following
+    word: word
+  })
+})
+
+router.get('/log', function (req, res) {
+  var word = req.query.word
+  res.render('log', {
     // To use the company data on that page use the following
     word: word
   })

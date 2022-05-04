@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  My Profile - GOV.UK Case Management
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">My profile</h1>
+
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Email"
+        },
+        value: {
+          html: "michael.gearon@digital.cabinet-office.gov.uk"
+        }
+      },
+      {
+        key: {
+          text: "Mobile number"
+        },
+        value: {
+          text: "	+447557050000"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "date of birth"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Sign-in method"
+        },
+        value: {
+          html: "Text message"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "address"
+            }
+          ]
+        }
+      }
+    ]
+  }) }}
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <p class="border-top govuk-body-s govuk-!-padding-top-2">To change your permission level on a service you need to contact an administrator for that service.</p>
+      </div>
+    </div>
+{% endblock %}

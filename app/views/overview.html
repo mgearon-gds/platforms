@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Choose Service - GOV.UK Case Management
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Overview</h1>
+      <h2 class="govuk-heading-m">Service performance</h2>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-l govuk-!-margin-bottom-0">696</h3>
+          <p class="govuk-body">
+            cases
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-l govuk-!-margin-bottom-0">550</h3>
+          <p class="govuk-body">
+            closed cases
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-l govuk-!-margin-bottom-0">20</h3>
+          <p class="govuk-body">
+            delayed cases
+          </p>
+        </div>
+      </div>
+      <p class="govuk-body govuk-!-margin-top-6"><a href="report" class="govuk-link">Show performance for all your services</a></p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-m">Department for Education Services</h2>
+      <p class="govuk-body">
+        <a class="govuk-body" href="all">Special school application to convert to academy status service</a>
+        </p>
+        <p class="govuk-body">
+          <a class="govuk-body" href="all">Apply to open a special or alternative provision free school</a>
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-8">
+            <a class="govuk-body" href="all">Employing an apprentice</a>
+            </p>
+      {{ govukButton({
+  text: "Add a new service",
+  classes: "govuk-button--secondary"
+}) }}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,277 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - GOV.UK Case Management
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Workflow overview</h1>
+      <p class="govuk-body">
+        Last edited by Jane Smith on 09 January 2022
+        </p>
+      {{ govukButton({
+        text: "Add step",
+        classes: "govuk-!-margin-bottom-0"
+      }) }}
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Delivery officer check if passes credentials to become an Academy</h2>
+      {{ govukSummaryList({
+  rows: [
+  {
+    key: {
+      text: "Step"
+    },
+    value: {
+      text: "1"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+    {
+      key: {
+        text: "Type of task"
+      },
+      value: {
+        text: "Approval"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Assign to"
+      },
+      value: {
+        text: "Delivery officers"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Deadline for the task"
+      },
+      value: {
+        html: "14 days"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Manage step",
+        classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+      }) }}
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-m">Preparing papers for Advisory Board</h2>
+
+      {{ govukSummaryList({
+  rows: [
+  {
+    key: {
+      text: "Step"
+    },
+    value: {
+      text: "2"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+    {
+      key: {
+        text: "Type of task"
+      },
+      value: {
+        text: "Approval"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Assign to"
+      },
+      value: {
+        text: "Delivery officers"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Deadline for the task"
+      },
+      value: {
+        html: "14 days"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Manage step",
+  classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+}) }}
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-m">First review of the case</h2>
+
+      {{ govukSummaryList({
+  rows: [
+  {
+    key: {
+      text: "Step"
+    },
+    value: {
+      text: "3"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+    {
+      key: {
+        text: "Type of task"
+      },
+      value: {
+        text: "Approval"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Assign to"
+      },
+      value: {
+        text: "Delivery officers"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Deadline for the task"
+      },
+      value: {
+        html: "14 days"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Manage step",
+  classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+}) }}
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-m">First review of the case</h2>
+
+      <p class="govuk-body">
+          Assign to Jane Smith
+      </p>
+      {{ govukButton({
+        text: "Edit step",
+        classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+      }) }}
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Save changes"
+        }) }}
+
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

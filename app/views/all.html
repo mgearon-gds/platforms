@@ -2,9 +2,14 @@
 {% block pageTitle %}
   Overview - GOV.UK Case Management
 {% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
 {% block content %}
+
+
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
       {% if status == 'success' %}
         {% set html %}
         <p class="govuk-notification-banner__heading">
@@ -17,8 +22,7 @@
           type: 'success'
         }) }}
       {% endif %}
-      <span class="govuk-caption-l">Special school application to convert to academy status service</span>
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Applications</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Special school application to convert to academy status service</h1>
 
       {{ govukButton({
         text: "Add new case",
@@ -31,7 +35,7 @@
       {% include "includes/filters.html" %}
 
       <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
 <label class="govuk-label govuk-label--m" for="event-name">
       Search by application name or number
     </label>
@@ -43,17 +47,32 @@ classes: "govuk-button--secondary govuk-!-margin-bottom-2 search"
 }) }}
 </div>
 </div>
+<div class="app-sort">
+        <p>
+          <b class="govuk-!-margin-right-1">Sort by:</b>
 
-        <h3 class="info result-count govuk-heading-m govuk-!-font-weight-regular govuk-!-margin-bottom-6" id="result-count" aria-live="assertive">{{length|safe}}</h3>
+            <span class="govuk-!-margin-right-1">Status</span>
+
+          |
+
+            <a class="govuk-!-margin-right-1 govuk-!-margin-left-1" href="/applications/?sort=Updated most recently">Updated most recently</a>
+
+          |
+
+            <a class="govuk-!-margin-right-1 govuk-!-margin-left-1" href="/applications/?sort=Updated least recently">Updated least recently</a>
+
+        </p>
+      </div>
+        <h3 class="info result-count govuk-heading-m govuk-!-font-weight-regular govuk-!-margin-top-8 govuk-!-margin-bottom-6" id="result-count" aria-live="assertive">{{length|safe}}</h3>
 
             {% for case in cases %}
             <section>
               <div class="govuk-grid-row">
-                <div class="govuk-grid-column-three-quarters one-line">
+                <div class="govuk-grid-column-two-thirds one-line">
                   <h4 class="govuk-heading-s"><a href="word?word={{ case.word}}" class="govuk-link govuk-link--no-visited-state">{{ case.word }}</a></h4>
                   <p class="govuk-body-s">{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</p>
                 </div>
-                <div class="govuk-grid-column-one-quarter">
+                <div class="govuk-grid-column-one-third">
                   <p class="govuk-body govuk-!-text-align-right">
                     {% if case.status === "closed" %}
                       <strong class="govuk-tag govuk-tag--green">
@@ -70,9 +89,13 @@ classes: "govuk-button--secondary govuk-!-margin-bottom-2 search"
               </div>
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
+                  {% if case.added %}
                   <p class="govuk-body">
                     Assigned to {{case.added}}
                   </p>
+                  {% else %}
+
+                  {% endif %}
                   <p class="govuk-body govuk-!-margin-bottom-0">
                   <!--{{ case.addedon }}-->
                   Received on {{ ["02 April 2009", "05 November 2014", "22 August 2008", "28 Febuary 2018", "02 December 2016", "14 May 2008", "22 June 2019"] | random }}. Last

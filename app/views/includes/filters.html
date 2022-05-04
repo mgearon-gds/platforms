@@ -7,10 +7,11 @@
           {{ govukCheckboxes({
             idPrefix: "filter-word-type",
             name: "filterWordType",
-            classes: "govuk-!-margin-bottom-4 govuk-checkboxes--small",
+            classes: "govuk-!-margin-bottom-6 govuk-checkboxes--small",
             fieldset: {
               legend: {
                 text: "Assigned to",
+                classes: "govuk-!-font-weight-bold",
                 isPageHeading: false
               }
             },
@@ -45,7 +46,7 @@
         </div>
       </div>
 
-      <div role="widget" class="filter govuk-!-margin-bottom-4">
+      <div role="widget" class="filter govuk-!-margin-bottom-6">
         {{ govukCheckboxes({
           idPrefix: "filter-status",
           name: "filterStatus",
@@ -53,11 +54,17 @@
           fieldset: {
             legend: {
               text: "Case status",
+              classes: "govuk-!-font-weight-bold",
               isPageHeading: false
             },
             classes: "filters-wrapper"
           },
           items: [
+          {
+            value: "Not assigned",
+            text: "Not assigned",
+            checked: filterParams.status.referred.checked
+          },
           {
             value: "Delayed",
             text: "Delayed",
@@ -76,35 +83,28 @@
           ]
         }) }}
       </div>
-      <div role="widget" class="filter ">
-        {{ govukCheckboxes({
-          idPrefix: "filter-status",
-          name: "filterStatus",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Date recieved",
-              isPageHeading: false
-            },
-            classes: "filters-wrapper"
+      <div role="widget" class="filter govuk-!-margin-bottom-6">
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-2">Date submitted</h4>
+        {{ govukInput({
+          label: {
+            text: "From"
           },
-          items: [
-          {
-            value: "Last 7 days",
-            text: "Last 7 days",
-            checked: filterParams.status.referred.checked
+          hint: {
+            text: "For example, 2005 or 21/11/2014"
           },
-            {
-              value: "Last 14 days",
-              text: "Last 14 days",
-              checked: filterParams.status.referred.checked
-            },
-            {
-              value: "Last 30 days",
-              text: "Last 30 days",
-              checked: filterParams.status.accepted.checked
-            }
-          ]
+          id: "event-name",
+          name: "event-name"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "To",
+            classes: "govuk-!-margin-top-4"
+          },
+          hint: {
+            text: "For example, 2019 or 21/11/2019"
+          },
+          id: "event-name",
+          name: "event-name"
         }) }}
       </div>
       {{ govukButton({
