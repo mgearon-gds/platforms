@@ -1,0 +1,414 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - GOV.UK Case Management
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+      </div>
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+          Transactions
+        </h1>
+
+        <div class="govuk-!-font-size-18 govuk-!-margin-bottom-6">
+          <a href="/reports-reconciliation-test-account/all-transactions-live-with-data-v7" class="govuk-body">Transactions for all services</a>
+        </div>
+
+        <div class="transactions-filter govuk-grid-row">
+          <form class="govuk-clearfix" method="get" action="/transactions" novalidate="">
+            <div class="govuk-grid-column-one-quarter inputs-less-margin">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-0" for="reference">
+                  Reference number
+                </label>
+                <span id="reference-hint" class="govuk-hint govuk-!-font-size-14">
+                  Enter full or partial number
+                </span>
+                <input class="govuk-input govuk-!-font-size-16" id="reference" name="reference" type="text" aria-describedby="reference-hint">
+              </div>
+
+            </div>
+            <div class="govuk-grid-column-one-quarter inputs-less-margin">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-0" for="email">
+                  Email address
+                </label>
+                <span id="email-hint" class="govuk-hint govuk-!-font-size-14">
+                  Enter full or partial email
+                </span>
+                <input class="govuk-input govuk-!-font-size-16" id="email" name="email" type="text" aria-describedby="email-hint">
+              </div>
+
+            </div>
+            <div class="govuk-grid-column-one-quarter inputs-less-margin">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-0" for="cardholderName">
+                  Name on card
+                </label>
+                <span id="cardholderName-hint" class="govuk-hint govuk-!-font-size-14">
+                  Enter full or partial name
+                </span>
+                <input class="govuk-input govuk-!-font-size-16" id="cardholderName" name="cardholderName" type="text" aria-describedby="cardholderName-hint">
+              </div>
+
+            </div>
+            <div class="govuk-grid-column-one-quarter inputs-less-margin">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-0" for="lastDigitsCardNumber">
+                  Last 4 card numbers
+                </label>
+                <span id="lastDigitsCardNumber-hint" class="govuk-hint govuk-!-font-size-14">
+                  Last 4 digits of associated card
+                </span>
+                <input class="govuk-input govuk-!-font-size-16" id="lastDigitsCardNumber" name="lastDigitsCardNumber" type="text" aria-describedby="lastDigitsCardNumber-hint" autocomplete="off" inputmode="numeric" pattern="[0-9]*">
+              </div>
+
+            </div>
+
+
+
+
+            <div class="govuk-grid-column-one-quarter">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-visually-hidden">
+                  Card brand
+                </legend>
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-0" for="card-brand">
+                    Card brand
+                  </label>
+                  <span id="card-brand-hint" class="govuk-hint govuk-!-font-size-14">
+                    Select a brand
+                  </span>
+                  <select class="govuk-select govuk-!-font-size-16" id="card-brand" name="brand" aria-describedby="card-brand-hint" data-enhance-multiple="true">
+                    <option value="">All brands</option>
+                    <option value="visa">Visa</option>
+                    <option value="master-card">Mastercard</option>
+                    <option value="american-express">American Express</option>
+                    <option value="diners-club">Diners Club</option>
+                    <option value="discover">Discover</option>
+                    <option value="jcb">JCB</option>
+                    <option value="unionpay">Union Pay</option>
+                    <option value="maestro">Maestro</option>
+                  </select>
+                </div>
+
+              </fieldset>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-visually-hidden">
+                  Payment status
+                </legend>
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-0" for="state">
+                    Payment status
+                  </label>
+                  <span id="state-hint" class="govuk-hint govuk-!-font-size-14">
+                    Select an option
+                  </span>
+                  <select class="govuk-select govuk-!-font-size-16" id="state" name="state" aria-describedby="state-hint" data-enhance-multiple="true">
+                    <option value="">Any</option>
+                    <option value="In progress">In progress</option>
+                    <option value="Success">Success</option>
+                    <option value="Declined">Declined</option>
+                    <option value="Timed out">Timed out</option>
+                    <option value="Cancelled">Cancelled</option>
+                    <option value="Error">Error</option>
+                    <option value="Refund submitted">Refund submitted</option>
+                    <option value="Refund error">Refund error</option>
+                    <option value="Refund success">Refund success</option>
+                  </select>
+                </div>
+
+              </fieldset>
+            </div>
+
+            <div class="govuk-grid-column-one-half">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16 govuk-!-margin-bottom-0 govuk-!-display-block">
+                  Date range
+                </legend>
+                <fieldset class="govuk-fieldset datetime-filter datetime-filter-from">
+                  <legend class="govuk-visually-hidden">
+                    From this date and time
+                  </legend>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-size-14 govuk-!-margin-bottom-2" for="fromDate">
+                      Start date
+                    </label>
+                    <input class="govuk-input date-picker start govuk-!-font-size-16" id="fromDate" name="fromDate" type="text" autocomplete="off">
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-size-14 govuk-!-margin-bottom-2" for="fromTime">
+                      Start time
+                    </label>
+                    <input class="govuk-input time-picker start govuk-!-font-size-16" id="fromTime" name="fromTime" type="text" autocomplete="off">
+                  </div>
+
+                </fieldset>
+                <fieldset class="govuk-fieldset datetime-filter datetime-filter-to">
+                  <legend class="datetime-separator">
+                    to<span class="govuk-visually-hidden"> this date and time</span>
+                  </legend>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-size-14 govuk-!-margin-bottom-2" for="toDate">
+                      End date
+                    </label>
+                    <input class="govuk-input date-picker end govuk-!-font-size-16" id="toDate" name="toDate" type="text" autocomplete="off">
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-size-14 govuk-!-margin-bottom-2" for="toTime">
+                      End time
+                    </label>
+                    <input class="govuk-input time-picker end govuk-!-font-size-16" id="toTime" name="toTime" type="text" autocomplete="off">
+                  </div>
+
+                </fieldset>
+              </fieldset>
+            </div>
+
+            <div class="govuk-grid-column-full inputs-less-margin">
+
+                          <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">
+                                Advanced filters
+                              </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s govuk-!-font-size-16 govuk-!-margin-bottom-0" for="reference">
+                                  Search by metadata or reporting column
+                                </label>
+                                <span id="reference-hint" class="govuk-hint govuk-!-font-size-14">
+                                  Enter full value
+                                </span>
+                                <input class="govuk-input govuk-!-font-size-16" id="reference" name="reference" type="text" aria-describedby="reference-hint">
+                              </div>
+                            </div>
+                          </details>
+            </div>
+
+
+            <div class="govuk-grid-column-one-quarter inputs-less-margin">
+              <button class="govuk-button govuk-!-width-full" data-module="govuk-button" id="filter">
+                Filter
+              </button>
+            </div>
+            <div class="govuk-grid-column-one-quarter inputs-less-margin">
+            </div>
+          </form>
+        </div>
+
+
+
+        <h3 class="govuk-heading-s govuk-!-font-weight-regular govuk-!-margin-top-3" id="total-results">
+          13 transactions
+
+        </h3>
+
+
+        <p id="csv-download" class="govuk-body">
+          <a href="/transactions/download" id="download-transactions-link" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16"> Download all transaction details as a CSV file </a>
+        </p>
+
+        <div class="pagination">
+        </div>
+
+        <table id="transactions-list" class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col" id="reference-header">Reference number</th>
+              <th class="govuk-table__header" scope="col" id="email-header">Email</th>
+              <th class="govuk-table__header" scope="col" id="amount-header">Amount</th>
+              <th class="govuk-table__header" scope="col" id="brand-header">Card brand</th>
+              <th class="govuk-table__header" scope="col" id="state-header">State</th>
+              <th class="govuk-table__header govuk-table__header--numeric" scope="col" id="time-header">Date created</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr data-follow-link="" data-link="/account/20a90c8145d24ecb98bce859cfa475f1/transactions/85v25bj3l6c6mlo8tk8va5qovm" class="transactions-list--row govuk-table__row vertical-align-top">
+      <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="d1fbeb29-3e02-4f92-bde7-68329a19219d">
+        <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-85v25bj3l6c6mlo8tk8va5qovm" data-charge-id="85v25bj3l6c6mlo8tk8va5qovm" href="/account/20a90c8145d24ecb98bce859cfa475f1/transactions/85v25bj3l6c6mlo8tk8va5qovm">
+          468CTS9R3H
+        </a>
+      </th>
+      <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+4@digita…</td>
+      <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">£20.00</span></td>
+      <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+      <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Success</td>
+      <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">17 Feb 2021 — 16:08:44</td>
+    </tr>
+
+            <tr data-follow-link="" data-link="/transactions/q298b431m63v09bncd2q74ldok" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="9f62c703-c2b4-4bef-9cbb-bf5a7650d720">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-q298b431m63v09bncd2q74ldok" data-charge-id="q298b431m63v09bncd2q74ldok" href="/transactions/q298b431m63v09bncd2q74ldok">
+                  EY6ECN6YBV
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+3@digita…</td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">–£3.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Refund success</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 15:31:01</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/q298b431m63v09bncd2q74ldok" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="3a7de5e5-36e5-433e-a888-c39b45cdcac2">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-q298b431m63v09bncd2q74ldok" data-charge-id="q298b431m63v09bncd2q74ldok" href="/transactions/q298b431m63v09bncd2q74ldok">
+                  EY6ECN6YBV
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+3@digita…</td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">–£5.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Refund success</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 15:30:55</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/q298b431m63v09bncd2q74ldok" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="4e122147-b0bc-47ff-a2fb-ffe5f36ad1be">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-q298b431m63v09bncd2q74ldok" data-charge-id="q298b431m63v09bncd2q74ldok" href="/transactions/q298b431m63v09bncd2q74ldok">
+                  EY6ECN6YBV
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+3@digita…</td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">–£2.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Refund success</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 15:29:14</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/q298b431m63v09bncd2q74ldok" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="0095b617-0ee9-49ad-a820-14e5fdc73e13">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-q298b431m63v09bncd2q74ldok" data-charge-id="q298b431m63v09bncd2q74ldok" href="/transactions/q298b431m63v09bncd2q74ldok">
+                  EY6ECN6YBV
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+3@digita…</td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">–£10.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Refund success</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 15:28:05</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/q298b431m63v09bncd2q74ldok" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="0fdc71dd-406e-4e5f-9fcc-6b3eec13ffd2">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-q298b431m63v09bncd2q74ldok" data-charge-id="q298b431m63v09bncd2q74ldok" href="/transactions/q298b431m63v09bncd2q74ldok">
+                  EY6ECN6YBV
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+3@digita…</td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">£20.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Success</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 14:57:21</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/iv6qp0tfb6stvmu3dbe6imhva4" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-iv6qp0tfb6stvmu3dbe6imhva4" data-charge-id="iv6qp0tfb6stvmu3dbe6imhva4" href="/transactions/iv6qp0tfb6stvmu3dbe6imhva4">
+                  9M2TL68NM5
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email"></td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">£20.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand"></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Timed out</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 14:57:08</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/npgjmqtfprheu3klr97oerosmg" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="31cc5411-b2f6-4818-be47-9d2f98b355dc">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-npgjmqtfprheu3klr97oerosmg" data-charge-id="npgjmqtfprheu3klr97oerosmg" href="/transactions/npgjmqtfprheu3klr97oerosmg">
+                  JD7C265S6R
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+3@digita…</td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">–£20.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Refund success</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 14:55:16</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/npgjmqtfprheu3klr97oerosmg" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="73d0b9e3-c948-46b9-a38e-07ec46876bf9">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-npgjmqtfprheu3klr97oerosmg" data-charge-id="npgjmqtfprheu3klr97oerosmg" href="/transactions/npgjmqtfprheu3klr97oerosmg">
+                  JD7C265S6R
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+3@digita…</td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">£20.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Success</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 14:53:32</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/ntusau2usk7tuc2jl7qmalp1n0" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-ntusau2usk7tuc2jl7qmalp1n0" data-charge-id="ntusau2usk7tuc2jl7qmalp1n0" href="/transactions/ntusau2usk7tuc2jl7qmalp1n0">
+                  TV7RFY3UYF
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email"></td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">£20.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand"></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Timed out</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 14:53:24</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/0iqdlmvll377talq71bt6lqo3t" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="c2e31795-8be3-445a-9476-1cf6a3d82c96">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-0iqdlmvll377talq71bt6lqo3t" data-charge-id="0iqdlmvll377talq71bt6lqo3t" href="/transactions/0iqdlmvll377talq71bt6lqo3t">
+                  AJ5YAU4XQB
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+3@digita…</td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">–£20.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Refund success</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">29 Sep 2020 — 14:01:45</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/la84m2u0gltbm9c61ofjppubgv" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-la84m2u0gltbm9c61ofjppubgv" data-charge-id="la84m2u0gltbm9c61ofjppubgv" href="/transactions/la84m2u0gltbm9c61ofjppubgv">
+                  GP59AC2DD2
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email"></td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">£20.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand"></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Cancelled</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">01 Sep 2020 — 18:15:54</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/rv0ocnfatvot6qjcf4dove801f" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-rv0ocnfatvot6qjcf4dove801f" data-charge-id="rv0ocnfatvot6qjcf4dove801f" href="/transactions/rv0ocnfatvot6qjcf4dove801f">
+                  Z77DAP37JK
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email"></td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">£100.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand"></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Timed out</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">25 Aug 2020 — 19:19:00</td>
+            </tr>
+            <tr data-follow-link="" data-link="/transactions/0iqdlmvll377talq71bt6lqo3t" class="transactions-list--row govuk-table__row vertical-align-top">
+              <th scope="row" class="charge-column reference govuk-table__header" data-gateway-transaction-id="baf33fac-d365-457f-8678-ede0ca1cc5c3">
+                <a class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-14 reference govuk-!-display-block" id="charge-id-0iqdlmvll377talq71bt6lqo3t" data-charge-id="0iqdlmvll377talq71bt6lqo3t" href="/transactions/0iqdlmvll377talq71bt6lqo3t">
+                  AJ5YAU4XQB
+                </a>
+              </th>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 email">arindra.das+3@digita…</td>
+              <td class="govuk-table__cell transactions-list--item amount govuk-!-font-size-14" id="amount"><span style="white-space: pre">£20.00</span></td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 brand">Visa</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 state">Success</td>
+              <td class="govuk-table__cell transactions-list--item govuk-!-font-size-14 govuk-table__cell--numeric time">25 Aug 2020 — 17:15:39</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pagination">
+        </div>
+      </div>
+    </div>
+{% endblock %}

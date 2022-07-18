@@ -174,3 +174,85 @@ $govuk-assets-path: '/govuk/assets/';
 .app-hero > *{
     color: white;
 }
+
+.transactions-filter {
+  form {
+    margin: 0 15px;
+    padding: 15px 0;
+    background: #f3f2f1;
+  }
+
+  .govuk-hint {
+    color: #0b0c0c	;
+  }
+}
+
+.datetime-filter {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+
+  .govuk-form-group {
+    float: left;
+
+    width: 50%;
+    box-sizing: border-box;
+
+    &:first-of-type {
+      padding-right: 5px;
+    }
+
+    &:last-of-type {
+      padding-left: 5px;
+    }
+  }
+}
+
+.datetime-filter-from {
+  padding-right: 15px;
+}
+
+.datetime-filter-to {
+  position: relative;
+  padding-left: 15px;
+}
+
+.datetime-separator {
+  font-size: 16px;
+  margin-bottom: 10px;
+
+}
+
+.inputs-less-margin .govuk-form-group {
+  margin-bottom: 15px;
+}
+
+.inputs-less-margin .govuk-button {
+  margin-bottom: 5px;
+}
+
+.clear-filter {
+  position: relative;
+  top: 12px;
+}
+
+// bootstrap datepicker overides
+.datepicker .datepicker-days table {
+  font-size: 14px;
+}
+
+.ui-timepicker-list {
+  font-size: 14px;
+}
+
+.datepicker .datepicker-days table tr td.day.focused,
+.datepicker .datepicker-days table tr td.day:hover {
+    background: 	#ffdd00;
+}
+
+.datepicker .datepicker-days table tr td.active:active,
+.datepicker .datepicker-days table tr td.active.highlighted:active,
+.datepicker .datepicker-days table tr td.active.active,
+.datepicker .datepicker-days table tr td.active.highlighted.active {
+  background: 	#1d70b8;
+}

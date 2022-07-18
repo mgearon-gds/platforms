@@ -7,8 +7,37 @@
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Settings</h1>
+            <h2 class="govuk-heading-m">About the group</h2>
+            {{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "What is this group used for?"
+  },
+  hint: {
+    text: "Include enough information to make it clear what this group is used for."
+  }
+}) }}
+      <h2 class="govuk-heading-m">Connected platforms</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Case manager</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Forms</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Payments</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Notifications</a>
+        </li>
+      </ul>
+      {{ govukButton({
+  text: "Add new connection"
+}) }}
 <h2 class="govuk-heading-m">API Keys</h2>
 <h3 class="govuk-heading-s">Payment API</h3>
 <h3 class="govuk-heading-s">Notifications API</h3>
