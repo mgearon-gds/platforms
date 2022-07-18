@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% set mainClasses = "main--draft govuk-main-wrapper--auto-spacing" %}
+
+{% block pageTitle %}
+  {{data['checkAnswersTitle']}} - Preview - GOV.UK
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="page-preview-new-tab/{{data['highestPageId']}}">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+  <h1 class="govuk-panel__title">{{data['checkAnswersTitle']}} <span class="govuk-visually-hidden">preview</span></h1>
+
+  <dl class="govuk-summary-list">
+    {% for page in data.pages -%}
+
+      {% set questionTitle = page["long-title"] or "Page " + page["pageIndex"] %}
+
+      {% if questionTitle %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+          <!--Q{{page["pageIndex"] | int + 1}}.--> {{questionTitle}}
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if (data[loop.index]) or (data[loop.index + '-year']) %}
+            {% if page['type'] == 'date' %}
+              {{data[loop.index + '-day']}}
+              {% if (data[loop.index + '-day']) %}/{% endif %}
+              {{data[loop.index + '-month'] or '01'}} / {{data[loop.index + '-year']}}
+            {% elif page['type'] == 'address' %}
+              {{data[loop.index + '-address-line-1']}}<br>
+              {% if data[loop.index + '-address-line-2'] %}{{data[loop.index + '-address-line-2']}}<br>{% endif %}
+              {{data[loop.index + '-address-town']}}<br>
+              {{data[loop.index + '-address-postcode']}}
+            {% else %}
+              {{data[loop.index]}}
+            {% endif %}
+          {% else %}
+            Not completed
+          {% endif %}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="page-preview-new-tab/{{loop.index}}">
+                Change <span class="govuk-visually-hidden">{{questionTitle}}<span>
+              </a>
+          </dd>
+      </div>
+      {% endif %}
+
+    {%- endfor %}
+
+  </dl>
+
+    {% if data['checkAnswersDeclaration'] %}
+    <h2 class="govuk-heading-m">Declaration</h2>
+
+    <div class="app-prose-scope">
+    {% markdown %}
+      {{ data['checkAnswersDeclaration'] }}
+    {% endmarkdown %}
+    </div>
+
+    {% endif %}
+
+    {{ govukButton({
+      text: "Agree and submit",
+      href: "confirmation-page-preview-new-tab",
+      attributes: {
+        target: "_parent"
+      }
+    }) }}
+  </div>
+</div>
+{% endblock %}

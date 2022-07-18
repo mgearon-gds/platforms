@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Reviewing question: Name
+{% endblock %}
+
+{% block header %}
+    {{ govukHeader() }}
+    {% include "includes/submenu.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+        }) 
+    }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="#" method="post" novalidate>
+                {{ govukRadios({
+                    idPrefix: "what-is-your-capacity",
+                    name: "what-is-your-capacity",
+                    fieldset: {
+                        legend: {
+                        text: "What is the capacity of your venue?",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--l"
+                        }
+                    },
+                    items: [
+                        {
+                        value: "0to50",
+                        text: "Fewer than 50 people"
+                        },
+                        {
+                        value: "51to100",
+                        text: "Between 51 and 100 people"
+                        },
+                        {
+                        value: "101orMore",
+                        text: "101 or more people"
+                        }
+                    ]
+                }) }}
+
+                {{ govukButton({
+                    text: "Next page"
+                }) }}
+            </form>
+
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <hr/>
+            <p>Nothing below this line is visible to the public.</p>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <h2 class="govuk-heading-m">Page information</h2>
+            {{ govukSummaryList({
+                rows: [
+                    {
+                    key: {
+                        text: "Type"
+                    },
+                    value: {
+                        text: "Choose one"
+                    }
+                    },
+                    {
+                    key: {
+                        text: "Required"
+                    },
+                    value: {
+                        text: "Yes"
+                    }
+                    },
+                    {
+                    key: {
+                        text: "Next page"
+                    },
+                    value: {
+                        html: '<ul class="govuk-list govuk-list--bullet"><li>If user chooses "101 or more people": <a href="#">Ineligible</a></li><li>Otherwise: <a href="#">Check your answers</a></li></ul>'
+                    }
+                    }
+                ]
+            }) }}
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <h2 class="govuk-heading-m">Reviewer comments</h2>
+
+            <div  class="moj-message-list">
+                {{ comment(name='elissavet.gianouli@djrs.gov.uk',
+                    value='This looks OK to me, but make sure you double check this wording with the content team - I believe they recently issued updated guidance on questions like these.'
+                ) }}
+                {{ reply(name='Laura Mipsum',
+                    value='Thanks Elissavet, I\ll get them to take a look.'
+                ) }}
+            </div>
+
+            <form action="#" method="post" novalidate>
+                {{ govukTextarea({
+                    label: {
+                        text: "Add a comment",
+                        classes: "govuk-label--s"
+                    },
+                    id: "review-comment",
+                    name: "review-comment",
+                    classes: "govuk-!-margin-bottom-1",
+                    formGroup: {
+                        classes: "govuk-!-margin-bottom-1"
+                    }
+                }) }}
+
+                {{ govukButton({
+                    text: "Submit feedback"
+                }) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

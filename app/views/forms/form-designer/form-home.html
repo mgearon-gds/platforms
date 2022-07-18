@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Forms
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Manage the forms</h1>
+        <p class="govuk-body">
+          You need to create a form
+        </p>
+        {{ govukButton({
+        text: "Create a form",
+        href: "form-create-a-form.html"
+        }) }}
+      </div>
+    </div>
+
+{% endblock %}

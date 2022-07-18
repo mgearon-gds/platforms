@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Form examples
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">GOV.UK Forms</span>
+      <h1 class="govuk-heading-xl">
+        Prototypes
+      </h1>
+
+      <p class="govuk-body-l">Prototypes from the GOV.UK Forms team in the Government Digital Service.<p>
+
+          <div class="app-prose-scope">
+            {% markdown %}
+
+            ---
+
+      ## [Form prototypes](form-prototypes)
+      Some examples of common kinds of government form, using components and patterns from the GOV.UK Design System.
+
+      ## [Form builder prototypes](form-builder-prototypes)
+      Prototypes exploring different aspects of form builders.
+
+      ## [Figma prototypes](https://www.figma.com/files/project/34163725/GOV.UK-Forms?fuid=822552076153840665)
+      Sketches, prototypes and other design assets - you'll need access to the GDS Figma account to view these.
+
+      ---
+
+      [Source code available on GitHub](https://github.com/alphagov/forms-prototypes)
+
+      {% endmarkdown %}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

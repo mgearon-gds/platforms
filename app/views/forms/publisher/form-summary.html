@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Form Summary - Apply for a Roller Disco Licence
+{% endblock %}
+
+{% block header %}
+    {{ govukHeader() }}
+    {% include "includes/submenu.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+        }) 
+    }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Apply for a Roller Disco Licence</h1>
+            {{ govukSummaryList({
+                rows: [
+                    {
+                        key: {
+                            text: "Status"
+                        },
+                        value: {
+                            html: govukTag({
+                                text: "Draft",
+                                classes: "govuk-tag--blue"
+                                })
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Author"
+                        },
+                        value: {
+                            text: "Laura Mipsum"
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Last modified date"
+                        },
+                        value: {
+                            text: "20th November 2021 at 15:45"
+                        }
+                    },
+                    {
+                        key: {
+                            text: "Version"
+                        },
+                        value: {
+                            text: "3"
+                        },
+                        actions: {
+                            items: [
+                                {
+                                    href: "versions",
+                                    text: "Manage",
+                                    visuallyHiddenText: 'versions'
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }) }}
+
+            <h3 class="govuk-heading-m">Draft URL</h3>
+            <p>
+                <a href="#">https://apply-for-a-roller-disco-licence.draft.forms.service.gov.uk</a>
+            </p>
+
+            {{ govukButton({
+                text: "Edit form",
+                href: '/form-designer/form-index'
+            }) }}
+
+            <h3 class="govuk-heading-m">Review URL</h3>
+            <p>
+                <a href="review">https://apply-for-a-roller-disco-licence.draft.forms.service.gov.uk/review</a>
+            </p>
+            {{ govukButton({
+                text: "Send for review",
+                href: "review"
+            }) }}
+
+            <h3 class="govuk-heading-m">Actions</h3>
+
+            <div class="govuk-button-group">
+
+                {{ govukButton({
+                    text: "Publish form",
+                    href: "enter-email"
+                }) }}
+
+                {{ govukButton({
+                    text: "Delete form",
+                    classes: "govuk-button--warning",
+                    href: "start"
+                }) }}
+                <p>
+                    or <a class="govuk-link govuk-link--no-visited-state" href="start">view your forms</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

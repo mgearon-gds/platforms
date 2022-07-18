@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Reviewing form: Apply for a Roller Disco Licence
+{% endblock %}
+
+{% block header %}
+    {{ govukHeader() }}
+    {% include "includes/submenu.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        "text": "Back",
+        "href": "javascript: window.history.go(-1)"
+        }) 
+    }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Reviewing form: Apply for a Roller Disco Licence</h1>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {{ govukButton({
+                text: "Manage reviewers",
+                href: "reviewers"
+            }) }}
+
+            <h2 class="govuk-heading-l">Review URL</h3>
+            <p>
+                <a href="#">https://apply-for-a-roller-disco-licence.draft.forms.service.gov.uk</a>
+            </p>
+
+            <h2 class="govuk-heading-l">Form pages</h2>
+            {{ govukTable({
+                head: [
+                    {
+                        text: "Page"
+                    },
+                    {
+                        text: "Reviewer comments",
+                        classes: 'govuk-!-width-one-quarter'
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            html: "<a href='review-question.html'>Name</a>"
+                        },
+                        {
+                            text: "1",
+                            classes: 'govuk-!-width-one-quarter'
+                        }
+                    ],
+                    [
+                        {
+                            html: "<a href='review-question.html'>Address</a>"
+                        },
+                        {
+                            text: "0",
+                            classes: 'govuk-!-width-one-quarter'
+                        }
+                    ],
+                    [
+                        {
+                            html: "<a href='review-question.html'>Date of birth</a>"
+                        },
+                        {
+                            text: "0",
+                            classes: 'govuk-!-width-one-quarter'
+                        }
+                    ],
+                    [
+                        {
+                            html: "<a href='review-question.html'>Trading name</a>"
+                        },
+                        {
+                            text: "3",
+                            classes: 'govuk-!-width-one-quarter'
+                        }
+                    ],
+                    [
+                        {
+                            html: "<a href='review-question.html'>Capacity</a>"
+                        },
+                        {
+                            text: "1",
+                            classes: 'govuk-!-width-one-quarter'
+                        }
+                    ]
+                ]
+            }) }}
+
+            <h2 class="govuk-heading-l">Reviewer comments</h2>
+            <div class="moj-message-list">
+                {{ comment(name='elissavet.gianouli@djrs.gov.uk',
+                    value="The new address field looks good. I'm happy with the changes!"
+                ) }}
+
+                {{ comment(name='nina.licheli@djrs.gov.uk',
+                    value='I agree with Elissavet - this looks good.'
+                ) }}
+
+                {{ reply(name='Laura Mipsum',
+                    value='Thanks folks!'
+                ) }}
+            </div>
+
+            <form action="#" method="post" novalidate>
+                {{ govukTextarea({
+                    label: {
+                        text: "Add a comment",
+                        classes: "govuk-label--s"
+                    },
+                    id: "review-comment",
+                    name: "review-comment",
+                    classes: "govuk-!-margin-bottom-1",
+                    formGroup: {
+                        classes: "govuk-!-margin-bottom-1"
+                    }
+                }) }}
+
+                {{ govukButton({
+                    text: "Submit feedback"
+                }) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

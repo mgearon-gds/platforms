@@ -1,0 +1,354 @@
+{% extends "layout-govuk-forms.html" %}
+
+{% set pageTitle -%}
+  {% if pageData['long-title'] %}
+    {{pageData['long-title']}}
+  {% else %}
+    Edit question
+  {% endif %}
+{%- endset %}
+
+{% block pageTitle %}
+  {{pageTitle|safe}} - GOV.UK Forms
+{% endblock %}
+
+{% block beforeContent %}
+  {% set prevPageId = pageId | int - 1 %}
+  {% if prevPageId > 0 %}
+    <a class="govuk-back-link" href="{{prevPageId}}">Back</a>
+  {% else %}
+    <a class="govuk-back-link" href="../form-index" target="_parent">Back</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  <form id="form" class="form" action="../edit-page/{{pageId}}" method="post">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% set namePrefix = "pages[" + pageIndex + "]" %}
+
+        <span class="govuk-caption-l">Question {{pageId}}</span>
+        <h1 class="govuk-heading-l">{{pageTitle|safe}}</h1>
+
+        {% set radioCheckboxHtml %}
+
+        {{ govukTextarea({
+          label: {
+            text: "Option list",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter each item on a new line"
+          },
+          id: "item-list",
+          name: namePrefix + "[item-list]",
+          value: pageData['item-list'],
+          classes: "govuk-!-margin-bottom-1",
+          formGroup: {
+            classes: "govuk-!-margin-bottom-1"
+          }
+        }) }}
+
+        {{ govukCheckboxes({
+          idPrefix: "radios",
+          name: namePrefix + "[radios]",
+          classes: "govuk-checkboxes--small",
+          items: [
+            {
+              value: "radios",
+              text: "Only let people select one option",
+              checked: checked(namePrefix + "['radios']", "radios")
+            }
+          ]
+        }) }}
+
+        {% endset -%}
+
+        {% set textareaHtml %}
+        {{ govukSelect({
+          id: "char-limit",
+          name: namePrefix + "[char-limit]",
+          label: {
+            text: "Character limit",
+            classes: "govuk-label--s"
+          },
+          items: [
+            {
+              value: "none",
+              text: "None",
+              selected: checked(namePrefix + "['char-limit']", "")
+            },
+            {
+              value: "100",
+              text: "100",
+              selected: checked(namePrefix + "['char-limit']", "100")
+            },
+            {
+              value: "250",
+              text: "250",
+              selected: checked(namePrefix + "['char-limit']", "250")
+            },
+            {
+              value: "500",
+              text: "500",
+              selected: checked(namePrefix + "['char-limit']", "500")
+            },
+            {
+              value: "750",
+              text: "750",
+              selected: checked(namePrefix + "['char-limit']", "750")
+            }
+          ]
+        }) }}
+        {% endset -%}
+
+        <!-- Long question text input -->
+        {{ govukInput({
+          label: {
+            text: "Question text",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Ask a question the way you would in person. For example ‘What is your address?’."
+          },
+          formGroup: {
+            classes: "govuk-!-margin-bottom-3"
+          },
+          id: "long-title",
+          name: namePrefix + "[long-title]",
+          value: pageData['long-title']
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        {{ govukInput({
+          label: {
+            text: "Hint text (optional)",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "You can use hint text if you need to explain the format the answer should be in, or where to find the information you’ve asked for."
+          },
+          id: "hint-text",
+          name: namePrefix + "[hint-text]",
+          value: pageData['hint-text']
+        }) }}
+      
+        {# <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Add help text
+            </span>
+          </summary>
+          <div class="govuk-details__text govuk-!-padding-bottom-0">
+            {{ govukTextarea({
+              id: "help-text",
+              name: namePrefix + "[help-text]",
+              value: pageData['help-text'],
+              classes: "govuk-!-margin-bottom-1",
+              label: {
+                text: "Help",
+                classes: "govuk-visually-hidden"
+              },
+              hint: {
+                text: "More detailed help — only add this if people get stuck"
+              }
+            }) }}
+          </div>
+        </details> #}
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        {# If no type is set, set type to text #}
+        {%
+         set allEmpty = not (checked(namePrefix + "['type']", "text")
+           or checked(namePrefix + "['type']", "number")
+           or checked(namePrefix + "['type']", "email")
+           or checked(namePrefix + "['type']", "address")
+           or checked(namePrefix + "['type']", "phone")
+           or checked(namePrefix + "['type']", "national-insurance-number")
+           or checked(namePrefix + "['type']", "date"))
+        %}
+
+        {%
+          set radioItems = [
+            {
+              value: "text",
+              text: "Single line of text",
+              checked: checked(namePrefix + "['type']", "text") or allEmpty
+            },
+            {
+              value: "number",
+              text: "Number",
+              checked: checked(namePrefix + "['type']", "number")
+            } if enableNumberAnswerType,
+            {
+              value: "address",
+              text: "Address",
+              checked: checked(namePrefix + "['type']", "address")
+            },
+            {
+              value: "date",
+              text: "Date",
+              checked: checked(namePrefix + "['type']", "date")
+            },
+            {
+              value: "email",
+              text: "Email address",
+              checked: checked(namePrefix + "['type']", "email")
+            },
+            {
+              value: "national-insurance-number",
+              text: "National Insurance number",
+              checked: checked(namePrefix + "['type']", "national-insurance-number")
+            },
+            {
+              value: "phone",
+              text: "Phone number",
+              checked: checked(namePrefix + "['type']", "phone")
+            }
+          ]
+        %}
+        
+        {% set multipleChoiceRadioItem = {
+            value: "radio-checkbox",
+            text: "Choosing from a list of options",
+            checked: checked(namePrefix + "['type']", "radio-checkbox"),
+            conditional: {
+              html: radioCheckboxHtml
+            }
+          }
+        %}
+
+        {% if enableMultipleChoiceAnswerType %}
+          {% set radioItems = (radioItems.push(multipleChoiceRadioItem), radioItems) %}
+        {% endif %}
+
+        {{ govukRadios({
+          idPrefix: "type",
+          name: namePrefix + "[type]",
+          classes: "govuk-radios--small",
+          fieldset: {
+            legend: {
+              text: "What kind of answer do you need to this question?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "The answer will be validated to check it’s in the selected format."
+          },
+          items: radioItems
+        }) }}
+
+        {#
+            {
+              value: "textarea",
+              text: "One or more paragraphs",
+              checked: checked(namePrefix + "['type']", "textarea"),
+              conditional: {
+                html: textareaHtml
+              }
+            },
+            {
+              value: "radio-checkbox",
+              text: "Choosing from a list of options",
+              checked: checked(namePrefix + "['type']", "radio-checkbox"),
+              conditional: {
+                html: radioCheckboxHtml
+              }
+            }, #}
+
+        {# <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Add an introduction
+            </span>
+          </summary>
+          <div class="govuk-details__text govuk-!-padding-bottom-0">
+            {{ govukTextarea({
+              id: "intro-text",
+              name: namePrefix + "[intro-text]",
+              value: pageData['intro-text'],
+              classes: "govuk-!-margin-bottom-3",
+              label: {
+                text: "Introduction",
+                classes: "govuk-visually-hidden"
+              },
+              hint: {
+                text: "Only add if it helps people understand the question"
+              }
+            }) }}
+          </div>
+        </details> #}
+
+        <input type="hidden" id="index" name="{{namePrefix}}[pageIndex]'" value="{{[pageIndex]}}">
+
+        <div class="govuk-button-group">
+          {% if pageId >= data['highestPageId'] %}
+
+            {{ govukButton({
+              text: "Save and add next question",
+              name: "action",
+              value: "createNextPage"
+            }) }}
+
+          {% else %}
+
+            {{ govukButton({
+              text: "Save and edit next question",
+              name: "action",
+              value: "editNextPage"
+            }) }}
+
+          {% endif %}
+
+          {{ govukButton({
+            text:  "Save and preview question",
+            name: "action",
+            value: "update",
+            classes: "govuk-button--secondary"
+          }) }}
+
+          {% if editingExistingQuestion %}
+          {{ govukButton({
+            text: "Delete question",
+            classes: "govuk-button--warning",
+            name: "action",
+            value: "deletePage"
+          }) }}
+          {% endif %}
+        </div>
+
+        <p class="govuk-body">
+          <a class="govuk-link govuk-link--no-visited-state" href="../form-index">Go to form overview</a>
+        </p>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <div class="preview-pane-wrapper">
+          <h2 class="govuk-heading-m">
+            Question preview
+          </h2>
+          <a href="../page-preview-new-tab/{{pageId}}" class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-4 new-tab-link" target="_blank">Preview question in a new tab</a>
+          <div class="preview-header">
+            <p class="preview-link govuk-body-s">
+              <!-- <a href="#" target="_blank" onclick="document.getElementById('form').submit();">Refresh</a> &nbsp;|&nbsp; -->
+            </p>
+          </div>
+          <iframe sandbox="allow-same-origin allow-scripts" title="Page preview" data-module="app-example-frame" class="preview-pane app-example__frame app-example__frame--resizable" src="../page-preview/{{pageId}}" frameborder="1" loading="lazy" id="iFrameResizer0"></iframe>
+
+        </div>
+      </div>
+
+    </div>
+
+  </form>
+
+{% endblock %}
