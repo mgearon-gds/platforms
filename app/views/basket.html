@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{word}}
+  - GOV.UK Case Management
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+<h1 class="govuk-heading-l">Basket</h1>
+<h2 class="govuk-heading-m">Item 1</h2>
+
+<p class="govuk-body govuk-!-margin-bottom-6">
+  Cost: £10 - <a href="#" class="govuk-link">Change</a>
+</p>
+<div class="govuk-button-group">
+  <p class="govuk-body">
+     <a href="#" class="govuk-link govuk-!-margin-bottom-0"> Save for later</a>
+  </p>
+    {{ govukButton({
+      text: "Remove",
+      classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+    }) }}
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h2 class="govuk-heading-m">Item 2</h2>
+
+<p class="govuk-body govuk-!-margin-bottom-6">
+  Cost: £10 - <a href="#" class="govuk-link">Change</a>
+</p>
+<div class="govuk-button-group">
+  <p class="govuk-body">
+     <a href="#" class="govuk-link govuk-!-margin-bottom-0"> Save for later</a>
+  </p>
+    {{ govukButton({
+      text: "Remove",
+      classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+    }) }}
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Item 3</h2>
+
+<p class="govuk-body govuk-!-margin-bottom-6">
+  Cost: £10 - <a href="#" class="govuk-link">Change</a>
+</p>
+<div class="govuk-button-group">
+  <p class="govuk-body">
+     <a href="#" class="govuk-link govuk-!-margin-bottom-0"> Save for later</a>
+  </p>
+    {{ govukButton({
+      text: "Remove",
+      classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+    }) }}
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{{ govukButton({
+  text: "Pay £30"
+}) }}
+    </div>
+  </div>
+{% endblock %}

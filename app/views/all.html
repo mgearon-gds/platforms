@@ -7,9 +7,22 @@
 {% endblock %}
 {% block content %}
 
+<div class="govuk-grid-row">
+  {% set html %}
+<p class="govuk-notification-banner__heading">
+There was an increase of 70% of people visiting the Bringing your pet to the UK from Ukraine guidance page in the last 7 days
+<a class="govuk-notification-banner__link" href="#">View content</a>.
+</p>
+{% endset %}
+</div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
       {% if status == 'success' %}
         {% set html %}
         <p class="govuk-notification-banner__heading">
@@ -22,7 +35,8 @@
           type: 'success'
         }) }}
       {% endif %}
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Special school application to convert to academy status service</h1>
+      <span class="govuk-caption-l">Case manager</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Bringing your pet to the UK from Ukraine</h1>
 
       {{ govukButton({
         text: "Add new case",

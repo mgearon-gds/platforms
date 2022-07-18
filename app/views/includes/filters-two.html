@@ -1,0 +1,56 @@
+<div class="govuk-grid-column-one-third">
+  <section class="filters" id="filters">
+    <form action="/all" method="post" id="filter-form">
+      <h5 class="govuk-heading-m">Filter</h5>
+      <div role="widget" class="filter">
+        <div id="filter-crn" class="filters-wrapper govuk-!-margin-bottom-4" aria-hidden="true" aria-labelledby="filter-label-crn">
+          {{ govukCheckboxes({
+            idPrefix: "filter-word-type",
+            name: "filterWordType",
+            classes: "govuk-!-margin-bottom-6 govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                text: "Type",
+                classes: "govuk-!-font-weight-bold",
+                isPageHeading: false
+              }
+            },
+            items: [
+            {
+              value: "Group",
+              text: "Group",
+              checked: filterParams.status.referred.checked
+            },
+              {
+                value: "Payments",
+                text: "Payments",
+                checked: filterParams.status.referred.checked
+              },
+              {
+                value: "Notifications",
+                text: "Notifications",
+                checked: filterParams.status.accepted.checked
+              },
+              {
+                value: "Case manager",
+                text: "Case manager",
+                checked: filterParams.status.accepted.checked
+              },
+              {
+                value: "Forms",
+                text: "Forms",
+                checked: filterParams.status.accepted.checked
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+
+      
+      {{ govukButton({
+        text: "Filter results",
+        classes: "govuk-!-margin-top-4 govuk-button--secondary"
+      }) }}
+    </form>
+  </section>
+</div>

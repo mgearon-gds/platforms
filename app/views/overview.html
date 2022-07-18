@@ -5,44 +5,74 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">Overview</h1>
-      <h2 class="govuk-heading-m">Service performance</h2>
+      <span class="govuk-caption-l">Department for Environment Food & Rural Affairs</span>
+      <h1 class="govuk-heading-l">All services</h1>
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-l govuk-!-margin-bottom-0">696</h3>
-          <p class="govuk-body">
-            cases
-          </p>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-l govuk-!-margin-bottom-0">550</h3>
-          <p class="govuk-body">
-            closed cases
-          </p>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-l govuk-!-margin-bottom-0">20</h3>
-          <p class="govuk-body">
-            delayed cases
-          </p>
-        </div>
-      </div>
-      <p class="govuk-body govuk-!-margin-top-6"><a href="report" class="govuk-link">Show performance for all your services</a></p>
+        {% include "includes/filters-two.html" %}
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-form-group govuk-!-margin-bottom-2">
+  <label class="govuk-label govuk-label--m" for="event-name">
+        Search for service or group
+      </label>
+    <div class="wrapper">
+    <input class="govuk-input" id="event-name" name="event-name" type="text">
+    {{ govukButton({
+  text: "Search",
+  classes: "govuk-button--secondary govuk-!-margin-bottom-8 search"
+  }) }}
+  </div>
+  <span class="govuk-caption-m">Group</span>
+  <h3 class="govuk-heading-m">
+    <a class="govuk-link govuk-link--no-visited-state" href="all">Bringing your pet to the UK from Ukraine</a>
+  </h3>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <span class="govuk-caption-m">Payments</span>
+    <h3 class="govuk-heading-m">
+      <a class="govuk-link govuk-link--no-visited-state" href="all">Common land and greens: statutory disposition (CA8)</a>
+    </h3>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <span class="govuk-caption-m">Payments</span>
+      <h3 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="all">Apply to protect a wine name or aromatised wine name</a>
+      </h3>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      <h2 class="govuk-heading-m">Department for Education Services</h2>
-      <p class="govuk-body">
-        <a class="govuk-body" href="all">Special school application to convert to academy status service</a>
-        </p>
-        <p class="govuk-body">
-          <a class="govuk-body" href="all">Apply to open a special or alternative provision free school</a>
-          </p>
-          <p class="govuk-body govuk-!-margin-bottom-8">
-            <a class="govuk-body" href="all">Employing an apprentice</a>
-            </p>
+
+      <span class="govuk-caption-m">Forms</span>
+      <h3 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="all">Application to use herbicides in or near water</a>
+      </h3>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <span class="govuk-caption-m">Payments</span>
+      <h3 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="all">Manage your water abstraction or impoundment licence online</a>
+      </h3>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <span class="govuk-caption-m">Group</span>
+      <h3 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="all">Apply to renew a water abstraction licence</a>
+      </h3>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <span class="govuk-caption-m">Notifications</span>
+      <h3 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="all">Get an EORI number</a>
+      </h3>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
       {{ govukButton({
-  text: "Add a new service",
-  classes: "govuk-button--secondary"
+  text: "Create new thing",
+  classes: "govuk-!-margin-top-6"
 }) }}
+  </div>
+      </div>
+
+
+
+
     </div>
   </div>
 {% endblock %}

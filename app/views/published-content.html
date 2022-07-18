@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - GOV.UK Case Management
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Published content</h1>
+      <p class="govuk-body">
+        Content linked to this service that is published on GOV.UK
+      </p>
+      {{ govukButton({
+        text: "Link content",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+      <h2 class="govuk-heading-m">Bringing your pet to the UK from Ukraine</h2>
+      <p class="govuk-body">
+        Type: Guidance
+      </p>
+      <p class="govuk-body">
+        Published: 8 April 2022
+      </p>
+      <div class="govuk-button-group">
+  {{ govukButton({
+    text: "View"
+  }) }}
+
+  {{ govukButton({
+    text: "Manage",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Bringing your pet to the UK from Ukraine</h2>
+<p class="govuk-body">
+  Type: Form
+</p>
+<p class="govuk-body">
+  Published: 8 April 2022
+</p>
+<div class="govuk-button-group">
+{{ govukButton({
+text: "View"
+}) }}
+
+{{ govukButton({
+text: "Manage",
+classes: "govuk-button--secondary"
+}) }}
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Emergency support put in place for people fleeing Ukraine and entering the UK with their pets</h2>
+<p class="govuk-body">
+  Type: News story
+</p>
+<p class="govuk-body">
+  Published: 15 March 2022
+</p>
+<div class="govuk-button-group">
+{{ govukButton({
+text: "View"
+}) }}
+
+{{ govukButton({
+text: "Manage",
+classes: "govuk-button--secondary"
+}) }}
+    </div>
+  </div>
+{% endblock %}

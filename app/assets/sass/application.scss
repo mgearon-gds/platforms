@@ -156,9 +156,21 @@ $govuk-assets-path: '/govuk/assets/';
   font-family: sans-serif;
   padding-left: 0;
     border-bottom: 1px solid #b1b4b6;
+    border-top: 1px solid #b1b4b6
 }
 
 .second-nav ul li{
   padding-right: 18px;
 
+}
+
+
+.app-hero{
+  background: #1d70b8;
+  width: 100%;
+
+}
+
+.app-hero > *{
+    color: white;
 }

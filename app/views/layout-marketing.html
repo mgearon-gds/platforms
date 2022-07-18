@@ -62,83 +62,18 @@
         </span>
       </a>
     </div>
-    <nav aria-label="Menu" class="govuk-header__navigation ">
-        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide menu">Menu</button>
 
-        <ul id="navigation" class="govuk-header__navigation-list">
-          <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="my-profile">
-              My profile
-            </a>
-          </li>
-          <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="features">
-              Features
-            </a>
-          </li>
-          <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="documentation">
-              Documentation
-            </a>
-          </li>
-          <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="/">
-              Sign out
-            </a>
-          </li>
-        </ul>
-      </nav>
   </div>
 </header>
-<div class="govuk-width-container">
 
 
-{% if home %}
-    {% else %}
-    {{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Home",
-      href: "overview"
-    },
-    {
-      text: "Bringing your pet to the UK from Ukraine",
-      href: "all"
-    },
-    {
-      text: "Payments",
-      href: "#"
-    }
-  ]
-}) }}
-<nav class="second-nav">
-<ul class="govuk-!-padding-bottom-4 govuk-!-padding-top-4">
-    <li>
-      <a href="all" class="govuk-link">Cases</a>
-      </li>
-    <li>
-      <a href="#" class="govuk-link">Form</a>
-      </li>
-      <li>
-        <a href="#" class="govuk-link">Payments</a>
-        </li>
-        <li>
-          <a href="#" class="govuk-link">Notifications</a>
-          </li>
-          <li>
-            <a href="report" class="govuk-link">Insights</a>
-            </li>
 
-        <li>
-          <a href="published-content" class="govuk-link">Published content</a>
-          </li>
-        <li>
-          <a href="settings" class="govuk-link">Settings</a>
-          </li>
-  </ul>
-  {% endif %}
-</nav>
-</div>
+
+  <div class="app-hero govuk-!-padding-top-6 govuk-!-padding-bottom-6 govuk-!-margin-bottom-4">
+
+    <h1 class="govuk-heading-xl">Design and build government services</h1>
+    <p class="govuk-body-l">All you need to design, build and run services that meet government standards.</p>
+  </div>
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing ") %}
