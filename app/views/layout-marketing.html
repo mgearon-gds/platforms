@@ -62,18 +62,41 @@
         </span>
       </a>
     </div>
+    <nav aria-label="Menu" class="govuk-header__navigation ">
+            <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide menu">Menu</button>
 
+            <ul id="navigation" class="govuk-header__navigation-list">
+              <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+                <a class="govuk-header__link" href="#1">
+                  Platforms
+                </a>
+              </li>
+              <li class="govuk-header__navigation-item">
+                <a class="govuk-header__link" href="#2">
+                  Guidance
+                </a>
+              </li>
+              <li class="govuk-header__navigation-item">
+                <a class="govuk-header__link" href="sign-in">
+                  Sign in
+                </a>
+              </li>
+            </ul>
+          </nav>
   </div>
 </header>
 
 
 
 
-  <div class="app-hero govuk-!-padding-top-6 govuk-!-padding-bottom-6 govuk-!-margin-bottom-4">
+  <div class="app-hero govuk-!-padding-top-8 govuk-!-padding-bottom-6 govuk-!-margin-bottom-4">
     <div class="govuk-width-container">
-
-    <h1 class="govuk-heading-xl">Design and build government services</h1>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Design and build government services</h1>
     <p class="govuk-body-l">All you need to design, build and run services that meet government standards.</p>
+  </div>
+</div>
     </div>
   </div>
 {% endblock %}
