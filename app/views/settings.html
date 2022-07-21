@@ -8,11 +8,33 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Settings</h1>
+          <h1 class="govuk-heading-l">Settings</h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <ul class="govuk-list govuk-list--spaced">
+  <li>
+    <a class="govuk-link" href="#">Group settings</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">API's</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Staff access</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Visibility</a>
+  </li>
+</ul>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
             <h2 class="govuk-heading-m">About the group</h2>
             {{ govukTextarea({
   name: "more-detail",
   id: "more-detail",
+  value: "Emegency service created to help people bring pets to the UK from Ukraine. This is a spin off service from the bringing your pet dog, cat or ferret to Great Britain.",
   label: {
     text: "What is this group used for?"
   },
@@ -43,7 +65,60 @@
 <h3 class="govuk-heading-s">Notifications API</h3>
 <h3 class="govuk-heading-s">Case worker API</h3>
   <h2 class="govuk-heading-m">Manage users</h2>
-    <h2 class="govuk-heading-m">Set visibility to the organisation</h2>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">Connect Platforms</h2>
+    <p class="govuk-body">
+      Rather than using email to communicate, you can use Connect Platforms to work alongside people from other companies in the same Platforms group. When you work with other companies in Platforms, people can only access the groups that they’ve been invited to join.
+    </p>
+    {{ govukCheckboxes({
+  idPrefix: "waste",
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Share outside of the Department for Environment Food & Rural Affairs?",
+      classes: "govuk-!-font-weight-bold"
+    }
+  },
+  hint: {
+    text: "This will need approval from an administrator."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes, share outside of the organisation"
+    }
+  ]
+}) }}
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">Set visibility to the organisation</h2>
+    <p class="govuk-body">
+      You can make a group public or private, by default all groups are set to public. Administrators will be able to see both public and private groups.
+    </p>
+    {{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "Set visibility"
+    }
+  },
+  items: [
+    {
+      value: "public",
+      text: "Public",
+      checked: true,
+      hint: {
+        text: "When a group is set to public, it can only be viewed. A person will still need permissions to join and make changes to the group."
+      }
+    },
+    {
+      value: "private",
+      text: "Private",
+      hint: {
+        text: "When a group is set to private, it can only be viewed or joined by invitation."
+      }
+    }
+  ]
+}) }}
     </div>
   </div>
 {% endblock %}

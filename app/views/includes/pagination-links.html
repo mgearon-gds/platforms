@@ -1,33 +1,39 @@
-<nav class="ch-pagination" role="navigation" aria-label="Pagination Navigation">
-  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
-  {% if pagination.pages.length > 0 %}
-    <ul class="ch-pagination__list govuk-body" role="navigation">
-      {% if pagination.currentPage > 1 %}
-        <li class="ch-pagination__item">
-          <a href="?page={{ pagination.previousPage }}{{ viewParams.total }}" class="ch-pagination__link ch-pagination-previous govuk-link--no-visited-state">Previous
-            <span class="govuk-visually-hidden">
-              set of pages</span></a>
-        </li>
-      {% endif %}
-      {% for page in pagination.pages %}
-        {% if page.number === pagination.currentPage %}
-          <li class="ch-pagination__item ch-pagination__item--active">
-            <span aria-current="true">{{ page.number }}</span>
-          </li>
-        {% else %}
-          <li class="ch-pagination__item">
-            <a href="?page={{ page.number }}{{ viewParams.total }}" class="ch-pagination__link govuk-link--no-visited-state" aria-label="Go to Page {{ page.number }}">
-              {{ page.number }}</a>
-          </li>
+
+<nav class="govuk-pagination" role="navigation" aria-label="results">
+    {% if pagination.pages.length > 0 %}
+        {% if pagination.currentPage > 1 %}
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="?page={{ pagination.previousPage }}{{ viewParams.total }}" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">Previous</span></a>
+  </div>
         {% endif %}
-      {% endfor %}
-      {% if pagination.currentPage < pagination.totalPages %}
-        <li class="ch-pagination__item">
-          <a href="?page={{ pagination.nextPage}}{{ viewParams.total }}" class="ch-pagination__link govuk-link--no-visited-state ch-pagination-next">Next
-            <span class="govuk-visually-hidden">
-              set of pages</span></a>
-        </li>
-      {% endif %}
-    </ul>
-  {% endif %}
+
+  <ul class="govuk-pagination__list">
+    {% for page in pagination.pages %}
+      {% if page.number === pagination.currentPage %}
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="{{ page.number }}">
+        {{ page.number }}
+      </a>
+    </li>
+        {% else %}
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="{{ page.number }}">
+        {{ page.number }}
+      </a>
+    </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+        {% if pagination.currentPage < pagination.totalPages %}
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg></a>
+  </div>
+        {% endif %}
+          {% endif %}
 </nav>

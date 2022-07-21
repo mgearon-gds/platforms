@@ -4,6 +4,7 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 require('./routes/core.js')(router)
 require('./routes/all.js')(router)
+require('./routes/forms.js')(router)
 
 // Word page on get
 

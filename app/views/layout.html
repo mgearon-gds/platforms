@@ -29,6 +29,8 @@
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -106,7 +108,7 @@
       href: "all"
     },
     {
-      text: "Payments",
+      text: "Transactions",
       href: "#"
     }
   ]
@@ -126,7 +128,7 @@
           <a href="#" class="govuk-link">Notifications</a>
           </li>
           <li>
-            <a href="/published-content" class="govuk-link">Content</a>
+            <a href="/published-content" class="govuk-link">Pages</a>
             </li>
           <li>
             <a href="/report" class="govuk-link">Insights</a>

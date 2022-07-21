@@ -175,6 +175,19 @@ $govuk-assets-path: '/govuk/assets/';
     color: white;
 }
 
+.app-hero .govuk-heading-xl, .app-hero .govuk-body-l{
+  color: white;
+}
+
+.govuk-header-overide{
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.govuk-header-container-overide{
+  border-bottom: 0;
+}
+
 .transactions-filter {
   form {
     margin: 0 15px;
@@ -255,4 +268,8 @@ $govuk-assets-path: '/govuk/assets/';
 .datepicker .datepicker-days table tr td.active.active,
 .datepicker .datepicker-days table tr td.active.highlighted.active {
   background: 	#1d70b8;
+}
+
+.govuk-pagination{
+  justify-content: end;
 }
