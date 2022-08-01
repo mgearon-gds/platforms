@@ -186,6 +186,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 .govuk-header-container-overide{
   border-bottom: 0;
+  position: relative;
 }
 
 .transactions-filter {
@@ -272,4 +273,1583 @@ $govuk-assets-path: '/govuk/assets/';
 
 .govuk-pagination{
   justify-content: end;
+}
+
+.govuk-header__menu-button.gem-c-header__menu-button {
+    top: 20px;
+    right: 0
+}
+
+.gem-c-header__nav {
+    clear: both
+}
+
+.gem-c-layout-super-navigation-header {
+    background: #0b0c0c;
+    border-top: 1px solid #0b0c0c;
+    margin-top: -1px;
+    position: relative
+}
+
+.lte-ie8 .gem-c-layout-super-navigation-header {
+    height: 50px
+}
+
+.gem-c-layout-super-navigation-header [hidden] {
+    display: none
+}
+
+.gem-c-layout-super-navigation-header__container {
+    position: relative
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__container {
+        position:static
+    }
+}
+
+.gem-c-layout-super-navigation-header__header-logo {
+    height: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__header-logo {
+        display:block;
+        float: left
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__content {
+        display:block;
+        float: right
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-toggle-wrapper {
+    position: relative
+}
+
+.gem-c-layout-super-navigation-header__navigation-items,.gem-c-layout-super-navigation-header__search-items {
+    background: #f3f2f1;
+    display: block;
+    list-style: none;
+    margin: 0 -15px;
+    padding: 0
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-items,.gem-c-layout-super-navigation-header__search-items {
+        margin:0 -30px
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-items,.gem-c-layout-super-navigation-header__search-items {
+        background:none;
+        float: left;
+        padding: 0;
+        margin: 0
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-items {
+        display:inline-block
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-item,.gem-c-layout-super-navigation-header__search-item {
+    display: block;
+    margin: 0;
+    padding: 10px 15px;
+    position: relative
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-item,.gem-c-layout-super-navigation-header__search-item {
+        margin:0 30px;
+        padding: 10px 0
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-item,.gem-c-layout-super-navigation-header__search-item {
+        background:#0b0c0c;
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: static
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-item {
+    border-bottom: 1px solid #b1b4b6
+}
+
+.js-module-initialised .gem-c-layout-super-navigation-header__navigation-item:last-child {
+    border-bottom: none
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-item {
+        border-bottom:0;
+        padding: 0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item:first-of-type {
+        margin-right: -1px
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item:first-of-type .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        border-left: 1px solid #7c8185;
+        border-right: 1px solid #7c8185
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link,.gem-c-layout-super-navigation-header__search-item-link,.gem-c-layout-super-navigation-header__navigation-second-toggle-button {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .1em;
+    display: inline-block;
+    font-size: 19px;
+    font-size: 1.1875rem;
+    font-weight: bold;
+    margin: 15px 0
+}
+
+@media print {
+    .gem-c-layout-super-navigation-header__navigation-item-link,.gem-c-layout-super-navigation-header__search-item-link,.gem-c-layout-super-navigation-header__navigation-second-toggle-button {
+        font-family: sans-serif
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:hover,.gem-c-layout-super-navigation-header__search-item-link:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:focus,.gem-c-layout-super-navigation-header__search-item-link:focus,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:link,.gem-c-layout-super-navigation-header__search-item-link:link,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link {
+    color: #1d70b8
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:visited,.gem-c-layout-super-navigation-header__search-item-link:visited,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited {
+    color: #1d70b8
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:hover,.gem-c-layout-super-navigation-header__search-item-link:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover {
+    color: #003078
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:active,.gem-c-layout-super-navigation-header__search-item-link:active,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:active {
+    color: #0b0c0c
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:focus,.gem-c-layout-super-navigation-header__search-item-link:focus,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus {
+    color: #0b0c0c
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-item-link,.gem-c-layout-super-navigation-header__search-item-link,.gem-c-layout-super-navigation-header__navigation-second-toggle-button {
+        display:block;
+        margin: 0
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:hover,.gem-c-layout-super-navigation-header__search-item-link:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:focus,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus,.gem-c-layout-super-navigation-header__search-item-link:focus,.gem-c-layout-super-navigation-header__search-item-link:link:focus,.gem-c-layout-super-navigation-header__search-item-link:visited:focus,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:focus-visible,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus-visible,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus-visible,.gem-c-layout-super-navigation-header__search-item-link:focus-visible,.gem-c-layout-super-navigation-header__search-item-link:link:focus-visible,.gem-c-layout-super-navigation-header__search-item-link:visited:focus-visible,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus-visible,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus-visible,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus-visible {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:not(:focus-visible) {
+    background: none;
+    box-shadow: none;
+    color: #1d70b8
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:not(:focus-visible):hover {
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .1em;
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none;
+    color: #003078
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:after,.gem-c-layout-super-navigation-header__search-item-link:after,.gem-c-layout-super-navigation-header__search-item-link:link:after,.gem-c-layout-super-navigation-header__search-item-link:visited:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:after {
+    background: none;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-item-link,.gem-c-layout-super-navigation-header__navigation-item-link:link,.gem-c-layout-super-navigation-header__navigation-item-link:visited,.gem-c-layout-super-navigation-header__search-item-link,.gem-c-layout-super-navigation-header__search-item-link:link,.gem-c-layout-super-navigation-header__search-item-link:visited,.gem-c-layout-super-navigation-header__navigation-second-toggle-button,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited {
+        float:left;
+        font-size: 16px;
+        font-size: 1rem;
+        height: 20px;
+        padding: 15px;
+        position: relative
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:before,.gem-c-layout-super-navigation-header__navigation-item-link:link:before,.gem-c-layout-super-navigation-header__navigation-item-link:visited:before,.gem-c-layout-super-navigation-header__search-item-link:before,.gem-c-layout-super-navigation-header__search-item-link:link:before,.gem-c-layout-super-navigation-header__search-item-link:visited:before,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:before,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:before,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:before {
+        border-bottom-color: #fff;
+        border-right-color: #fff
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:hover,.gem-c-layout-super-navigation-header__navigation-item-link:link:hover,.gem-c-layout-super-navigation-header__navigation-item-link:visited:hover,.gem-c-layout-super-navigation-header__search-item-link:hover,.gem-c-layout-super-navigation-header__search-item-link:link:hover,.gem-c-layout-super-navigation-header__search-item-link:visited:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:hover {
+        color: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:hover:after,.gem-c-layout-super-navigation-header__search-item-link:hover:after,.gem-c-layout-super-navigation-header__search-item-link:link:hover:after,.gem-c-layout-super-navigation-header__search-item-link:visited:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:hover:after {
+        background: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:focus,.gem-c-layout-super-navigation-header__navigation-item-link:focus:hover,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:hover,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:hover,.gem-c-layout-super-navigation-header__search-item-link:focus,.gem-c-layout-super-navigation-header__search-item-link:focus:hover,.gem-c-layout-super-navigation-header__search-item-link:link:focus,.gem-c-layout-super-navigation-header__search-item-link:link:focus:hover,.gem-c-layout-super-navigation-header__search-item-link:visited:focus,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:hover {
+        box-shadow: none;
+        color: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:focus:after,.gem-c-layout-super-navigation-header__navigation-item-link:focus:hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:hover:after,.gem-c-layout-super-navigation-header__search-item-link:focus:after,.gem-c-layout-super-navigation-header__search-item-link:focus:hover:after,.gem-c-layout-super-navigation-header__search-item-link:link:focus:after,.gem-c-layout-super-navigation-header__search-item-link:link:focus:hover:after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:hover:after {
+        background: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:focus-visible,.gem-c-layout-super-navigation-header__navigation-item-link:focus-visible:hover,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus-visible,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus-visible:hover,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus-visible,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus-visible:hover,.gem-c-layout-super-navigation-header__search-item-link:focus-visible,.gem-c-layout-super-navigation-header__search-item-link:focus-visible:hover,.gem-c-layout-super-navigation-header__search-item-link:link:focus-visible,.gem-c-layout-super-navigation-header__search-item-link:link:focus-visible:hover,.gem-c-layout-super-navigation-header__search-item-link:visited:focus-visible,.gem-c-layout-super-navigation-header__search-item-link:visited:focus-visible:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus-visible,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus-visible:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus-visible,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus-visible:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus-visible,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus-visible:hover {
+        box-shadow: none;
+        color: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:focus-visible:after,.gem-c-layout-super-navigation-header__navigation-item-link:focus-visible:hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus-visible:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus-visible:hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus-visible:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus-visible:hover:after,.gem-c-layout-super-navigation-header__search-item-link:focus-visible:after,.gem-c-layout-super-navigation-header__search-item-link:focus-visible:hover:after,.gem-c-layout-super-navigation-header__search-item-link:link:focus-visible:after,.gem-c-layout-super-navigation-header__search-item-link:link:focus-visible:hover:after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus-visible:after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus-visible:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus-visible:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus-visible:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus-visible:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus-visible:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus-visible:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus-visible:hover:after {
+        background: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link,.gem-c-layout-super-navigation-header__navigation-item-link:hover,.gem-c-layout-super-navigation-header__navigation-item-link:link,.gem-c-layout-super-navigation-header__navigation-item-link:link:hover,.gem-c-layout-super-navigation-header__navigation-item-link:visited,.gem-c-layout-super-navigation-header__navigation-item-link:visited:hover,.gem-c-layout-super-navigation-header__search-item-link,.gem-c-layout-super-navigation-header__search-item-link:hover,.gem-c-layout-super-navigation-header__search-item-link:link,.gem-c-layout-super-navigation-header__search-item-link:link:hover,.gem-c-layout-super-navigation-header__search-item-link:visited,.gem-c-layout-super-navigation-header__search-item-link:visited:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:hover {
+        text-decoration: none
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link,.gem-c-layout-super-navigation-header__navigation-item-link:link,.gem-c-layout-super-navigation-header__navigation-item-link:visited,.gem-c-layout-super-navigation-header__search-item-link,.gem-c-layout-super-navigation-header__search-item-link:link,.gem-c-layout-super-navigation-header__search-item-link:visited,.gem-c-layout-super-navigation-header__navigation-second-toggle-button,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited {
+        color: #fff
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:hover,.gem-c-layout-super-navigation-header__navigation-item-link:link:hover,.gem-c-layout-super-navigation-header__navigation-item-link:visited:hover,.gem-c-layout-super-navigation-header__search-item-link:hover,.gem-c-layout-super-navigation-header__search-item-link:link:hover,.gem-c-layout-super-navigation-header__search-item-link:visited:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:hover {
+        color: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:hover:after,.gem-c-layout-super-navigation-header__search-item-link:hover:after,.gem-c-layout-super-navigation-header__search-item-link:link:hover:after,.gem-c-layout-super-navigation-header__search-item-link:visited:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:hover:after {
+        background: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:after,.gem-c-layout-super-navigation-header__search-item-link:after,.gem-c-layout-super-navigation-header__search-item-link:link:after,.gem-c-layout-super-navigation-header__search-item-link:visited:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:after {
+        background: none
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-item-link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:not(:focus-visible):hover {
+        text-decoration: none
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:not(:focus-visible) {
+        color: #fff
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:not(:focus-visible):hover {
+        color: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:focus:not(:focus-visible):hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:not(:focus-visible):hover:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:not(:focus-visible):hover:after,.gem-c-layout-super-navigation-header__search-item-link:focus:not(:focus-visible):hover:after,.gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible):hover:after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible):hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible):hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:not(:focus-visible):hover:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:not(:focus-visible):hover:after {
+        background: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:focus:not(:focus-visible):after,.gem-c-layout-super-navigation-header__navigation-item-link:link:focus:not(:focus-visible):after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:focus:not(:focus-visible):after,.gem-c-layout-super-navigation-header__search-item-link:focus:not(:focus-visible):after,.gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible):after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible):after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible):after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:focus:not(:focus-visible):after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:focus:not(:focus-visible):after {
+        background: none
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-item-link:after,.gem-c-layout-super-navigation-header__navigation-item-link:link:after,.gem-c-layout-super-navigation-header__navigation-item-link:visited:after,.gem-c-layout-super-navigation-header__search-item-link:after,.gem-c-layout-super-navigation-header__search-item-link:link:after,.gem-c-layout-super-navigation-header__search-item-link:visited:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:link:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:visited:after {
+        background: none;
+        bottom: 0;
+        content: "";
+        height: 3px;
+        left: 25px;
+        position: absolute;
+        right: 30px;
+        top: auto
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link:after,.gem-c-layout-super-navigation-header__search-item-link:after,.gem-c-layout-super-navigation-header__navigation-second-toggle-button:after {
+    background: none;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.js-module-initialised .gem-c-layout-super-navigation-header__navigation-item-link {
+    margin-left: 20px
+}
+
+.js-module-initialised .gem-c-layout-super-navigation-header__navigation-item-link:not(:hover):not(:active) {
+    text-decoration: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-toggle-button {
+    background: none;
+    border: 0;
+    color: #1d70b8;
+    cursor: pointer;
+    padding: 0
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-toggle-button .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+    -webkit-transform: translateY(-35%) rotate(45deg) scale(1);
+    -ms-transform: translateY(-35%) rotate(45deg) scale(1);
+    transform: translateY(-35%) rotate(45deg) scale(1);
+    border-bottom: 2px solid #1d70b8;
+    border-right: 2px solid #1d70b8;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    margin: 0 10px 0 2px;
+    vertical-align: middle;
+    width: 8px
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+    -webkit-transform: translateY(-35%) rotate(45deg) scale(1);
+    -ms-transform: translateY(-35%) rotate(45deg) scale(1);
+    transform: translateY(-35%) rotate(45deg) scale(1);
+    border-bottom: 2px solid #1d70b8;
+    border-right: 2px solid #1d70b8;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    margin: 0 10px 0 2px;
+    vertical-align: middle;
+    width: 8px
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+    border-bottom-color: #003078;
+    border-right-color: #003078
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible):hover .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+    border-bottom-color: #003078;
+    border-right-color: #003078
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+    border-bottom-color: #0b0c0c;
+    border-right-color: #0b0c0c
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:after {
+        background:none;
+        bottom: 0;
+        content: "";
+        height: 3px;
+        left: 25px;
+        position: absolute;
+        right: 30px;
+        top: auto
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button {
+        color: #fff;
+        float: left;
+        font-size: 16px;
+        font-size: 1rem;
+        height: 50px;
+        position: relative;
+        text-decoration: none
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        border-color: #7c8185
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #fff;
+        border-right-color: #fff
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible) {
+        color: #fff;
+        float: left;
+        font-size: 16px;
+        font-size: 1rem;
+        height: 50px;
+        position: relative;
+        text-decoration: none
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        border-color: #7c8185
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #fff;
+        border-right-color: #fff
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover {
+        color: #b1b4b6;
+        text-decoration: none
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover:after {
+        background: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:hover .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #b1b4b6;
+        border-right-color: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible):hover {
+        color: #b1b4b6;
+        text-decoration: none
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible):hover:after {
+        background: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:not(:focus-visible):hover .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #b1b4b6;
+        border-right-color: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus {
+        color: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus:after {
+        background: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        border-color: #fd0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #0b0c0c;
+        border-right-color: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus-visible {
+        color: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus-visible:after {
+        background: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus-visible .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        border-color: #fd0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button:focus-visible .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #0b0c0c;
+        border-right-color: #0b0c0c
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+    -webkit-transform: translateY(1px) rotate(225deg) scale(1);
+    -ms-transform: translateY(1px) rotate(225deg) scale(1);
+    transform: translateY(1px) rotate(225deg) scale(1)
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+    -webkit-transform: translateY(1px) rotate(225deg) scale(1);
+    -ms-transform: translateY(1px) rotate(225deg) scale(1);
+    transform: translateY(1px) rotate(225deg) scale(1)
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button {
+        background:#f3f2f1;
+        color: #1d70b8
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        border-color: #f3f2f1
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #1d70b8;
+        border-right-color: #1d70b8
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:after {
+        background-color: #1d70b8
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) {
+        background: #f3f2f1;
+        color: #1d70b8
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        border-color: #f3f2f1
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #1d70b8;
+        border-right-color: #1d70b8
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible):after {
+        background-color: #1d70b8
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus {
+        background-color: #fd0;
+        color: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        border-color: #fd0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #0b0c0c;
+        border-right-color: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:after {
+        background: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible {
+        background-color: #fd0;
+        color: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        border-color: #fd0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner:before {
+        border-bottom-color: #0b0c0c;
+        border-right-color: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible:after {
+        background: #0b0c0c
+    }
+}
+
+.js-module-initialised .gem-c-layout-super-navigation-header__navigation-second-toggle-button:not(:hover):not(:active) {
+    text-decoration: none
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-toggle-button-inner {
+        display:inline-block;
+        padding: 5px 30px 5px 25px
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__search-item-link:link,.gem-c-layout-super-navigation-header__search-item-link:visited {
+        background:#1d70b8;
+        border-bottom: 1px solid #003078
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:hover,.gem-c-layout-super-navigation-header__search-item-link:visited:hover {
+        background: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:hover:before,.gem-c-layout-super-navigation-header__search-item-link:visited:hover:before {
+        left: 0;
+        right: 0
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:focus,.gem-c-layout-super-navigation-header__search-item-link:visited:focus {
+        background: #fd0
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:focus:before,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:before {
+        content: none
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:after,.gem-c-layout-super-navigation-header__search-item-link:visited:after {
+        left: 0;
+        right: 0
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link,.gem-c-layout-super-navigation-header__search-item-link:visited {
+        background: #1d70b8
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:hover,.gem-c-layout-super-navigation-header__search-item-link:visited:hover {
+        background: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible),.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible) {
+        background: #1d70b8
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:focus:not(:focus-visible):hover,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:not(:focus-visible):hover {
+        background: #0b0c0c
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:focus:hover,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:hover {
+        background: #fd0
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:focus:after,.gem-c-layout-super-navigation-header__search-item-link:link:focus:hover:after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus:hover:after {
+        background: #fd0
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:focus-visible:hover,.gem-c-layout-super-navigation-header__search-item-link:visited:focus-visible:hover {
+        background: #fd0
+    }
+
+    .gem-c-layout-super-navigation-header__search-item-link:link:focus-visible:after,.gem-c-layout-super-navigation-header__search-item-link:link:focus-visible:hover:after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus-visible:after,.gem-c-layout-super-navigation-header__search-item-link:visited:focus-visible:hover:after {
+        background: #fd0
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__search-item-link-text {
+        position:absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        -webkit-clip-path: inset(50%) !important;
+        clip-path: inset(50%) !important;
+        border: 0 !important;
+        white-space: nowrap !important
+    }
+}
+
+.gem-c-layout-super-navigation-header__search-item-link-icon,.gem-c-layout-super-navigation-header__search-toggle-button-link-icon {
+    height: 20px;
+    pointer-events: none;
+    width: 20px
+}
+
+@media (max-width: 48.0525em) {
+    .gem-c-layout-super-navigation-header__search-item-link-icon {
+        position:absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        -webkit-clip-path: inset(50%) !important;
+        clip-path: inset(50%) !important;
+        border: 0 !important;
+        white-space: nowrap !important
+    }
+}
+
+.gem-c-layout-super-navigation-header__search-and-popular {
+    display: none;
+    padding-bottom: 20px;
+    padding-top: 20px
+}
+
+.js-module-initialised .gem-c-layout-super-navigation-header__search-and-popular {
+    display: block
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .1em;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    background: #0b0c0c;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 34px;
+    top: 0;
+    z-index: 10
+}
+
+@media print {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+        font-family: sans-serif
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:link {
+    color: #1d70b8
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:visited {
+    color: #1d70b8
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover {
+    color: #003078
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:active {
+    color: #0b0c0c
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus {
+    color: #0b0c0c
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:not(:hover):not(:active) {
+    text-decoration: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    box-shadow: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    border-color: #fd0;
+    color: #0b0c0c
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+        border-bottom-color:#0b0c0c;
+        border-right-color: #0b0c0c
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    box-shadow: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    border-color: #fd0;
+    color: #0b0c0c
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+        border-bottom-color:#0b0c0c;
+        border-right-color: #0b0c0c
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+    background: none;
+    box-shadow: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    border-color: #7c8185;
+    color: #fff
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+        border-bottom-color:#fff;
+        border-right-color: #fff
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not(:focus-visible) {
+    background: none;
+    box-shadow: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    border-color: #7c8185;
+    color: #fff
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+        border-bottom-color:#fff;
+        border-right-color: #fff
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    box-shadow: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:after {
+    background-color: #fd0
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    color: #0b0c0c;
+    border-color: #fd0
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+        border-bottom-color:#0b0c0c;
+        border-right-color: #0b0c0c;
+        -webkit-transform: translateY(1px) rotate(225deg) scale(1);
+        -ms-transform: translateY(1px) rotate(225deg) scale(1);
+        transform: translateY(1px) rotate(225deg) scale(1)
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    box-shadow: none
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible:after {
+    background-color: #fd0
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    color: #0b0c0c;
+    border-color: #fd0
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+        border-bottom-color:#0b0c0c;
+        border-right-color: #0b0c0c;
+        -webkit-transform: translateY(1px) rotate(225deg) scale(1);
+        -ms-transform: translateY(1px) rotate(225deg) scale(1);
+        transform: translateY(1px) rotate(225deg) scale(1)
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button {
+    background: #f3f2f1
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:after {
+    background-color: #1d70b8
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    color: #1d70b8;
+    border-color: #f3f2f1
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+        -webkit-transform:translateY(-35%) rotate(45deg) scale(1);
+        -ms-transform: translateY(-35%) rotate(45deg) scale(1);
+        transform: translateY(-35%) rotate(45deg) scale(1);
+        border-bottom: 2px solid #1d70b8;
+        border-right: 2px solid #1d70b8;
+        content: "";
+        display: inline-block;
+        height: 8px;
+        margin: 0 10px 0 2px;
+        vertical-align: middle;
+        width: 8px;
+        -webkit-transform: translateY(1px) rotate(225deg) scale(1);
+        -ms-transform: translateY(1px) rotate(225deg) scale(1);
+        transform: translateY(1px) rotate(225deg) scale(1)
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) {
+    background: #f3f2f1
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible):after {
+    background-color: #1d70b8
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    color: #1d70b8;
+    border-color: #f3f2f1
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+        -webkit-transform:translateY(-35%) rotate(45deg) scale(1);
+        -ms-transform: translateY(-35%) rotate(45deg) scale(1);
+        transform: translateY(-35%) rotate(45deg) scale(1);
+        border-bottom: 2px solid #1d70b8;
+        border-right: 2px solid #1d70b8;
+        content: "";
+        display: inline-block;
+        height: 8px;
+        margin: 0 10px 0 2px;
+        vertical-align: middle;
+        width: 8px;
+        -webkit-transform: translateY(1px) rotate(225deg) scale(1);
+        -ms-transform: translateY(1px) rotate(225deg) scale(1);
+        transform: translateY(1px) rotate(225deg) scale(1)
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    display: inline-block;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    margin: 0;
+    padding: 10px 20px
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+        -webkit-transform:translateY(-35%) rotate(45deg) scale(1);
+        -ms-transform: translateY(-35%) rotate(45deg) scale(1);
+        transform: translateY(-35%) rotate(45deg) scale(1);
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        content: "";
+        display: inline-block;
+        height: 8px;
+        margin: 0 10px 0 2px;
+        vertical-align: middle;
+        width: 8px
+    }
+}
+
+.gem-c-layout-super-navigation-header__search-toggle-button {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    background: #0b0c0c;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    padding: 15px;
+    position: absolute;
+    right: -15px;
+    top: 0;
+    width: 50px
+}
+
+@media print {
+    .gem-c-layout-super-navigation-header__search-toggle-button {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-layout-super-navigation-header__search-toggle-button {
+        font-size:19px;
+        font-size: 1.1875rem;
+        line-height: 1.0526315789
+    }
+}
+
+@media print {
+    .gem-c-layout-super-navigation-header__search-toggle-button {
+        font-size: 14pt;
+        line-height: 20px
+    }
+}
+
+.gem-c-layout-super-navigation-header__search-toggle-button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    border-color: #fd0;
+    box-shadow: none;
+    z-index: 11
+}
+
+.gem-c-layout-super-navigation-header__search-toggle-button:focus-visible {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    border-color: #fd0;
+    box-shadow: none;
+    z-index: 11
+}
+
+.gem-c-layout-super-navigation-header__search-toggle-button:focus:not(:focus-visible) {
+    background: none;
+    border-color: #fff;
+    box-shadow: none;
+    color: #fff
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__search-toggle-button {
+        right:0
+    }
+
+    .gem-c-layout-super-navigation-header__search-toggle-button {
+        background: #1d70b8;
+        border-bottom: 1px solid #003078;
+        border-left: none;
+        position: relative
+    }
+
+    .gem-c-layout-super-navigation-header__search-toggle-button:focus:not(:focus-visible) {
+        background: #1d70b8;
+        border-bottom: 1px solid #003078;
+        border-left: none;
+        position: relative
+    }
+
+    .gem-c-layout-super-navigation-header__search-toggle-button:hover {
+        background: #0b0c0c;
+        border-bottom: 3px solid #b1b4b6;
+        color: #b1b4b6
+    }
+
+    .gem-c-layout-super-navigation-header__search-toggle-button:focus {
+        outline: 3px solid transparent;
+        color: #0b0c0c;
+        background-color: #fd0;
+        box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+        text-decoration: none;
+        border-bottom-color: #fd0;
+        box-shadow: none
+    }
+
+    .gem-c-layout-super-navigation-header__search-toggle-button:focus-visible {
+        outline: 3px solid transparent;
+        color: #0b0c0c;
+        background-color: #fd0;
+        box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+        text-decoration: none;
+        border-bottom-color: #fd0;
+        box-shadow: none
+    }
+}
+
+.gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    border-color: #fd0;
+    box-shadow: none;
+    color: #fd0
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:before {
+        border-bottom-color:#fd0;
+        border-right-color: #fd0
+    }
+}
+
+.gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    border-color: #fd0;
+    box-shadow: none;
+    color: #fd0
+}
+
+@media (min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible:before {
+        border-bottom-color:#fd0;
+        border-right-color: #fd0
+    }
+}
+
+.gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button {
+    background: #f3f2f1;
+    border-bottom-color: #f3f2f1;
+    color: #f3f2f1
+}
+
+.gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) {
+    background: #f3f2f1;
+    border-bottom-color: #f3f2f1;
+    color: #f3f2f1
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon {
+    color: #0b0c0c;
+    display: none;
+    font-size: 36px;
+    font-weight: normal;
+    left: 0;
+    line-height: 22px;
+    padding: 15px 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0
+}
+
+.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon {
+    display: block
+}
+
+.gem-c-layout-super-navigation-header__navigation-dropdown-menu {
+    background: #f3f2f1
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-dropdown-menu {
+        border-bottom:1px #b1b4b6 solid;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+}
+
+.gem-c-layout-super-navigation-header__menu-description {
+    display: none
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__menu-description {
+        display:block;
+        padding: 40px 0 40px 0
+    }
+}
+
+.gem-c-layout-super-navigation-header__dropdown-list-item {
+    box-sizing: border-box;
+    padding: 0 0 20px 0;
+    position: relative
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-items {
+    list-style: none;
+    margin: 0;
+    padding: 30px 20px
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-items>li {
+    margin: 0
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-items {
+        margin:0 -15px;
+        padding: 40px 0 50px 0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items>li {
+        margin: 0 15px
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics {
+        display:-ms-grid;
+        display: grid;
+        grid-auto-flow: column;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(1) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(2) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(3) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(4) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 4
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(5) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 5
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(6) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(7) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 7
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(8) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 8
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(9) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(10) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 2
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(11) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 3
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(12) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 4
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(13) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 5
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(14) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 6
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(15) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 7
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(16) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 8
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-items--government-activity {
+        display:-ms-grid;
+        display: grid;
+        grid-auto-flow: column;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding-bottom: 0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--government-activity>li:nth-child(1) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--government-activity>li:nth-child(2) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--government-activity>li:nth-child(3) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--government-activity>li:nth-child(4) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--government-activity>li:nth-child(5) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 2
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--government-activity>li:nth-child(6) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 3
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-items--government-activity>li {
+        box-sizing: border-box;
+        padding-bottom: 20px
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-item-link {
+    font-size: 16px;
+    font-size: 1rem
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-item-link:after {
+    background: none;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-item-link {
+        font-weight:bold;
+        padding: 0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-item-link:after {
+        content: none
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-item-link--with-description {
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: bold
+}
+
+@media (max-width: 48.0525em) {
+    .gem-c-layout-super-navigation-header__navigation-second-footer-break {
+        display:none
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-footer-list {
+    list-style: none;
+    padding: 0 0 50px 20px
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-footer-list {
+        display:-ms-grid;
+        display: grid;
+        grid-auto-flow: row;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        margin: 0 -15px;
+        padding: 30px 0 40px 0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-footer-list>li:nth-child(1) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-footer-list>li:nth-child(2) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-footer-item {
+    padding: 10px 0;
+    position: relative
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-footer-item {
+        padding:0 15px
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-footer-link {
+    display: inline-block;
+    font-size: 16px;
+    font-size: 1rem;
+    margin: 5px 0
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-footer-link:after {
+    background: none;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-second-footer-link {
+        display:inline;
+        padding: 0
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-second-footer-link:after {
+        content: none
+    }
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-item-description {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 5px 0 0 0
+}
+
+@media print {
+    .gem-c-layout-super-navigation-header__navigation-second-item-description {
+        font-family: sans-serif
+    }
+}
+
+.gem-c-layout-super-navigation-header__search-items {
+    background: #f3f2f1;
+    margin: 0 -15px
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-layout-super-navigation-header__search-items {
+        margin:0 -30px
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__search-items {
+        margin:0
+    }
+
+    .js-module-initialised .gem-c-layout-super-navigation-header__search-items {
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+}
+
+.gem-c-layout-super-navigation-header__search-form {
+    padding: 15px 0 30px 0
+}
+
+.gem-c-layout-super-navigation-header__popular-item {
+    position: relative;
+    padding: 5px 0
+}
+
+.gem-c-layout-super-navigation-header__popular-link {
+    display: inline-block;
+    font-size: 16px;
+    font-size: 1rem;
+    padding: 0
+}
+
+.gem-c-layout-super-navigation-header__popular-link:after {
+    background: none;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+@media (min-width: 48.0625em) {
+    .gem-c-layout-super-navigation-header__popular-link:after {
+        content:none
+    }
+}
+
+@media (max-width: 48.0525em) {
+    .gem-c-layout-super-navigation-header__width-container {
+        margin:0
+    }
 }

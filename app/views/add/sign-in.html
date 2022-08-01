@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  My Profile - GOV.UK Case Management
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "Do you people need to sign in to use the service using GOV.UK Sign In?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+  text: "Let users sign in to your service"
+},
+  items: [
+    {
+      value: "england",
+      text: "Yes"
+    },
+    {
+      value: "scotland",
+      text: "No"
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Save and continue",
+  href: "case-management.html"
+}) }}
+      </div>
+    </div>
+{% endblock %}

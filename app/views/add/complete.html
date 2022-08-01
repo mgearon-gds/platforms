@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  My Profile - GOV.UK Case Management
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Service created",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+
+      {{ govukButton({
+  text: "Go to the service",
+  href: "../all"
+}) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        Now the service has been created you will need to build the service.
+      </p>
+      <p class="govuk-body">
+        You can either request help within your department or contact GDS Advisory for more information
+      </p>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+      </p>
+    </div>
+  </div>
+      </div>
+    </div>
+{% endblock %}

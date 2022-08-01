@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  My Profile - GOV.UK Case Management
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+{% endblock %}
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Check your answers before building your service</h1>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+          {
+            key: {
+              text: "Name of the service"
+            },
+            value: {
+              text: "Bring your pet to the UK from Ukraine"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+            {
+              key: {
+                text: "Form"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Notifications"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Payments"
+              },
+              value: {
+                html: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Sign in"
+              },
+              value: {
+                html: 'Yes'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Case Management"
+              },
+              value: {
+                html: 'Yes'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Now build your service</h2>
+
+        <p class="govuk-body">By building your service it will not go live. You will still need to go through checks and processes before a service is published to GOV.UK</p>
+
+        <form action="/form-handler" method="post" novalidate>
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          {{ govukButton({
+            text: "Accept and build",
+            href: "complete"
+          }) }}
+
+        </form>
+      </div>
+    </div>
+{% endblock %}

@@ -8,8 +8,9 @@
       <span class="govuk-caption-l">Department for Environment Food & Rural Affairs</span>
       <h1 class="govuk-heading-l">All services</h1>
       {{ govukButton({
-  text: "Add new platform or group",
-  classes: "govuk-!-margin-top-2"
+  text: "New platform or group",
+  classes: "govuk-!-margin-top-2",
+  href: "/add/type"
 }) }}
       <div class="govuk-grid-row">
         {% include "includes/filters-two.html" %}
@@ -67,7 +68,16 @@
       </h3>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-
+      {{ govukPagination({
+        previous: {
+          labelText: "1 of 3",
+          href: "#"
+        },
+        next: {
+          labelText: "3 of 3",
+          href: "#"
+        }
+      }) }}
   </div>
       </div>
 
