@@ -1853,3 +1853,29 @@ $govuk-assets-path: '/govuk/assets/';
         margin:0
     }
 }
+
+nav ul li ul{
+  background: #f3f2f1;
+      border-bottom: 1px #b1b4b6 solid;
+      list-style: none;
+      padding: 0;
+        top: 50px
+}
+nav ul li ul li {
+  min-width: 190px;
+  margin: 4px 0;
+  padding: 6px 0;
+
+}
+
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
