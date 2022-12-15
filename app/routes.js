@@ -8,8 +8,8 @@ require('./routes/forms.js')(router)
 
 // Word page on get
 
-router.get('/overview', function (req, res) {
-  res.render('overview', {
+router.get('/application/overview', function (req, res) {
+  res.render('application/overview', {
     // To use the company data on that page use the following
     home: "home"
   })

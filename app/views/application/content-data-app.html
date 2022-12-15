@@ -1,0 +1,79 @@
+{% extends "layout-signin.html" %}
+{% block pageTitle %}
+  Sign in - GOV.UK Case Management
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="event-name">
+    From
+  </label>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+</div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="event-name">
+    To
+  </label>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+</div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="event-name">
+    Search for a title or URL
+  </label>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+</div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukTable({
+  caption: "Dates and amounts",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Page title"
+    },
+    {
+      text: "Document type"
+    },
+    {
+      text: "Unique page views"
+    },
+    {
+      text: "Users who found page useful"
+    },
+    {
+      text: "Searches from page"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "First 6 weeks"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ],
+    [
+      {
+        text: "Next 33 weeks"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ],
+    [
+      {
+        text: "Total estimated pay"
+      },
+      {
+        text: "£4,282.20"
+      }
+    ]
+  ]
+}) }}
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Custom date ranges
+{% endblock %}
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-inset-text">
+      <p> <b>From 20 December 2019 we only have Google Analytics data for users who consent to cookies.</b>
+      <p>The amount of data is severely limited by this so data after this date might not be representative.</p>
+    </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third-from-desktop">
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Change time period
+            </span>
+          </summary>
+
+            <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend">
+          How would you prefer to be contacted?
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+          <label class="govuk-label govuk-radios__label" for="contact">
+            Past 30 days
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+          <label class="govuk-label govuk-radios__label" for="contact">
+            Last month
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+          <label class="govuk-label govuk-radios__label" for="contact">
+            Past 3 months
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+          <label class="govuk-label govuk-radios__label" for="contact">
+            Past 6 months
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+          <label class="govuk-label govuk-radios__label" for="contact-2">
+            Past year
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+          <label class="govuk-label govuk-radios__label" for="contact-3">
+            Custom dates
+          </label>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+          <div class="govuk-form-group">
+  <label class="govuk-label" for="event-name">
+    From
+  </label>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+</div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="event-name">
+    To
+  </label>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+</div>
+
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+
+        </details>
+<!--- search for title url ---!>
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Search for a title or url
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="published">Recently published</option>
+    <option value="updated" selected></option>
+    <option value="views">Most views</option>
+    <option value="comments">Most comments</option>
+  </select>
+</div>
+<!--- search for title url---!>
+<!--- Document type ---!>
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+      Document type
+    </label>
+    <select class="govuk-select" id="sort" name="sort">
+      <option value="published">Recently published</option>
+      <option value="updated" selected></option>
+      <option value="views">Most views</option>
+      <option value="comments">Most comments</option>
+    </select>
+  </div>
+  <!--- Document type---!>
+<!--- Organisation---!>
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Organisation
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="published">Recently published</option>
+          <option value="updated" selected></option>
+          <option value="views">Most views</option>
+          <option value="comments">Most comments</option>
+        </select>
+      </div>
+<!--- Organisation---!>
+  <hr>
+<!--- filter button---!>
+  <button class="govuk-button" data-module="govuk-button">
+  Filter
+</button>
+<a class="govuk-link" href="#">Clear all filters</a>
+<hr>
+<a class="govuk-link" href="#">Download all CSV file</a>
+</div>
+<div class="govuk-grid-column-two-thirds-from-desktop">
+<!-- Table --!>
+<p>
+Showing <b>675,463</b> results for <b>all document types </b> from <b>all organisations</b> </p>
+  <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Document type</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Unique page views</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Users who found this page useful</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">Gov.uk homepage</a></th>
+      <td class="govuk-table__cell">Homepage</td>
+      <td class="govuk-table__cell">653930</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">Sign in to your Universal Credit Account</a></th>
+      <td class="govuk-table__cell">Transaction</td>
+      <td class="govuk-table__cell">43230</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">Check the MOT history of a vehicle</a></th>
+      <td class="govuk-table__cell">Homepage</td>
+      <td class="govuk-table__cell">2530</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+</div>
+{% endblock %}

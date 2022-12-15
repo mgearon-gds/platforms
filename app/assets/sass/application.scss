@@ -16,11 +16,50 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.nav{
+  background: rgba(245,245,247,1);
+  padding: 40px 0;
+}
 
+.nav ul{
+  list-style: none;
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  justify-content: space-around;
+  font-weight: bold;
+  align-items: center;
+}
+
+.nav ul li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav ul li img{
+  margin-bottom: 18px;
+}
 .govuk-notification {
   border: 5px solid #1d70b8;
 }
 
+.video{
+
+  width: 100%;
+  display: block;
+}
+
+figure{
+  padding: 0;
+  margin: 0;
+}
+
+figcaption{
+  margin-top: 4px;
+      font-family: "GDS Transport", arial, sans-serif;
+      color: #505a5f
+}
 .govuk-notification p {
   margin-bottom: 0;
 }

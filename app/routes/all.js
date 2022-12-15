@@ -2,7 +2,7 @@ var arraySort = require('array-sort')
 
 module.exports = function (router) {
   // ALL CASES
-  router.get('/all', function (req, res) {
+  router.get('/application/all', function (req, res) {
     // sortedCases
     var sortedCases = []
     var filteredCases = []
@@ -194,7 +194,7 @@ module.exports = function (router) {
 
     var status = req.query.status
 
-    res.render('all', {
+    res.render('application/all', {
       cases: filteredCases,
       allLinkActive: 'section-navigation__link--active',
       viewParams: viewParams,
@@ -208,7 +208,7 @@ module.exports = function (router) {
   })
 
   // On post
-  router.post('all', function (req, res) {
+  router.post('/application/all', function (req, res) {
     var filterParams = {}
     var viewParams = {}
     var pagination = {}
@@ -503,7 +503,7 @@ module.exports = function (router) {
     filteredCases = mimicArray.splice(0)
     mimicArray = []
 
-    res.render('all', {
+    res.render('application/all', {
       cases: filteredCases,
       allLinkActive: 'section-navigation__link--active',
       viewParams: viewParams,
