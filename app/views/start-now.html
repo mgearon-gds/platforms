@@ -1,0 +1,37 @@
+{% extends "layout-marketing.html" %}
+{% block pageTitle %}
+  Build a service - GOV.UK
+{% endblock %}
+{% block header %}
+{% include "includes/header-marketing.html" %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">River Thames: lock and weir fishing permit application</h1>
+    <p class="govuk-body-l">Apply here to apply for, renew or update your River Thames lock and weir fishing permit and pay for it online.</p>
+    <p class="govuk-body">This service is also avaliable in Welsh (Cymraeg).</p>
+    {{ govukInsetText({
+        text: "This permit is not for use during the closed season from 15 March to 15 June 2023"
+    }) }}
+
+    <h2 class="govuk-heading-l">Before you start</h2>
+    <p class="govuk-body">Please note that many lock and weir fishing sites are only available for fishing outside of the boating season. Please check the maps carefully to find out when the site is available for fishing.</p>
+    <p class="govuk-body">The cost of an adult licence is £31 per annum.</p>
+    <p class="govuk-body">Concessionary licences are available for senior citizens over 60 years, juniors from 13 years up to and including 16 years and registered Blue Badge holders at a cost of £20.50 per annum.</p>
+
+    <h2 class="govuk-heading-l">How long it takes to apply</h2>
+    <p class="govuk-body">It will take about 5 minutes to fill in this form.</p>
+    <p class="govuk-body">We aim to process your application as quickly as possible but it can take up to 10 working days especially at busy times</p>
+    {{ govukButton({
+        text: "Start now",
+        href: "#",
+        isStartButton: true
+    }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">Related content</h3>
+        </div>
+</div>
+{% endblock %}

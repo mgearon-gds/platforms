@@ -15,6 +15,31 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 
+@import "patterns/borders";
+@import "patterns/breadcrumbs";
+@import "patterns/header";
+@import "patterns/hero";
+@import "patterns/hero-alternative-action";
+@import "patterns/image";
+@import "patterns/inverted-button";
+@import "patterns/masthead";
+@import "patterns/navigation";
+@import "patterns/related-items";
+@import "patterns/responsive-embed";
+@import "patterns/sub-navigation";
+
+#main-content {
+    display: block;
+    margin-bottom: govuk-spacing(9);
+  }
+
+.hero__description, .hero__paragraph{
+    color: white;
+}
+
+.gem-c-layout-super-navigation-header{
+    margin-bottom: 10px;
+}
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 .nav{
   background: rgba(245,245,247,1);

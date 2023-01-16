@@ -1,6 +1,17 @@
 var arraySort = require('array-sort')
 
 module.exports = function (router) {
+
+  router.post('/application/sign-in', function (req, res) {
+    const { email, password} = req.body;
+    if (!email || !password){
+      return res.redirect('/application/sign-in'), {
+        error: "Email and password are required"
+      }
+    } else {
+      res.redirect('/application/overview')
+    }
+  })
   // ALL CASES
   router.get('/application/all', function (req, res) {
     // sortedCases

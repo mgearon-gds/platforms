@@ -9,6 +9,8 @@
       <p class="govuk-body">
         If you do not have an account, you can <a href="#" class="govuk-link">create one now</a>.
         </p>
+        {{error}}
+        <form action="/application/sign-in" method="post">
       {{ govukInput({
         label: {
           text: "Email address"
@@ -25,9 +27,9 @@
         name: "password"
       }) }}
       {{ govukButton({
-        text: "Continue",
-        href: 'overview.html'
+        text: "Continue"
       }) }}
+      </form>
       <p>
         <a href="#" class="govuk-link block govuk-body govuk-!-font-size-9">Forgot your password?</a>
       </p>
