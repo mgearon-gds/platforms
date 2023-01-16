@@ -4,6 +4,33 @@
 {% endblock %}
 {% block header %}
 {% include "includes/header-marketing.html" %}
+
+{% endblock %}
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Environment",
+      href: "#"
+    },
+    {
+      text: "Rural and countryside",
+      href: "#"
+    },
+    {
+      text: "Countryside",
+      href: "#"
+    },
+    {
+      text: "Access to our countryside",
+      href: "#"
+    }
+  ]
+}) }}
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
@@ -32,6 +59,20 @@
     </div>
     <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-s">Related content</h3>
+        <ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="#">River Thames: lock and weir fishing maps</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Lock and weir fishing on River Thames</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Rod fishing byelaws: Anglia</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Rod fishing byelaws: North East</a>
+  </li>
+</ul>
         </div>
 </div>
 {% endblock %}
