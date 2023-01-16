@@ -3,6 +3,11 @@
   Build a service - GOV.UK
 {% endblock %}
 
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+{% endblock %}
 {% block beforeContent %}
 {{ govukBreadcrumbs({
   items: [
