@@ -2,10 +2,7 @@
 {% block pageTitle %}
   Build a service - GOV.UK
 {% endblock %}
-{% block header %}
-{% include "includes/header-marketing.html" %}
 
-{% endblock %}
 {% block beforeContent %}
 {{ govukBreadcrumbs({
   items: [
@@ -38,13 +35,13 @@
 
     <h1 class="govuk-heading-xl">River Thames: lock and weir fishing permit application</h1>
     <p class="govuk-body-l">Apply here to apply for, renew or update your River Thames lock and weir fishing permit and pay for it online.</p>
-    <p class="govuk-body">This service is also avaliable in Welsh (Cymraeg).</p>
+    <p class="govuk-body">This service is also avaliable in <a class="govuk-link" href="#">Welsh (Cymraeg)</a>.</p>
     {{ govukInsetText({
         text: "This permit is not for use during the closed season from 15 March to 15 June 2023"
     }) }}
 
     <h2 class="govuk-heading-l">Before you start</h2>
-    <p class="govuk-body">Please note that many lock and weir fishing sites are only available for fishing outside of the boating season. Please check the maps carefully to find out when the site is available for fishing.</p>
+    <p class="govuk-body">Please note that many lock and weir fishing sites are only available for fishing outside of the boating season. Please <a class="govuk-link" href="#">check the maps</a> carefully to find out when the site is available for fishing.</p>
     <p class="govuk-body">The cost of an adult licence is £31 per annum.</p>
     <p class="govuk-body">Concessionary licences are available for senior citizens over 60 years, juniors from 13 years up to and including 16 years and registered Blue Badge holders at a cost of £20.50 per annum.</p>
 
@@ -53,7 +50,7 @@
     <p class="govuk-body">We aim to process your application as quickly as possible but it can take up to 10 working days especially at busy times</p>
     {{ govukButton({
         text: "Start now",
-        href: "#",
+        href: "https://submit.forms.service.gov.uk/preview-form/86/test-2-0-lock-and-weir-fishing-permit-application-form/169",
         isStartButton: true
     }) }}
     </div>
