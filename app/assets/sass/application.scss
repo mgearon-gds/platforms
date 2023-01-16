@@ -40,6 +40,14 @@ $govuk-assets-path: '/govuk/assets/';
 .gem-c-layout-super-navigation-header{
     margin-bottom: 10px;
 }
+
+.govuk-list-small{
+    font-size: 16px;
+}
+
+.govuk-related-content{
+    border-top: 2px solid #1d70b8;
+}
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 .nav{
   background: rgba(245,245,247,1);
