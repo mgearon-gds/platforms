@@ -1951,3 +1951,10 @@ nav ul li ul li a {
   z-index: 1;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
+
+.partner-grid{
+    display: flex;
+    align-items: self-end;
+    justify-content: center;
+    flex-wrap: wrap;
+}
