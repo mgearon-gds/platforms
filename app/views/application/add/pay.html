@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  My Profile - GOV.UK Case Management
+  My Profile - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
 {{ govukBackLink({
@@ -9,37 +9,36 @@
 }) }}
 {% endblock %}
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       {{ govukRadios({
-  idPrefix: "where-do-you-live",
-  name: "where-do-you-live",
-  fieldset: {
-    legend: {
-      text: "Do you need to use GOV.UK Pay?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-  text: "Take online payments from your users"
-},
-  items: [
-    {
-      value: "england",
-      text: "Yes"
-    },
-    {
-      value: "scotland",
-      text: "No"
-    }
-  ]
-}) }}
-{{ govukButton({
-  text: "Save and continue",
-  href: "sign-in.html"
-}) }}
-      </div>
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Do you need to use GOV.UK Pay?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Take online payments from your users"
+        },
+        items: [
+          {
+            value: "england",
+            text: "Yes"
+          },
+          {
+            value: "scotland",
+            text: "No"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Save and continue",
+        href: "sign-in.html"
+      }) }}
     </div>
+  </div>
 {% endblock %}

@@ -1,28 +1,19 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Overview - GOV.UK Case Management
-{% endblock %}
-{% block beforeContent %}
-
+  Overview - {{serviceName}}
 {% endblock %}
 {% block content %}
-
-<div class="govuk-grid-row">
-  {% set html %}
-<p class="govuk-notification-banner__heading">
-There was an increase of 70% of people visiting the Bringing your pet to the UK from Ukraine guidance page in the last 7 days
-<a class="govuk-notification-banner__link" href="#">View content</a>.
-</p>
-{% endset %}
-</div>
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
-
-
-{{ govukNotificationBanner({
-  html: html
-}) }}
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+        There was an increase of 70% of people visiting the Bringing your pet to the UK from Ukraine guidance page in the last 7 days
+        <a class="govuk-notification-banner__link" href="#">View content</a>.
+        </p>
+      {% endset %}
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
       {% if status == 'success' %}
         {% set html %}
         <p class="govuk-notification-banner__heading">
@@ -37,7 +28,6 @@ There was an increase of 70% of people visiting the Bringing your pet to the UK 
       {% endif %}
       <span class="govuk-caption-l">Case manager</span>
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Bringing your pet to the UK from Ukraine</h1>
-
       {{ govukButton({
         text: "Add new case",
         href: "add-new-word"
@@ -47,81 +37,68 @@ There was an increase of 70% of people visiting the Bringing your pet to the UK 
   {% if cases.length > 0 %}
     <div class="govuk-grid-row">
       {% include "includes/filters.html" %}
-
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group govuk-!-margin-bottom-2">
-<label class="govuk-label govuk-label--m" for="event-name">
-      Search by application name or number
-    </label>
-  <div class="wrapper">
-  <input class="govuk-input" id="event-name" name="event-name" type="text">
-  {{ govukButton({
-text: "Search",
-classes: "govuk-button--secondary govuk-!-margin-bottom-2 search"
-}) }}
-</div>
-</div>
-<div class="app-sort">
-        <p>
-          <b class="govuk-!-margin-right-1">Sort by:</b>
-
-            <span class="govuk-!-margin-right-1">Status</span>
-
-          |
-
-            <a class="govuk-!-margin-right-1 govuk-!-margin-left-1" href="/applications/?sort=Updated most recently">Updated most recently</a>
-
-          |
-
-            <a class="govuk-!-margin-right-1 govuk-!-margin-left-1" href="/applications/?sort=Updated least recently">Updated least recently</a>
-
-        </p>
-      </div>
+          <label class="govuk-label govuk-label--m" for="event-name">
+            Search by application name or number
+          </label>
+          <div class="wrapper">
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+            {{ govukButton({
+              text: "Search",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-2 search"
+            }) }}
+          </div>
+        </div>
+        <div class="app-sort">
+          <p>
+            <b class="govuk-!-margin-right-1">Sort by:</b>
+            <span class="govuk-sort-by-filter">Status</span>
+            <a class="govuk-sort-by-filter" href="/applications/?sort=Updated most recently">Updated most recently</a>
+            <a class="govuk-sort-by-filter" href="/applications/?sort=Updated least recently">Updated least recently</a>
+          </p>
+        </div>
         <h3 class="info result-count govuk-heading-m govuk-!-font-weight-regular govuk-!-margin-top-8 govuk-!-margin-bottom-6" id="result-count" aria-live="assertive">{{length|safe}}</h3>
-
-            {% for case in cases %}
-            <section>
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds one-line">
-                  <h4 class="govuk-heading-s"><a href="word?word={{ case.word}}" class="govuk-link govuk-link--no-visited-state">{{ case.word }}</a></h4>
-                  <p class="govuk-body-s">{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</p>
-                </div>
-                <div class="govuk-grid-column-one-third">
-                  <p class="govuk-body govuk-!-text-align-right">
-                    {% if case.status === "closed" %}
-                      <strong class="govuk-tag govuk-tag--green">
-                    {% elif case.status === "received" %}
-                      <strong class="govuk-tag govuk-tag--blue">
-                    {% else %}
-                      <strong class="govuk-tag govuk-tag--yellow">
-                    {% endif %}
-                    {{ case.status }}
-                      </strong>
-                    </p>
-
-                </div>
+        {% for case in cases %}
+          <section>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds one-line">
+                <h4 class="govuk-heading-s"><a href="word?word={{ case.word}}" class="govuk-link govuk-link--no-visited-state">{{ case.word }}</a></h4>
+                <p class="govuk-body-s">{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</p>
               </div>
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-                  {% if case.added %}
+              <div class="govuk-grid-column-one-third">
+                <p class="govuk-body govuk-!-text-align-right">
+                  {% if case.status === "closed" %}
+                    <strong class="govuk-tag govuk-tag--green">
+                  {% elif case.status === "received" %}
+                    <strong class="govuk-tag govuk-tag--blue">
+                  {% else %}
+                    <strong class="govuk-tag govuk-tag--yellow">
+                  {% endif %}
+                      {{ case.status }}
+                    </strong>
+                </p>
+              </div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                {% if case.added %}
                   <p class="govuk-body">
                     Assigned to {{case.added}}
                   </p>
-                  {% else %}
-
-                  {% endif %}
-                  <p class="govuk-body govuk-!-margin-bottom-0">
+                {% else %}
+                {% endif %}
+                <p class="govuk-body govuk-!-margin-bottom-0">
                   <!--{{ case.addedon }}-->
                   Received on {{ ["02 April 2009", "05 November 2014", "22 August 2008", "28 Febuary 2018", "02 December 2016", "14 May 2008", "22 June 2019"] | random }}. Last
-
                   updated on {{ ["09 March 2013", "09 April 2004", "23 October 2017"] | random }}.
                   {{ case.removedon }}
-                  </p>
+                </p>
               </div>
-              </div>
-              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            </section>
-            {% endfor %}
+            </div>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </section>
+        {% endfor %}
         <div class="govuk-grid-row ch-pagination-container">
           <div class="govuk-grid-column-one-third">
             {% include "includes/pagination-views-per-page.html" %}

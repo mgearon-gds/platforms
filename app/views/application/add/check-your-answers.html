@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  My Profile - GOV.UK Case Management
+  My Profile - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
 {{ govukBackLink({
@@ -9,8 +9,6 @@
 }) }}
 {% endblock %}
 {% block content %}
-
-
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 

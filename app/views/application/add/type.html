@@ -9,49 +9,48 @@
 }) }}
 {% endblock %}
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       {{ govukRadios({
-  idPrefix: "where-do-you-live",
-  name: "where-do-you-live",
-  fieldset: {
-    legend: {
-      text: "What do you want to create?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "england",
-      text: "GOV.UK Pay"
-    },
-    {
-      value: "scotland",
-      text: "GOV.UK Notify"
-    },
-    {
-      value: "wales",
-      text: "GOV.UK Case Management"
-    },
-    {
-      value: "northern-ireland",
-      text: "GOV.UK Forms"
-    },
-    {
-      divider: "or"
-    },
-    {
-      value: "group",
-      text: "Group of platforms"
-    }
-  ]
-}) }}
-{{ govukButton({
-  text: "Save and continue",
-  href: "name-of-the-service.html"
-}) }}
-      </div>
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "What do you want to create?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "GOV.UK Pay"
+          },
+          {
+            value: "scotland",
+            text: "GOV.UK Notify"
+          },
+          {
+            value: "wales",
+            text: "GOV.UK Case Management"
+          },
+          {
+            value: "northern-ireland",
+            text: "GOV.UK Forms"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "group",
+            text: "Group of platforms"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Save and continue",
+        href: "name-of-the-service.html"
+      }) }}
     </div>
+  </div>
 {% endblock %}
