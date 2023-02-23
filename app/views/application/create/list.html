@@ -57,10 +57,11 @@
                 <table class="govuk-table">
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Set the payment information</a></td>
-                    <td class="govuk-table__cell">{{ govukTag({
-  text: "completed"
-}) }}</td>
+                    <td class="govuk-table__cell"><a href="payment-information.html" class="govuk-link">Set the payment information</a></td>
+                    <td class="govuk-table__cell">{{govukTag({
+          text: "In prgoress",
+          classes: "govuk-tag--blue"
+        })}}</td>
                 </tr>
             </tbody>
         </table>
@@ -116,7 +117,14 @@
 }) }}
     </div>
     <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">Get support</h3>
+        <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
+        <p class="govuk-body govuk-body-s">You can get support by:</p>
+<ul class="govuk-list govuk-body-s govuk-list--spaced">
+  <li><a href="#">Reading online documentation</a></li>
+  <li><a href="#">Slack</a></li>
+  <li><a href="#">Send an email to support</a></li>
+  <li><a href="#">Online forum</a></li>
+</ul>
     </div>
   </div>
 {% endblock %}
