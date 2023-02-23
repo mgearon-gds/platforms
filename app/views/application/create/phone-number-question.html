@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Edit question - {{serviceName}}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Edit question</h2>
+{{ govukInput({
+  label: {
+    text: "Question text",
+    classes: "govuk-label--m"
+  },
+  id: "event-name",
+    hint: {
+    text: "Ask the question the way you would in person. For example, ‘What’s your phone number?’"
+  },
+  name: "event-name"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+{{ govukInput({
+  label: {
+    text: "Hint text (optional)",
+    classes: "govuk-label--m"
+  },
+  id: "event-name",
+    hint: {
+    text: "Use hint text to help people answer the question. For example, ‘You can provide either a home or mobile phone number.’"
+  },
+  name: "event-name"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+{{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Question settings",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "carcasses",
+      text: "Make this question optional so people can skip it",
+            hint: {
+        text: "‘(optional)’ will be added to the end of the question text"
+      }
+    }
+  ]
+}) }}
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Answer type"
+      },
+      value: {
+        text: "Phone number"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+
+  ]
+}) }}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and add next question"
+  }) }}
+
+  {{ govukButton({
+    text: "Save question",
+    classes: "govuk-button--secondary"
+  }) }}
+  </div>
+  <p class="govuk-body"><a href="pages" class="govuk-link govuk-link--no-visited-state">Go to your questions</a></p>
+
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">Get support</h3>
+    </div>
+  </div>
+{% endblock %}

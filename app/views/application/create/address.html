@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What kind of addresses do you expect to receive? - {{serviceName}}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+{{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "What kind of addresses do you expect to receive?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "uk-adddresses",
+      text: "UK addresses"
+    },
+    {
+      value: "international-addresses",
+      text: "International addresses"
+    }
+  ]
+}) }}
+  {{ govukButton({
+    text: "Continue",
+    href: "address-question.html"
+  }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">Get support</h3>
+    </div>
+  </div>
+{% endblock %}

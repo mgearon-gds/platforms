@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Add and edit your questions - {{serviceName}}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Fishing Permit Application</span>
+        <h2 class="govuk-heading-l">Add and edit your questions</h2>
+        {{govukTag({
+          text: "DRAFT",
+          classes: "govuk-tag--purple govuk-!-margin-bottom-6"
+        })}}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Add a question"
+  }) }}
+
+  <a class="govuk-link" href="#">Preview this form in a new tab</a>
+</div>     
+        </div>
+    </div>
+      <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Your questions</h2>
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">What is their name?</td>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-button-group">
+                      {{ govukButton({
+  text: "Move down",
+  classes: "govuk-button--secondary"
+}) }}
+</div></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">What is their address?</td>
+                    <td class="govuk-table__cell">       <div class="govuk-button-group">
+                        {{ govukButton({
+    text: "Move up",
+    classes: "govuk-button--secondary"
+  }) }}
+                      {{ govukButton({
+  text: "Move down",
+  classes: "govuk-button--secondary"
+}) }}
+</div></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">What is their phone number</td>
+                    <td class="govuk-table__cell"><div class="govuk-button-group">
+                      {{ govukButton({
+    text: "Move up",
+    classes: "govuk-button--secondary"
+  }) }}
+                      {{ govukButton({
+  text: "Move down",
+  classes: "govuk-button--secondary"
+}) }}
+</div></td>
+                </tr>
+            </tbody>
+        </table>
+       
+        
+{{ govukRadios({
+  classes: "govuk-radios",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "Have you finished editing your questions?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Selecting ‘Yes’ will mark this task as complete. You’ll still be able to make changes if you need to."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+            hint: {
+        text: ""
+      }
+    },
+    {
+      value: "no",
+      text: "No, I'll come back later",
+            hint: {
+        text: ""
+      }
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Save and continue",
+  href: "list"
+}) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">Get support</h3>
+    </div>
+  </div>
+{% endblock %}

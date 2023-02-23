@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  My Profile - {{serviceName}}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Fishing Permit Application</span>
+        <h2 class="govuk-heading-l">Create a service</h2>
+        {{govukTag({
+          text: "DRAFT",
+          classes: "govuk-tag--purple govuk-!-margin-bottom-6"
+        })}}
+        <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link govuk-link--no-visited-state">Preview this service in a new tab</a></p>
+        <p class="govuk-body">You’ve completed 5 of 9 tasks.</p>
+        </div>
+    </div>
+      <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">1. Create your form</h2>
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit the name of your form</a></td>
+                    <td class="govuk-table__cell">{{ govukTag({
+  text: "completed"
+}) }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="type-of-answer.html" class="govuk-link">Add and edit your questions</a></td>
+                    <td class="govuk-table__cell">        {{govukTag({
+          text: "In prgoress",
+          classes: "govuk-tag--blue"
+        })}}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add a declaration for people to agree to</a></td>
+                    <td class="govuk-table__cell">{{ govukTag({
+  text: "completed"
+}) }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="govuk-heading-m">2. Create your notifications</h2>
+                <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="notification.html" class="govuk-link">Set the confirmation email</a></td>
+                    <td class="govuk-table__cell">{{govukTag({
+          text: "In prgoress",
+          classes: "govuk-tag--blue"
+        })}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="govuk-heading-m">3. Create your payments</h2>
+                <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Set the payment information</a></td>
+                    <td class="govuk-table__cell">{{ govukTag({
+  text: "completed"
+}) }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="govuk-heading-m">4. Set email address for completed forms</h2>
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Set the email address completed forms will be sent to</a></td>
+                    <td class="govuk-table__cell">{{ govukTag({
+  text: "completed"
+}) }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Enter the email address confirmation code</a></td>
+                    <td class="govuk-table__cell">{{ govukTag({
+  text: "completed"
+}) }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="govuk-heading-m">5. Provide privacy and contact details</h2>
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Provide a link to privacy information for this form</a></td>
+                    <td class="govuk-table__cell">{{ govukTag({
+  text: "completed"
+}) }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Provide contact details for support</a></td>
+                    <td class="govuk-table__cell">{{ govukTag({
+  text: "completed"
+}) }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="govuk-heading-m">6. Make your service live</h2>
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="make-your-service-live" class="govuk-link">Make your service live</a></td>
+                    <td class="govuk-table__cell">        {{govukTag({
+          text: "Not started",
+          classes: "govuk-tag--grey"
+        })}}</td>
+                </tr>
+            </tbody>
+        </table>
+        {{ govukButton({
+  text: "Delete service",
+  classes: "govuk-button--warning"
+}) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">Get support</h3>
+    </div>
+  </div>
+{% endblock %}

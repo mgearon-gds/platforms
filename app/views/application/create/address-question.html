@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Edit question - {{serviceName}}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Edit question</h2>
+{{ govukInput({
+  label: {
+    text: "Question text",
+    classes: "govuk-label--m"
+  },
+  id: "event-name",
+    hint: {
+    text: "Ask the question the way you would in person. For example, ‘What’s your address?’"
+  },
+  name: "event-name"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+{{ govukInput({
+  label: {
+    text: "Hint text (optional)",
+    classes: "govuk-label--m"
+  },
+  id: "event-name",
+    hint: {
+    text: "You could use hint text to tell people how you will use their address. For example, ‘We’ll send your licence to this address.’"
+  },
+  name: "event-name"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+{{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Question settings",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "carcasses",
+      text: "Make this question optional so people can skip it",
+            hint: {
+        text: "‘(optional)’ will be added to the end of the question text"
+      }
+    }
+  ]
+}) }}
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Answer type"
+      },
+      value: {
+        text: "Address"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Input type"
+      },
+      value: {
+        text: "UK addresses	"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+
+  ]
+}) }}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and add next question",
+    href: "type-of-answer-three.html"
+  }) }}
+
+  {{ govukButton({
+    text: "Save question",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">Get support</h3>
+    </div>
+  </div>
+{% endblock %}

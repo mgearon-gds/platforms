@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  New email template - {{serviceName}}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">New email template</h2>
+{{ govukInput({
+  label: {
+    text: "Template name"
+  },
+  id: "event-name",
+    hint: {
+    text: "Your recipients will not see this"
+  },
+  name: "event-name"
+}) }}
+{{ govukInput({
+  label: {
+    text: "Subject"
+  },
+  id: "event-name",
+  name: "event-name"
+}) }}
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "Message"
+  }
+}) }}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and continue",
+    href: "list.html"
+  }) }}
+</div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">Get support</h3>
+    </div>
+  </div>
+{% endblock %}
