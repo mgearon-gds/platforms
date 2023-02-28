@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Add a declaration for people to agree to - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back to create your service",
+  href: "list"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">{{ data['name-of-the-service'] }}</span>
+        <h1 class="govuk-heading-l">Provide a link to privacy information for this form</h1>
+        <p class="govuk-body">To comply with the UK General Data Protection Regulation (UK GDPR), you must provide privacy information for the people who will enter their data into your form.</p>
+        <p class="govuk-body">The privacy information must include details such as:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>your purposes for processing the personal data</li>
+            <li>how long you’ll keep the personal data</li>
+            <li>who the data will be shared with</li>
+            <li>contact details for your department and your data protection officer</li>
+        </ul>
+        <p class="govuk-body">You may already publish this information, for example in a privacy notice or personal information charter. Existing privacy information may need to be updated to cover the data you are collecting in this form, or you may need a new privacy notice.</p>
+        <p class="govuk-body">To get help, contact your department’s data protection officer or data protection manager.</p>
+        {{ govukInput({
+            label: {
+                text: "Enter a link to privacy information for this form",
+                classes: "govuk-label--m"
+            },
+            hint: {
+                text: "For example, https://www.gov.uk/help/privacy-notice"
+            },
+            id: "event-name",
+            name: "event-name"
+        }) }}
+        {{ govukButton({
+          text: "Save and continue",
+          href: "list.html"
+        }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
+      <p class="govuk-body govuk-body-s">You can get support by:</p>
+      <ul class="govuk-list govuk-body-s govuk-list--spaced">
+        <li><a href="#">Online documentation</a></li>
+        <li><a href="#">Slack</a></li>
+        <li><a href="#">Send an email to support</a></li>
+        <li><a href="#">Online forum</a></li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

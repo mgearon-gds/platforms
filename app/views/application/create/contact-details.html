@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Add a declaration for people to agree to - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back to create your service",
+  href: "list"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">{{ data['name-of-the-service'] }}</span>
+        <h1 class="govuk-heading-l">Provide contact details for support</h1>
+        <p class="govuk-body">You need to provide at least one way for people to get help if they get stuck while filling in this form.</p>
+        <p class="govuk-body">The contact information will be displayed at the bottom of every page of the form.</p>
+
+{% set emailHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  }
+}) }}
+{% endset -%}
+
+{% set phoneHtml %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Phone number"
+  }
+}) }}
+{% endset -%}
+
+{% set textHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+{% endset -%}
+
+{{ govukCheckboxes({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "How can people get help with filling in this form?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select at least one option"
+  },
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: phoneHtml
+      }
+    },
+    {
+      value: "online-contact-link",
+      text: "Online contact link",
+      conditional: {
+        html: textHtml
+      }
+    }
+  ]
+}) }}
+        {{ govukButton({
+          text: "Save and continue",
+          href: "list.html"
+        }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
+      <p class="govuk-body govuk-body-s">You can get support by:</p>
+      <ul class="govuk-list govuk-body-s govuk-list--spaced">
+        <li><a href="#">Online documentation</a></li>
+        <li><a href="#">Slack</a></li>
+        <li><a href="#">Send an email to support</a></li>
+        <li><a href="#">Online forum</a></li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

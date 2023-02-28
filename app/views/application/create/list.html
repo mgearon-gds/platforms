@@ -5,7 +5,7 @@
 {% block beforeContent %}
 {{ govukBackLink({
   text: "Back to your services",
-  href: "list"
+  href: "/application/overview"
 }) }}
 {% endblock %}
 {% block content %}
@@ -49,7 +49,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="declaration" class="govuk-link">Add information about what happens next</a>
+                <a href="what-happens-next" class="govuk-link">Add information about what happens next</a>
               </span>
               <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
             </li>
@@ -94,13 +94,13 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" class="govuk-link">Provide a link to privacy information for this form</a>
+                <a href="privacy-policy" class="govuk-link">Provide a link to privacy information for this form</a>
               </span>
               <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" class="govuk-link">Provide contact details for support</a>
+                <a href="contact-details" class="govuk-link">Provide contact details for support</a>
               </span>
               <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
             </li>

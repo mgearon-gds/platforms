@@ -2,6 +2,12 @@
 {% block pageTitle %}
   Add a declaration for people to agree to - {{serviceName}}
 {% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back to create your service",
+  href: "list"
+}) }}
+{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
