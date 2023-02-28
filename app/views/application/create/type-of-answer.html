@@ -2,82 +2,87 @@
 {% block pageTitle %}
   Edit question - {{serviceName}}
 {% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "list"
+}) }}
+{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-{{ govukRadios({
-  name: "where-do-you-live",
-  fieldset: {
-    legend: {
-      text: "What kind of answer do you need to this question?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "england",
-      text: "Person’s name"
-    },
-    {
-      value: "scotland",
-      text: "Company or organisation’s name"
-    },
-    {
-      value: "wales",
-      text: "Email address"
-    },
-    {
-      value: "northern-ireland",
-      text: "Phone number"
-    },
-    {
-      value: "northern-ireland",
-      text: "National Insurance number"
-    },
-    {
-      value: "northern-ireland",
-      text: "Address"
-    },
-    {
-      value: "northern-ireland",
-      text: "Date"
-    },
-    {
-      value: "northern-ireland",
-      text: "Selection from a list of options",
-            hint: {
-        text: "You’ll be able to create a list of options for people to select from"
-      }
-    },
-        {
-      value: "northern-ireland",
-      text: "Number",
-            hint: {
-        text: "People will only be able to enter whole or decimal numbers"
-
-            }
-      },
+      {{ govukRadios({
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "What kind of answer do you need to this question?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
           {
-      value: "northern-ireland",
-      text: "Text"
-    }
-  ]
-}) }}
-{{ govukButton({
-  text: "Continue",
-  href: "person-name"
-}) }}
+            value: "person-name",
+            text: "Person’s name"
+          },
+          {
+            value: "company-name",
+            text: "Company or organisation’s name"
+          },
+          {
+            value: "email-address",
+            text: "Email address"
+          },
+          {
+            value: "phome-number",
+            text: "Phone number"
+          },
+          {
+            value: "ni-number",
+            text: "National Insurance number"
+          },
+          {
+            value: "address",
+            text: "Address"
+          },
+          {
+            value: "date",
+            text: "Date"
+          },
+          {
+            value: "selection-from-a-list-of-options",
+            text: "Selection from a list of options",
+            hint: {
+              text: "You’ll be able to create a list of options for people to select from"
+            }
+          },
+          {
+            value: "number",
+            text: "Number",
+            hint: {
+              text: "People will only be able to enter whole or decimal numbers"
+            }
+          },
+          {
+            value: "text-input",
+            text: "Text"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        href: "person-name"
+      }) }}
     </div>
     <div class="govuk-grid-column-one-third">
-              <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
-        <p class="govuk-body govuk-body-s">You can get support by:</p>
-<ul class="govuk-list govuk-body-s govuk-list--spaced">
-  <li><a href="#">Online documentation</a></li>
-  <li><a href="#">Slack</a></li>
-  <li><a href="#">Send an email to support</a></li>
-  <li><a href="#">Online forum</a></li>
-</ul>
+      <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
+      <p class="govuk-body govuk-body-s">You can get support by:</p>
+      <ul class="govuk-list govuk-body-s govuk-list--spaced">
+        <li><a href="#">Online documentation</a></li>
+        <li><a href="#">Slack</a></li>
+        <li><a href="#">Send an email to support</a></li>
+        <li><a href="#">Online forum</a></li>
+      </ul>
     </div>
   </div>
 {% endblock %}

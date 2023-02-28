@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What kind of addresses do you expect to receive? - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back to create your service",
+  href: "list"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Application for trading certificate for a public company</span>
+<h1 class="govuk-heading-l">Set the email address for completed forms</h1>
+<p class="govuk-body">You need to provide an email address for completed forms to be sent to for processing. It should be a shared government email inbox.</p>
+<p class="govuk-body">To make sure the email address you provide is correct, we’ll send an email to it with a confirmation code and your email address.</p>
+<p class="govuk-body">The recipient will be asked to tell you the code. You will then need to enter the code to confirm the email address.</p>
+
+{{ govukInput({
+  label: {
+    text: "What email address should completed forms be sent to?",
+    classes: "govuk-label--m"
+  },
+  id: "event-name",
+  name: "event-name"
+}) }}
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+              <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
+        <p class="govuk-body govuk-body-s">You can get support by:</p>
+<ul class="govuk-list govuk-body-s govuk-list--spaced">
+  <li><a href="#">Online documentation</a></li>
+  <li><a href="#">Slack</a></li>
+  <li><a href="#">Send an email to support</a></li>
+  <li><a href="#">Online forum</a></li>
+</ul>
+    </div>
+  </div>
+{% endblock %}

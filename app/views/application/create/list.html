@@ -2,129 +2,151 @@
 {% block pageTitle %}
   My Profile - {{serviceName}}
 {% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back to your services",
+  href: "list"
+}) }}
+{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l">Fishing Permit Application</span>
-        <h2 class="govuk-heading-l">Build a service</h2>
+        <span class="govuk-caption-l">{{ data['name-of-the-service'] }}</span>
+        <h2 class="govuk-heading-l">Create a service</h2>
         {{govukTag({
           text: "DRAFT",
           classes: "govuk-tag--purple govuk-!-margin-bottom-6"
         })}}
         <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link govuk-link--no-visited-state">Preview this service in a new tab</a></p>
         <p class="govuk-body">You’ve completed 6 of 10 tasks.</p>
-        </div>
     </div>
-      <div class="govuk-grid-row">
+  </div>
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">1. Create your form</h2>
-        <table class="govuk-table">
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit the name of your form</a></td>
-                    <td class="govuk-table__cell">{{ govukTag({
-  text: "completed"
-}) }}</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="type-of-answer.html" class="govuk-link">Add and edit your questions</a></td>
-                    <td class="govuk-table__cell">        {{govukTag({
-          text: "In progress",
-          classes: "govuk-tag--blue"
-        })}}</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add a declaration for people to agree to</a></td>
-                    <td class="govuk-table__cell">{{ govukTag({
-  text: "completed"
-}) }}</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2 class="govuk-heading-m">2. Create your notifications</h2>
-                <table class="govuk-table">
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="notification.html" class="govuk-link">Set the confirmation email</a></td>
-                    <td class="govuk-table__cell">{{govukTag({
-          text: "In progress",
-          classes: "govuk-tag--blue"
-        })}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2 class="govuk-heading-m">3. Create your payments</h2>
-                <table class="govuk-table">
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="payment-information.html" class="govuk-link">Set the payment information</a></td>
-                    <td class="govuk-table__cell">{{govukTag({
-          text: "In progress",
-          classes: "govuk-tag--blue"
-        })}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2 class="govuk-heading-m">4. Set email address for completed forms</h2>
-        <table class="govuk-table">
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Set the email address completed forms will be sent to</a></td>
-                    <td class="govuk-table__cell">{{ govukTag({
-  text: "completed"
-}) }}</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Enter the email address confirmation code</a></td>
-                    <td class="govuk-table__cell">{{ govukTag({
-  text: "completed"
-}) }}</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2 class="govuk-heading-m">5. Provide privacy and contact details</h2>
-        <table class="govuk-table">
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Provide a link to privacy information for this form</a></td>
-                    <td class="govuk-table__cell">{{ govukTag({
-  text: "completed"
-}) }}</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Provide contact details for support</a></td>
-                    <td class="govuk-table__cell">{{ govukTag({
-  text: "completed"
-}) }}</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2 class="govuk-heading-m">6. Make your service live</h2>
-        <table class="govuk-table">
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="make-your-service-live" class="govuk-link">Make your service live</a></td>
-                    <td class="govuk-table__cell">        {{govukTag({
-          text: "Not started",
-          classes: "govuk-tag--grey"
-        })}}</td>
-                </tr>
-            </tbody>
-        </table>
-        {{ govukButton({
-  text: "Delete service",
-  classes: "govuk-button--warning"
-}) }}
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Create your form
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="change-name" class="govuk-link">Edit the name of your form</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="type-of-answer.html" class="govuk-link">Add and edit your questions</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="declaration" class="govuk-link">Add a declaration for people to agree to</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="declaration" class="govuk-link">Add information about what happens next</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Set email address for completed forms
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="submission-email" class="govuk-link">Set the email address completed forms will be sent to</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="confirm-submission-email.html" class="govuk-link">Enter the email address confirmation code</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Payment information
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="payment-information.html" class="govuk-link">Set the payment information</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Provide privacy and contact details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" class="govuk-link">Provide a link to privacy information for this form</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" class="govuk-link">Provide contact details for support</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Create your notifications to send
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="notification.html" class="govuk-link">Set the confirmation email</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Make your service live
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="make-your-service-live" class="govuk-link">Make your service live</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+      {{ govukButton({
+        text: "Delete service",
+        classes: "govuk-button--warning"
+      }) }}
     </div>
     <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
-        <p class="govuk-body govuk-body-s">You can get support by:</p>
-<ul class="govuk-list govuk-body-s govuk-list--spaced">
-  <li><a href="#">Online documentation</a></li>
-  <li><a href="#">Slack</a></li>
-  <li><a href="#">Send an email to support</a></li>
-  <li><a href="#">Online forum</a></li>
-</ul>
+      <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
+      <p class="govuk-body govuk-body-s">You can get support by:</p>
+      <ul class="govuk-list govuk-body-s govuk-list--spaced">
+        <li><a href="#">Online documentation</a></li>
+        <li><a href="#">Slack</a></li>
+        <li><a href="#">Send an email to support</a></li>
+        <li><a href="#">Online forum</a></li>
+      </ul>
     </div>
   </div>
 {% endblock %}

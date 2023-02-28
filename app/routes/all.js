@@ -2,6 +2,10 @@ var arraySort = require('array-sort')
 
 module.exports = function (router) {
 
+  router.post('/application/create/name-of-the-service', function (req, res) {
+      res.redirect('/application/create/list')
+  })
+
   router.post('/application/sign-in', function (req, res) {
     const { email, password} = req.body;
     if (!email || !password){

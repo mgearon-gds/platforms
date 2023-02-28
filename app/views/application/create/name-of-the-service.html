@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  My Profile - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/application/create/name-of-the-service" method="post" class="form">
+        {{ govukInput({
+          label: {
+            text: "What is the name of the service?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "The form name will be shown at the top of each page of the form. Use a name that describes what the form will help people to do. For example ‘Apply for a fishing licence’."
+          },
+          id: "name-of-the-service",
+          name: "name-of-the-service"
+        }) }}
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

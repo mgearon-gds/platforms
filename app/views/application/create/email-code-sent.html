@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Confirmation code sent - {{serviceName}}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">{{ data['name-of-the-service'] }}</span>
+      <h1 class="govuk-heading-l">Confirmation code sent</h1>
+      <p class="govuk-body">We've sent a confirmation code and your email address to michael.gearon@digital.cabinet-office.gov.uk.</p>
+      <p class="govuk-body">The recipient will be asked to give you the code. You need to enter the code to confirm the email address.</p>
+      <p class="govuk-body"><a href="confirm-submission-email" class="govuk-link">Enter the email address confirmation code</a></p>
+      <p class="govuk-body"><a href="list" class="govuk-link">Continue creating a form</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
+      <p class="govuk-body govuk-body-s">You can get support by:</p>
+      <ul class="govuk-list govuk-body-s govuk-list--spaced">
+        <li><a href="#">Online documentation</a></li>
+        <li><a href="#">Slack</a></li>
+        <li><a href="#">Send an email to support</a></li>
+        <li><a href="#">Online forum</a></li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

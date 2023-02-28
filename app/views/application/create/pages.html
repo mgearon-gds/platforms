@@ -5,22 +5,21 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l">Fishing Permit Application</span>
-        <h2 class="govuk-heading-l">Add and edit your questions</h2>
-        {{govukTag({
-          text: "DRAFT",
-          classes: "govuk-tag--purple govuk-!-margin-bottom-6"
-        })}}
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Add a question"
-  }) }}
-
-  <a class="govuk-link" href="#">Preview this form in a new tab</a>
-</div>     
-        </div>
+      <span class="govuk-caption-l">{{ data['name-of-the-service'] }}</span>
+      <h2 class="govuk-heading-l">Add and edit your questions</h2>
+      {{govukTag({
+        text: "DRAFT",
+        classes: "govuk-tag--purple govuk-!-margin-bottom-6"
+      })}}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Add a question"
+        }) }}
+        <a class="govuk-link" href="#">Preview this form in a new tab</a>
+      </div>     
     </div>
-      <div class="govuk-grid-row">
+  </div>
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">Your questions</h2>
         <table class="govuk-table">
@@ -30,84 +29,87 @@
                     <td class="govuk-table__cell">
                       <div class="govuk-button-group">
                       {{ govukButton({
-  text: "Move down",
-  classes: "govuk-button--secondary"
-}) }}
-</div></td>
+                        text: "Move down",
+                        classes: "govuk-button--secondary"
+                      }) }}
+                      </div>
+                    </td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">What’s your address?</td>
-                    <td class="govuk-table__cell">       <div class="govuk-button-group">
-                        {{ govukButton({
-    text: "Move up",
-    classes: "govuk-button--secondary"
-  }) }}
+                  <td class="govuk-table__cell">What’s your address?</td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-button-group">
                       {{ govukButton({
-  text: "Move down",
-  classes: "govuk-button--secondary"
-}) }}
-</div></td>
+                        text: "Move up",
+                        classes: "govuk-button--secondary"
+                      }) }}
+                      {{ govukButton({
+                        text: "Move down",
+                        classes: "govuk-button--secondary"
+                      }) }}
+                    </div>
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">What’s your phone number?</td>
-                    <td class="govuk-table__cell"><div class="govuk-button-group">
+                  <td class="govuk-table__cell">What’s your phone number?</td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-button-group">
                       {{ govukButton({
-    text: "Move up",
-    classes: "govuk-button--secondary"
-  }) }}
+                        text: "Move up",
+                        classes: "govuk-button--secondary"
+                      }) }}
                       {{ govukButton({
-  text: "Move down",
-  classes: "govuk-button--secondary"
-}) }}
-</div></td>
+                        text: "Move down",
+                        classes: "govuk-button--secondary"
+                      }) }}
+                    </div>
+                  </td>
                 </tr>
             </tbody>
         </table>
-       
-        
-{{ govukRadios({
-  classes: "govuk-radios",
-  name: "changed-name",
-  fieldset: {
-    legend: {
-      text: "Have you finished editing your questions?",
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "Selecting ‘Yes’ will mark this task as complete. You’ll still be able to make changes if you need to."
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-            hint: {
-        text: ""
-      }
-    },
-    {
-      value: "no",
-      text: "No, I'll come back later",
-            hint: {
-        text: ""
-      }
-    }
-  ]
-}) }}
-{{ govukButton({
-  text: "Save and continue",
-  href: "list"
-}) }}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              text: "Have you finished editing your questions?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Selecting ‘Yes’ will mark this task as complete. You’ll still be able to make changes if you need to."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              hint: {
+                text: ""
+              }
+            },
+            {
+              value: "no",
+              text: "No, I'll come back later",
+              hint: {
+                text: ""
+              }
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Save and continue",
+          href: "list"
+        }) }}
     </div>
     <div class="govuk-grid-column-one-third">
-             <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
-        <p class="govuk-body govuk-body-s">You can get support by:</p>
-<ul class="govuk-list govuk-body-s govuk-list--spaced">
-  <li><a href="#">Online documentation</a></li>
-  <li><a href="#">Slack</a></li>
-  <li><a href="#">Send an email to support</a></li>
-  <li><a href="#">Online forum</a></li>
-</ul>
+      <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
+      <p class="govuk-body govuk-body-s">You can get support by:</p>
+      <ul class="govuk-list govuk-body-s govuk-list--spaced">
+        <li><a href="#">Online documentation</a></li>
+        <li><a href="#">Slack</a></li>
+        <li><a href="#">Send an email to support</a></li>
+        <li><a href="#">Online forum</a></li>
+      </ul>
     </div>
   </div>
 {% endblock %}

@@ -1,7 +1,12 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-// Add your routes here - above the module.exports line
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+// Add your routes here
 require('./routes/core.js')(router)
 require('./routes/all.js')(router)
 require('./routes/forms.js')(router)
@@ -81,5 +86,3 @@ router.post('/add-new-word', function (req, res) {
     res.redirect('all?status=success')
   }
 })
-
-module.exports = router

@@ -6,96 +6,93 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-l">Payment information</h2>
-{{ govukInput({
-  label: {
-    text: "Title of the payment",
-    classes: "govuk-label--m"
-  },
-  id: "event-name",
-    hint: {
-    text: "Briefly describe what the user is paying for. For example, “Pay for a parking permit”. This will also be your website address. Do not include names or personal information."
-  },
-  name: "event-name"
-}) }}
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-{{ govukInput({
-  label: {
-    text: "Details (optional)",
-    classes: "govuk-label--m"
-  },
-  id: "event-name",
-    hint: {
-    text: "Give your users more information. For example, you could tell them how long it takes for their application to be processed."
-  },
-  name: "event-name"
-}) }}
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-{% set emailHtml %}
-{{ govukInput({
-  id: "contact-by-email",
-  name: "contact-by-email",
-  type: "email",
-    prefix: {
-    text: "£"
-  },
-  autocomplete: "email",
-  spellcheck: false,
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Enter the amount"
-  }
-}) }}
-{% endset -%}
-
-{% set phoneHtml %}
-{{ govukTextarea({
-  name: "more-detail",
-  id: "more-detail",
-  label: {
-    text: "Hint text (optional)"
-  },
-  hint: {
-    text: "Tell users how to work out how much they should pay, or where to find the payment amount."
-  }
-}) }}
-{% endset -%}
-
-
-{{ govukRadios({
-  name: "contact",
-  fieldset: {
-    legend: {
-      text: "Is the payment for a fixed amount?",
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "Select one option."
-  },
-  items: [
-    {
-      value: "email",
-      text: "Yes",
-      conditional: {
-        html: emailHtml
-      }
-    },
-    {
-      value: "phone",
-      text: "No",
-      conditional: {
-        html: phoneHtml
-      }
-    }
-  ]
-}) }}
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Confirm",
-    href: "list.html"
-  }) }}
-</div>
-    </div>
+        {{ govukInput({
+          label: {
+            text: "Title of the payment",
+            classes: "govuk-label--m"
+          },
+          id: "title-of-the-payment",
+          hint: {
+            text: "Briefly describe what the user is paying for. For example, “Pay for a parking permit”. This will also be your website address. Do not include names or personal information."
+          },
+          name: "title-of-the-payment"
+        }) }}
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        {{ govukInput({
+          label: {
+            text: "Details (optional)",
+            classes: "govuk-label--m"
+          },
+          id: "details-of-the-payment",
+          hint: {
+            text: "Give your users more information. For example, you could tell them how long it takes for their application to be processed."
+          },
+          name: "details-of-the-payment"
+        }) }}
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        {% set emailHtml %}
+          {{ govukInput({
+            id: "contact-by-email",
+            name: "contact-by-email",
+            type: "email",
+            prefix: {
+              text: "£"
+            },
+            autocomplete: "email",
+            spellcheck: false,
+            classes: "govuk-!-width-one-third",
+            label: {
+              text: "Enter the amount"
+            }
+          }) }}
+        {% endset -%}
+        {% set phoneHtml %}
+          {{ govukTextarea({
+            name: "more-detail",
+            id: "more-detail",
+            label: {
+              text: "Hint text (optional)"
+            },
+            hint: {
+              text: "Tell users how to work out how much they should pay, or where to find the payment amount."
+            }
+          }) }}
+        {% endset -%}
+        {{ govukRadios({
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Is the payment for a fixed amount?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select one option."
+          },
+          items: [
+            {
+              value: "email",
+              text: "Yes",
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "phone",
+              text: "No",
+              conditional: {
+                html: phoneHtml
+              }
+            }
+          ]
+        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm",
+            href: "list.html"
+          }) }}
+        </div>
+      </div>
     <div class="govuk-grid-column-one-third">
           <h3 class="govuk-heading-s govuk-blue-line">Help and support</h3>
         <p class="govuk-body govuk-body-s">You can get support by:</p>
