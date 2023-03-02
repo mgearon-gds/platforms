@@ -163,10 +163,27 @@
       </div>
     </div>
 {{ govukPagination({
-  next: {
-    labelText: "1 of 3",
+  previous: {
     href: "#"
-  }
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+           current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
 }) }}
   </div>
 </div>
