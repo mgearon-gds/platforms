@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Edit question - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "list"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Testing the service</h1>
+        <div class="govuk-inset-text">
+            Link to send to participants: <a class="govuk-link" href="https://submit.forms.service.gov.uk/preview-form/145/apply-for-fishing-permit/287">https://submit.forms.service.gov.uk/preview-form/145/apply-for-fishing-permit/287</a>
+        </div>
+        <h2 class="govuk-heading-m">Analytics and feedback</h2>
+    <h2 class="govuk-heading-s">Since 10 Febuary 2023</h2>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-l govuk-!-margin-bottom-0">10 minutes</h3>
+        <p class="govuk-body-s">
+          average time to complete form
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-l govuk-!-margin-bottom-0">24%</h3>
+        <p class="govuk-body-s">
+          not completing form
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-l govuk-!-margin-bottom-0">5%</h3>
+        <p class="govuk-body-s">
+          errors happening in the service
+        </p>
+      </div>
+    </div>
+        <p class="govuk-body"><a href="#" class="govuk-link">See all analytics and feedback</a></p>
+
+        {{ govukRadios({
+            name: "where-do-you-live",
+            fieldset: {
+            legend: {
+      text: "Is this service still being tested?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "Yes",
+       checked: true
+    },
+    {
+      value: "scotland",
+      text: "No"
+    }
+  ]
+}) }}
+        {{ govukButton({
+            text: "Save and continue",
+            href: "test-your-service-list"
+        }) }}
+    </div>
+  </div>
+{% endblock %}

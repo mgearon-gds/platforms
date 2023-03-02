@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Edit question - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "list"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "changed-name",
+        fieldset: {
+            legend: {
+                text: "Does the service need testing?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+            }
+        },
+        hint: {
+            text: "This involves inviting a limited number of people to test your service so you can get feedback and improve it."
+        },
+        items: [
+            {
+            value: "yes",
+            text: "Yes"
+            },
+            {
+            value: "no",
+            text: "No"
+            }
+        ]
+        }) }}
+        {{ govukButton({
+            text: "Save and continue",
+            href: "test-your-service-list"
+        }) }}
+    </div>
+  </div>
+{% endblock %}

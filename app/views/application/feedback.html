@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - GOV.UK Case Management
+{% endblock %}
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "overview"
+    },
+    {
+      text: "Fishing Permit Application Form",
+      href: "all"
+    },
+    {
+      text: "Transactions",
+      href: "#"
+    }
+  ]
+}) }}
+<nav class="second-nav">
+<ul class="govuk-!-padding-bottom-4 govuk-!-padding-top-4">
+    <li>
+      <a href="/application/all" class="govuk-link">Cases</a>
+      </li>
+    <li>
+      <a href="/application/forms/form-designer/form-home" class="govuk-link">Form</a>
+      </li>
+      <li>
+        <a href="/application/payments" class="govuk-link">Transactions</a>
+        </li>
+        <li>
+          <a href="/application/notifications/notify" class="govuk-link">Notifications</a>
+          </li>
+          <li>
+            <a href="/application/published-content" class="govuk-link">Pages</a>
+            </li>
+          <li>
+            <a href="/application/report" class="govuk-link">Insights</a>
+            </li>
+
+
+        <li>
+          <a href="/application/settings" class="govuk-link">Settings</a>
+          </li>
+  </ul>
+  </nav>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Insights</h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <ul class="govuk-list govuk-list--spaced">
+      <li>
+        <a class="govuk-link" href="report.html">Overall</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="feedback.html">Feedback</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Notifications</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Payments</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Case Management</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Forms</a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Page 1</span>
+    <h2 class="govuk-heading-l">Feedback</h2>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">Export all data</a>
+    </p>
+    <h2 class="govuk-heading-m">28 Feb 2023</h2>
+    {{govukTag({
+        text: "User",
+        classes: "govuk-tag--blue"
+    })}}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Trying to sign in</h3>
+    <p class="govuk-body govuk-!-margin-bottom-2">Wont let me sign in</p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+    <p class="govuk-body govuk-body-s">Page: <a class="govuk-link" href="#">Sign in</a>
+    </div>
+    <div class="govuk-grid-column-one-half">
+          <p style="text-align:right" class="govuk-body govuk-body-s"><a  class="govuk-link" href="#">View analytics for this page</a>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    {{govukTag({
+        text: "User",
+        classes: "govuk-tag--blue"
+    })}}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Trying to log in</h3>
+    <p class="govuk-body govuk-!-margin-bottom-2">Server and page cannot be found	</p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+    <p class="govuk-body govuk-body-s">Page: <a class="govuk-link" href="#">Sign in</a>
+    </div>
+    <div class="govuk-grid-column-one-half">
+          <p style="text-align:right" class="govuk-body govuk-body-s"><a  class="govuk-link" href="#">View analytics for this page</a>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    {{govukTag({
+        text: "User",
+        classes: "govuk-tag--blue"
+    })}}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Errors in the Fishing Permit Application Form.</h3>
+    <p class="govuk-body govuk-!-margin-bottom-2">The code does not come through on my phone so can not sign in.</p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+    <p class="govuk-body govuk-body-s">Page: <a class="govuk-link" href="#">Sign in</a>
+    </div>
+    <div class="govuk-grid-column-one-half">
+          <p style="text-align:right" class="govuk-body govuk-body-s"><a  class="govuk-link" href="#">View analytics for this page</a>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">16 Feb 2023</h2>
+    {{govukTag({
+        text: "Staff",
+        classes: "govuk-tag--purple"
+    })}}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">No longer need to capture the title of the person.</h3>
+    <p class="govuk-body govuk-!-margin-bottom-2">We've been told we no longer need to capture the title of the person when they make applications to apply for a fishing licence.</p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+    <p class="govuk-body govuk-body-s">Page: <a class="govuk-link" href="#">Name</a>
+    </div>
+    <div class="govuk-grid-column-one-half">
+          <p style="text-align:right" class="govuk-body govuk-body-s"><a  class="govuk-link" href="#">View analytics for this page</a>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">28 Dec 2023</h2>
+    {{govukTag({
+        text: "User",
+        classes: "govuk-tag--blue"
+    })}}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Errors in the Fishing Permit Application Form.</h3>
+    <p class="govuk-body govuk-!-margin-bottom-2">The code does not come through on my phone so can not sign in.</p>
+        <div class="govuk-grid-row govuk-!-margin-bottom-8">
+          <div class="govuk-grid-column-one-half">
+    <p class="govuk-body govuk-body-s">Page: <a class="govuk-link" href="#">Sign in</a>
+    </div>
+    <div class="govuk-grid-column-one-half">
+          <p style="text-align:right" class="govuk-body govuk-body-s"><a  class="govuk-link" href="#">View analytics for this page</a>
+      </div>
+    </div>
+{{ govukPagination({
+  next: {
+    labelText: "1 of 3",
+    href: "#"
+  }
+}) }}
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+  </div>
+</div>
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+
+
+    </div>
+  </div>
+{% endblock %}
