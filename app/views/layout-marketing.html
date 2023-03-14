@@ -67,13 +67,8 @@
 
             <ul id="navigation" class="govuk-header__navigation-list">
               <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="https://www.gov.uk/government/organisations/government-digital-service/about">
-                  About
-                </a>
-              </li>
-              <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="sign-in">
-                  Give feedback
+                <a class="govuk-header__link" href="#">
+                  Give feedback and sign up for user research
                 </a>
               </li>
               <li class="govuk-header__navigation-item">
@@ -97,38 +92,24 @@
 {% if useAutoStoreData %}
   {% block footer %}
 
-    {{ govukFooter({
-  navigation: [
-    {
-      title: "About",
-      width: "one-third",
-      columns: 1,
-      items: [
-        {
-          href: "https://gds.blog.gov.uk/category/digital-service-platforms/",
-          text: "Find out more about GOV.UK Platforms"
-        },
-        {
-          href: "https://www.gov.uk/service-toolkit",
-          text: "Service toolkit"
-        },
-        {
-          href: "#3",
-          text: "Get started"
-        }
-      ]
-    },
-    {
-      title: "Support",
-      width: "one-third",
-      items: [
-        {
-          href: "#1",
-          text: "Contact the GOV.UK Platforms team"
-        }
-      ]
-    }
-  ]
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "#",
+        text: "Cookies"
+      },
+      {
+        href: "#",
+        text: "Accessibility"
+      },
+      {
+        href: "#",
+        text: "Privacy"
+      }
+    ],
+        html: 'Built by the <a href="https://www.gov.uk/government/organisations/government-digital-service" class="govuk-footer__link">Government Digital Service</a>'
+  }
 }) }}
   {% endblock %}
 {% endif %}
