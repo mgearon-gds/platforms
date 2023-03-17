@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  My Profile - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/application/create/name-of-the-service" method="post" class="form">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set emailHtml %}
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload a file"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Do you want to upload existing case management data?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "The file format can be XLS, SQL, JSON, or CSV format"
+  },
+  items: [
+    {
+      value: "email",
+      text: "Yes",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "phone",
+      text: "No"
+    }
+  ]
+}) }}
+        {{ govukButton({
+          text: "Save and continue",
+          href:"../all.html"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
