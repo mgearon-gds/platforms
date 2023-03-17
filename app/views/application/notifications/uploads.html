@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "overview"
+      },
+      {
+        text: "Fishing Permit Application Form",
+        href: "all"
+      },
+      {
+        text: "Transactions",
+        href: "#"
+      }
+    ]
+  }) }}
+  {% include "includes/second-nav.html" %}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Notifications</h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {% include "includes/notify-sidebar.html" %}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Uploads</h2>
+        <p class="govuk-body">You have not uploaded any files recently.</p>
+        <p class="govuk-body">Upload a letter and Notify will print, pack and post it for you.</p>
+        <p class="govuk-body">Email message template</p>
+        <div class="govuk-button-group govuk-!-margin-top-8">
+            {{ govukButton({
+                text: "New template",
+                classes: "govuk-button--secondary"
+            }) }}
+            {{ govukButton({
+                text: "New folder",
+                classes: "govuk-button--secondary"
+            }) }}
+</div>
+    </div>
+</div>
+{% endblock %}

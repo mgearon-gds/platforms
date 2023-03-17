@@ -4,6 +4,10 @@
   - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "all.html"
+}) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
