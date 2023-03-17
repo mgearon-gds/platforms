@@ -1,0 +1,331 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "overview"
+      },
+      {
+        text: "Fishing Permit Application Form",
+        href: "all"
+      },
+      {
+        text: "Transactions",
+        href: "#"
+      }
+    ]
+  }) }}
+  {% include "includes/second-nav.html" %}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Notifications</h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {% include "includes/notify-sidebar.html" %}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Settings</h2>
+        {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Service name"
+      },
+      value: {
+        text: "Fishing Permit Application"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Sign-in method"
+      },
+      value: {
+        text: "Text message code"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+<h2 class="govuk-heading-m govuk-!-margin-bottom-6">Email settings</h2>
+        {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Send emails"
+      },
+      value: {
+        text: "On"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Reply-to email addresses"
+      },
+      value: {
+        text: "Not set"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Email branding"
+      },
+      value: {
+        text: "GOV.UK"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Send files by email"
+      },
+      value: {
+        text: "Not set up"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+<h2 class="govuk-heading-m govuk-!-margin-bottom-6">Text message settings</h2>
+        {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Send text messages"
+      },
+      value: {
+        text: "On"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Text message senders"
+      },
+      value: {
+        text: "GOVUK"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Start text messages with service name"
+      },
+      value: {
+        text: "On"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Send international text messages"
+      },
+      value: {
+        text: "On"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Receive text messages"
+      },
+      value: {
+        text: "Off"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+<h2 class="govuk-heading-m govuk-!-margin-bottom-6">Letter settings</h2>
+        {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Send letters"
+      },
+      value: {
+        text: "On"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Send international letters"
+      },
+      value: {
+        text: "On"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Sender addresses"
+      },
+      value: {
+        text: "Not set"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Letter branding"
+      },
+      value: {
+        text: "Not set"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Receive text messages"
+      },
+      value: {
+        text: "Off"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
