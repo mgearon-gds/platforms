@@ -3,48 +3,23 @@
   Overview - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Home",
-      href: "overview"
-    },
-    {
-      text: "Fishing Permit Application Form",
-      href: "all"
-    },
-    {
-      text: "Transactions",
-      href: "#"
-    }
-  ]
-}) }}
-<nav class="second-nav">
-<ul class="govuk-!-padding-bottom-4 govuk-!-padding-top-4">
-    <li>
-      <a href="/application/all" class="govuk-link">Cases</a>
-      </li>
-    <li>
-      <a href="/application/forms/form-designer/form-home" class="govuk-link">Form</a>
-      </li>
-      <li>
-        <a href="/application/payments" class="govuk-link">Transactions</a>
-        </li>
-        <li>
-          <a href="/application/notifications/notify" class="govuk-link">Notifications</a>
-          </li>
-          <li>
-            <a href="/application/published-content" class="govuk-link">Pages</a>
-            </li>
-          <li>
-            <a href="/application/report" class="govuk-link">Insights</a>
-            </li>
-
-
-        <li>
-          <a href="/application/settings" class="govuk-link">Settings</a>
-          </li>
-  </ul>
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "overview"
+      },
+      {
+        text: "Fishing Permit Application Form",
+        href: "all"
+      },
+      {
+        text: "Transactions",
+        href: "#"
+      }
+    ]
+  }) }}
+  {% include "includes/second-nav.html" %}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
@@ -103,6 +78,59 @@
           </p>
         </div>
         <h3 class="info result-count govuk-heading-m govuk-!-font-weight-regular govuk-!-margin-top-8 govuk-!-margin-bottom-6" id="result-count" aria-live="assertive">{{length|safe}}</h3>
+        <h4 class="govuk-heading-m">New cases</h4>
+                  <section>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds one-line">
+                <h4 class="govuk-heading-s"><a href="word?word={{ case.word}}" class="govuk-link govuk-link--no-visited-state">Tom Durrant</a></h4>
+                <p class="govuk-body-s">{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</p>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <p class="govuk-body govuk-!-text-align-right">
+
+                    <strong class="govuk-tag govuk-tag--green">
+                      New
+                    </strong>
+                </p>
+              </div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                <p class="govuk-body">Not assigned</p>
+                <p class="govuk-body govuk-!-margin-bottom-0">
+                  <!--{{ case.addedon }}-->
+                  Received on 17 March 2023
+                </p>
+              </div>
+            </div>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                        <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds one-line">
+                <h4 class="govuk-heading-s"><a href="word?word={{ case.word}}" class="govuk-link govuk-link--no-visited-state">Nkiru Proscovia</a></h4>
+                <p class="govuk-body-s">{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</p>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <p class="govuk-body govuk-!-text-align-right">
+
+                    <strong class="govuk-tag govuk-tag--green">
+                      New
+                    </strong>
+                </p>
+              </div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                <p class="govuk-body">Not assigned</p>
+                <p class="govuk-body govuk-!-margin-bottom-0">
+                  <!--{{ case.addedon }}-->
+                  Received on 17 March 2023
+                </p>
+              </div>
+            </div>
+          </section>
+                  <h4 class="govuk-heading-m govuk-!-margin-top-8">All cases</h4>
+
         {% for case in cases %}
           <section>
             <div class="govuk-grid-row">

@@ -3,6 +3,25 @@
   Service Performance
   - {{serviceName}}
 {% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "overview"
+      },
+      {
+        text: "Fishing Permit Application Form",
+        href: "all"
+      },
+      {
+        text: "Transactions",
+        href: "#"
+      }
+    ]
+  }) }}
+  {% include "includes/second-nav.html" %}
+{% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -14,7 +33,7 @@
         text: "Link new page",
         classes: "govuk-!-margin-bottom-8"
       }) }}
-      <h2 class="govuk-heading-m">Bringing your pet to the UK from Ukraine</h2>
+      <h2 class="govuk-heading-m">How to apply for a fishing permit</h2>
       <p class="govuk-body">
         Type: Guidance
       </p>
@@ -32,7 +51,7 @@
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<h2 class="govuk-heading-m">Bringing your pet to the UK from Ukraine</h2>
+<h2 class="govuk-heading-m">Apply for a fishing permit</h2>
 <p class="govuk-body">
   Type: Form
 </p>

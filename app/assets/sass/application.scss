@@ -411,3 +411,349 @@ nav ul li ul li a {
     margin-bottom: 0;
   }
 }
+
+.message-text{
+  background-color: #e2e1e0;
+  padding: 20px;
+}
+
+.message-yellow{
+  background-color: yellow;
+}
+
+.big-number,.big-number-dark,.big-number-smaller,.big-number-smallest,.big-number-with-status {
+  display: block
+}
+
+.big-number-label,.big-number-number {
+  display: block
+}
+
+.big-number-number {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "tnum" 1;
+  font-feature-settings: "tnum" 1;
+  font-weight: 700;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.09375
+}
+
+@media print {
+  .big-number-number {
+      font-family: sans-serif
+  }
+}
+
+@supports (font-variant-numeric: tabular-nums) {
+  .big-number-number {
+      -webkit-font-feature-settings:normal;
+      font-feature-settings: normal;
+      font-variant-numeric: tabular-nums
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .big-number-number {
+      font-size:48px;
+      font-size: 3rem;
+      line-height: 1.0416666667
+  }
+}
+
+@media print {
+  .big-number-number {
+      font-size: 32pt;
+      line-height: 1.15
+  }
+}
+
+.big-number-label {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  padding-bottom: 10px
+}
+
+@media print {
+  .big-number-label {
+      font-family: sans-serif
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .big-number-label {
+      font-size:19px;
+      font-size: 1.1875rem;
+      line-height: 1.3157894737
+  }
+}
+
+@media print {
+  .big-number-label {
+      font-size: 14pt;
+      line-height: 1.15
+  }
+}
+
+.pill .big-number-number {
+  padding-left: 5px
+}
+
+@media (min-width: 26.25em) {
+  .pill .big-number-number {
+      padding-left:10px
+  }
+}
+
+.big-number-dark {
+  padding: 15px;
+  position: relative;
+  background: #0b0c0c;
+  color: #fff
+}
+
+.big-number-dark .big-number-number {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "tnum" 1;
+  font-feature-settings: "tnum" 1;
+  font-weight: 700;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.0416666667
+}
+
+@media print {
+  .big-number-dark .big-number-number {
+      font-family: sans-serif
+  }
+}
+
+@supports (font-variant-numeric: tabular-nums) {
+  .big-number-dark .big-number-number {
+      -webkit-font-feature-settings:normal;
+      font-feature-settings: normal;
+      font-variant-numeric: tabular-nums
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .big-number-dark .big-number-number {
+      font-size:36px;
+      font-size: 2.25rem;
+      line-height: 1.1111111111
+  }
+}
+
+@media print {
+  .big-number-dark .big-number-number {
+      font-size: 24pt;
+      line-height: 1.05
+  }
+}
+
+.big-number-smaller .big-number-number {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "tnum" 1;
+  font-feature-settings: "tnum" 1;
+  font-weight: 700;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.0416666667
+}
+
+@media print {
+  .big-number-smaller .big-number-number {
+      font-family: sans-serif
+  }
+}
+
+@supports (font-variant-numeric: tabular-nums) {
+  .big-number-smaller .big-number-number {
+      -webkit-font-feature-settings:normal;
+      font-feature-settings: normal;
+      font-variant-numeric: tabular-nums
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .big-number-smaller .big-number-number {
+      font-size:36px;
+      font-size: 2.25rem;
+      line-height: 1.1111111111
+  }
+}
+
+@media print {
+  .big-number-smaller .big-number-number {
+      font-size: 24pt;
+      line-height: 1.05
+  }
+}
+
+.big-number-smallest .big-number-number {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "tnum" 1;
+  font-feature-settings: "tnum" 1;
+  font-weight: 700;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.1111111111
+}
+
+@media print {
+  .big-number-smallest .big-number-number {
+      font-family: sans-serif
+  }
+}
+
+@supports (font-variant-numeric: tabular-nums) {
+  .big-number-smallest .big-number-number {
+      -webkit-font-feature-settings:normal;
+      font-feature-settings: normal;
+      font-variant-numeric: tabular-nums
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .big-number-smallest .big-number-number {
+      font-size:24px;
+      font-size: 1.5rem;
+      line-height: 1.25
+  }
+}
+
+@media print {
+  .big-number-smallest .big-number-number {
+      font-size: 18pt;
+      line-height: 1.15
+  }
+}
+
+.big-number-with-status {
+  position: relative;
+  margin-bottom: 20px
+}
+
+.big-number-with-status .big-number,.big-number-with-status .big-number-smaller {
+  padding: 15px;
+  position: relative;
+  background: #0b0c0c;
+  color: #fff
+}
+
+.big-number-with-status .big-number-label {
+  padding-bottom: 0
+}
+
+.big-number-with-status .big-number-label:link,.big-number-with-status .big-number-label:visited {
+  color: #1d70b8
+}
+
+.big-number-with-status .big-number-link {
+  text-decoration: none;
+  background: #1d70b8;
+  display: block;
+  border: 2px solid #1d70b8;
+  margin-bottom: 5px
+}
+
+.big-number-with-status .big-number-link:hover .big-number-label {
+  text-decoration-thickness: max(3px,.1875rem,.12em);
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+  -webkit-text-decoration-skip: none;
+  text-decoration-skip: none
+}
+
+.big-number-with-status .big-number-link:active,.big-number-with-status .big-number-link:focus {
+  background: #fd0;
+  border: none;
+  padding: 2px;
+  box-shadow: inset 0 -4px #0b0c0c
+}
+
+.big-number-with-status .big-number-link:active .big-number-label,.big-number-with-status .big-number-link:active .big-number-number,.big-number-with-status .big-number-link:active .big-number-smaller,.big-number-with-status .big-number-link:focus .big-number-label,.big-number-with-status .big-number-link:focus .big-number-number,.big-number-with-status .big-number-link:focus .big-number-smaller {
+  color: #0b0c0c;
+  text-decoration: none
+}
+
+.big-number-with-status .big-number-link .big-number,.big-number-with-status .big-number-link .big-number-smaller {
+  background: 0 0
+}
+
+.big-number-with-status .big-number-link .big-number-label {
+  text-decoration: underline;
+  text-decoration-thickness: max(1px,.0625rem);
+  text-underline-offset: .1em
+}
+
+.big-number-with-status .big-number-status,.big-number-with-status .big-number-status-failing {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  display: block;
+  background: #00703c;
+  color: #fff;
+  padding: 15px
+}
+
+@media print {
+  .big-number-with-status .big-number-status,.big-number-with-status .big-number-status-failing {
+      font-family: sans-serif
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .big-number-with-status .big-number-status,.big-number-with-status .big-number-status-failing {
+      font-size:19px;
+      font-size: 1.1875rem;
+      line-height: 1.3157894737
+  }
+}
+
+@media print {
+  .big-number-with-status .big-number-status,.big-number-with-status .big-number-status-failing {
+      font-size: 14pt;
+      line-height: 1.15
+  }
+}
+
+.big-number-with-status .big-number-status--with-link {
+  padding: 0
+}
+
+.big-number-with-status .big-number-status--with-link>.govuk-link {
+  display: block;
+  padding: 15px
+}
+
+.big-number-with-status .big-number-status--with-link>.govuk-link:active,.big-number-with-status .big-number-status--with-link>.govuk-link:focus {
+  box-shadow: inset 0 -4px #0b0c0c
+}
+
+.big-number-with-status .big-number-status--with-link>.govuk-link:active {
+  text-decoration: none;
+  background-color: #fd0;
+  color: #0b0c0c
+}
+
+.big-number-with-status .big-number-status-failing {
+  background: #d4351c
+}

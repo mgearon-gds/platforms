@@ -9,9 +9,9 @@
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">Case number: {{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{word}}</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Tom Durrant</h1>
       <p class="govuk-body">
-        Sarah Phillps is currently assigned to the case — <a href="change-user">change <span class="govuk-visually-hidden">assignee</span></a>
+        No one is currently assigned to the case — <a href="change-user">change <span class="govuk-visually-hidden">assignee</span></a>
       </p>
     </div>
   </div>
@@ -51,6 +51,14 @@
           },
           {
             key: {
+              text: "Customer reference number"
+            },
+            value: {
+              text: "HDJ2123F"
+            }
+          },
+          {
+            key: {
               text: "Last change made on"
             },
             value: {
@@ -62,7 +70,15 @@
               text: "Current status"
             },
             value: {
-              html: "<strong class='govuk-tag govuk-tag--yellow'>Delayed</strong>"
+              html: "<strong class='govuk-tag govuk-tag--green'>New</strong>"
+            }
+          },
+          {
+            key: {
+              text: "Payment"
+            },
+            value: {
+              html: "<strong>Not recieved</strong>"
             }
           },
           {
@@ -70,7 +86,7 @@
               text: "Workflow stage"
             },
             value: {
-              html: reference
+              html: "Application recieved"
             }
           }
         ]

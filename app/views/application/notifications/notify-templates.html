@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "overview"
+      },
+      {
+        text: "Fishing Permit Application Form",
+        href: "all"
+      },
+      {
+        text: "Transactions",
+        href: "#"
+      }
+    ]
+  }) }}
+  {% include "includes/second-nav.html" %}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Notifications</h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <ul class="govuk-list">
+        <li>
+          <a href="#" class="govuk-link">Dashboard</a>  
+        </li>
+        <li>
+          <a href="notify-templates.html" class="govuk-link">Templates</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Uploads</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Team members</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Settings</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">API integration</a>  
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Templates</h2>
+        <h3 class="govuk-heading-m"> <a class="govuk-link" href="manage-template">Application received (FPTX01)</h3>
+        <p class="govuk-body">Text message template</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h3 class="govuk-heading-m"><a class="govuk-link" href="#">Application received (FPEM01)</a></h3>
+        <p class="govuk-body">Email message template</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h3 class="govuk-heading-m"><a class="govuk-link" href="#">Application error (FPEM02)</a></h3>
+        <p class="govuk-body">Email message template</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h3 class="govuk-heading-m"><a class="govuk-link" href="#">Application needs assistance (FPEM03)</a></h3>
+        <p class="govuk-body">Email message template</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h3 class="govuk-heading-m"><a class="govuk-link" href="#">Application sent to printer (FPTX04)</a></h3>
+        <p class="govuk-body">Text message template</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h3 class="govuk-heading-m"><a class="govuk-link" href="#">Permit completion (FPEM05)</a></h3>
+        <p class="govuk-body">Email message template</p>
+        <div class="govuk-button-group govuk-!-margin-top-8">
+            {{ govukButton({
+                text: "New template",
+                classes: "govuk-button--secondary"
+            }) }}
+            {{ govukButton({
+                text: "New folder",
+                classes: "govuk-button--secondary"
+            }) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

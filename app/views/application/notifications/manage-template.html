@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "overview"
+      },
+      {
+        text: "Fishing Permit Application Form",
+        href: "all"
+      },
+      {
+        text: "Transactions",
+        href: "#"
+      }
+    ]
+  }) }}
+  {% include "includes/second-nav.html" %}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Notifications</h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <ul class="govuk-list">
+        <li>
+          <a href="#" class="govuk-link">Dashboard</a>  
+        </li>
+        <li>
+          <a href="notify-templates.html" class="govuk-link">Templates</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Uploads</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Team members</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Settings</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">API integration</a>  
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Manage Application received (FPTX01)</h2>
+        <div class="message-area">
+            <p class="govuk-body">To: <span class="message-yellow">((phone number))</span></p>
+            <p class="govuk-body message-text">Hi <span class="message-yellow">((name))</span>, your application to fish at <span class="message-yellow">((locationName))</span> has been recieved. This will now be reviewed in the next 7 working days.</p>
+        </div>
+        <p class="govuk-body"><a href="#" class="govuk-link">Edit text message content</a></p>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+{% set phoneHtml %}
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Case status"
+  },
+  items: [
+    {
+      value: "published",
+      text: "Application received"
+    },
+    {
+      value: "updated",
+      text: "Application sent to printer",
+      selected: true
+    },
+    {
+      value: "views",
+      text: "Application rejected"
+    },
+    {
+      value: "comments",
+      text: "Application posted"
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "When should this notification be sent?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "email",
+      text: "Application recieved",
+      checked: true
+    },
+    {
+      value: "phone",
+      text: "Case status changes",
+      conditional: {
+        html: phoneHtml
+      }
+    },
+    {
+      value: "text",
+      text: "Case is closed"
+    }
+  ]
+}) }}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+{{ govukButton({
+  text: "Delete template",
+  classes: "govuk-button--warning"
+}) }}
+</div>
+    </div>
+</div>
+{% endblock %}

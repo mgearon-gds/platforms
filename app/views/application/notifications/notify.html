@@ -3,12 +3,200 @@
   Service Performance
   - {{serviceName}}
 {% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "overview"
+      },
+      {
+        text: "Fishing Permit Application Form",
+        href: "all"
+      },
+      {
+        text: "Transactions",
+        href: "#"
+      }
+    ]
+  }) }}
+  {% include "includes/second-nav.html" %}
+{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    </div>
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">Notify prototype</h1>
+      <h1 class="govuk-heading-l">Notifications</h1>
     </div>
   </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <ul class="govuk-list">
+        <li>
+          <a href="#" class="govuk-link">Dashboard</a>  
+        </li>
+        <li>
+          <a href="notify-templates.html" class="govuk-link">Templates</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Uploads</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Team members</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Settings</a>  
+        </li>
+        <li>
+          <a href="#" class="govuk-link">API integration</a>  
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <h2 class="govuk-heading-m">In the last 7 days</h1>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <span class="big-number-with-status">
+            <a class="govuk-link govuk-link--inverse big-number-link" href="/services/61d42a76-9b11-40ce-af91-1df843a7a80a/notifications/email?status=sending,delivered,failed">
+              <span class="big-number-smaller">
+                <span class="big-number-number">492</span>
+                <span class="big-number-label">emails sent</span>
+              </span>
+            </a>    
+      <span class="big-number-status">
+        
+          No failures
+        
+      </span>
+    
+  </span>
+        </div>
+        <div class="govuk-grid-column-one-third">
+                  <span class="big-number-with-status">
+    
+  
+    <a class="govuk-link govuk-link--inverse big-number-link" href="/services/61d42a76-9b11-40ce-af91-1df843a7a80a/notifications/email?status=sending,delivered,failed">
+  
+      <span class="big-number-smaller">
+        <span class="big-number-number">
+          
+            
+              300
+            
+          
+        </span>
+        
+          <span class="big-number-label">text messages sent</span>
+        
+      </span>
+  
+    </a>
+  
+
+    
+      <span class="big-number-status">
+        
+          No failures
+        
+      </span>
+    
+  </span>
+        </div>
+        <div class="govuk-grid-column-one-third">
+               <span class="big-number-with-status">
+    
+  
+    <a class="govuk-link govuk-link--inverse big-number-link" href="/services/61d42a76-9b11-40ce-af91-1df843a7a80a/notifications/email?status=sending,delivered,failed">
+  
+      <span class="big-number-smaller">
+        <span class="big-number-number">
+          
+            
+              90
+            
+          
+        </span>
+        
+          <span class="big-number-label">letters sent</span>
+        
+      </span>
+  
+    </a>
+  
+
+    
+      <span class="big-number-status">
+        
+          No failures
+        
+      </span>
+    
+  </span>
+        </div>
+         
+      </div>
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">This year</h1>
+      <div class="govuk-grid-row ajax-block-container">
+  <div class="govuk-grid-column-one-third">
+    <div class="keyline-block">
+      
+  
+      <span class="big-number-smaller">
+        <span class="big-number-number">
+          
+            Unlimited
+          
+        </span>
+        
+          <span class="big-number-label">free email allowance</span>
+        
+      </span>
+  
+
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="keyline-block">
+      
+        
+  
+      <span class="big-number-smaller">
+        <span class="big-number-number">
+          
+            
+              39,999
+            
+          
+        </span>
+        
+          <span class="big-number-label">free text messages left</span>
+        
+      </span>
+  
+
+      
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="keyline-block">
+      
+  
+      <span class="big-number-smaller">
+        <span class="big-number-number">
+          
+            
+              £0.00
+            
+          
+        </span>
+        
+          <span class="big-number-label">spent on letters</span>
+        
+      </span>
+  
+
+    </div>
+  </div>
+</div>
+    </div>
+</div>
 {% endblock %}

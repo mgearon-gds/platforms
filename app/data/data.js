@@ -1,7 +1,7 @@
 module.exports = [
   {word: 'Andriy Shevchenko', added: '', addedon: '10 November 2016', removedon: '', status: 'not assigned'},
   {word: 'Artem Shevchuk', added: 'Denis Vishnu', addedon: '04/02/2012', removedon: '', status: 'received'},
-  {word: 'Aleksander Marchenko', added: 'Denis Vishnu', addedon: '19 November 2014', removedon: '', status: 'received'},
+  {word: 'Aleksander Marchenko', added: 'Denis Vishnu', addedon: '19 November 2014', removedon: '', status: 'New'},
   {word: 'Anna Melnyk', added: 'Orla Tegan', addedon: '10/01/2019', removedon: '', status: 'received'},
   {word: 'Antin Bondarenko', added: 'Sasha Willifrid', addedon: '28/08/2011', removedon: '', status: 'delayed'},
   {word: 'Bodashka Kovalchuk', added: 'Orla Tegan', addedon: '06/09/2016', removedon: '', status: 'closed'},
