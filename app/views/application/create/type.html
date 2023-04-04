@@ -11,60 +11,62 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      {{ govukCheckboxes({
-        name: "waste",
-        fieldset: {
-          legend: {
-            text: "What tools does the service need?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "Select all that apply."
-        },
-        items: [
-          {
-            value: "carcasses",
-            text: "Payments",
-            hint: {
-              text: "Take online payments from your users"
+      <form action="/application/create/type" method="post" class="form">
+
+        {{ govukCheckboxes({
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "What tools does the service need?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
             }
           },
-          {
-            value: "mines",
-            text: "Notifications",
-            hint: {
-              text: "Send emails, text messages and letters to your users"
-            }
+          hint: {
+            text: "Select all that apply."
           },
-          {
-            value: "farm",
-            text: "Form",
-            hint: {
-              text: "Create an accessible online form in minutes without needing technical knowledge"
+          items: [
+            {
+              value: "carcasses",
+              text: "Payments",
+              hint: {
+                text: "Take online payments from your users"
+              }
+            },
+            {
+              value: "mines",
+              text: "Notifications",
+              hint: {
+                text: "Send emails, text messages and letters to your users"
+              }
+            },
+            {
+              value: "farm",
+              text: "Form",
+              hint: {
+                text: "Create an accessible online form in minutes without needing technical knowledge"
+              }
+            },
+            {
+              value: "farm",
+              text: "Case management",
+              hint: {
+                text: "Manage cases through a workflow system"
+              }
+            },
+            {
+              value: "farm",
+              text: "Sign in",
+              hint: {
+                text: "Let users sign in to your service"
+              }
             }
-          },
-          {
-            value: "farm",
-            text: "Case management",
-            hint: {
-              text: "Manage cases through a workflow system"
-            }
-          },
-          {
-            value: "farm",
-            text: "Sign in",
-            hint: {
-              text: "Let users sign in to your service"
-            }
-          }
-        ]
-      }) }}
-      {{ govukButton({
-        text: "Save and continue",
-        href: "existing-data.html"
-      }) }}
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
     </div>
   </div>
 {% endblock %}

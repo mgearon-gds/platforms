@@ -27,9 +27,35 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Forms</h1>
-        <p class="govuk-body">
-          No forms have been created for this group. You can create a new form using GOV.UK Forms.
-        </p>
+{{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Form name"
+    },
+    {
+      text: "Status"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "[External] Apply for your fishing permit application form"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ],
+    [
+      {
+        text: "[Internal] For office use only"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ]
+  ]
+}) }}
         {{ govukButton({
         text: "Create a form",
         href: "form-create-a-form.html"

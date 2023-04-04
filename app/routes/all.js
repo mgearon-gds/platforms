@@ -2,6 +2,9 @@ var arraySort = require('array-sort')
 
 module.exports = function (router) {
 
+  router.post('/application/create/type', function (req, res) {
+    res.redirect('/application/create/name-of-the-service')
+  })
   router.post('/application/create/name-of-the-service', function (req, res) {
       res.redirect('/application/create/list')
   })
