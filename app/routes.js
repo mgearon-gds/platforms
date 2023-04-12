@@ -11,6 +11,17 @@ require('./routes/core.js')(router)
 require('./routes/all.js')(router)
 require('./routes/forms.js')(router)
 
+
+router.use((req, res, next) => {  
+  const log = {  
+    method: req.method,  
+    url: req.originalUrl,  
+    data: req.session.data  
+  }  
+  console.log(JSON.stringify(log, null, 2))  
+  next()  
+})  
+
 // Word page on get
 
 router.get('/application/overview', function (req, res) {
