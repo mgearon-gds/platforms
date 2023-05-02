@@ -5,23 +5,29 @@
 
 {% block main %}
   {% block content %}
+  <div class="govuk-width-container">
+
     <main class="govuk-main-wrapper" id="main-content" role="main">
-      <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
                 {{govukTag({
           text: "Version 1",
           classes: "govuk-tag--blue"
         })}}
         <span class="govuk-caption-xl">Prototype</span>
         <h1 class="govuk-heading-xl">GOV.UK Digital Service Platforms</h1>
-
+        <p class="govuk-body-l">We want to deliver a vision that can be socialised throughout government to explain where we will be in 2025. This is a prototype to demo some of those features, if you have any questions message the Build a Service team.</p>
         <h2 class="govuk-heading-l">Shortcuts</h2>
         <ul class="govuk-list govuk-list--bullet">
           <li><a href="front-door.html">Front door page</a></li>
+          <li><a href="application/create/type">Build your service</a></li>
           <li><a href="application/overview">Signed in overview</a></li>
           <li><a href="application/all">Dashboard</a></li>
         </ul>
       </div>
+      </div>
     </main>
+    </div>
   {% endblock %}
 {% endblock %}
 
