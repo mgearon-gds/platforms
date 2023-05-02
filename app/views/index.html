@@ -4,22 +4,22 @@
 {% endblock %}
 
 {% block main %}
-  <div class="masthead">
-    <div class="hero hero--breaded">
-      {% include "includes/front-door/breadcrumb.html" %}
-      {% include "includes/front-door/hero.html" %}
-    </div>
-  </div>
   {% block content %}
     <main class="govuk-main-wrapper" id="main-content" role="main">
       <div class="govuk-width-container">
-        {% include "includes/front-door/products.html" %}
-        {% include "includes/front-door/service-standards-and-guidance.html" %}
-        {% include "includes/front-door/why-use-our-platforms.html" %}
-        {% include "includes/front-door/used-by.html" %}
-        {% include "includes/front-door/user-research.html" %}
-        {% include "includes/front-door/technical.html" %}
-        {% include "includes/front-door/blog.html" %}
+                {{govukTag({
+          text: "Version 1",
+          classes: "govuk-tag--blue"
+        })}}
+        <span class="govuk-caption-xl">Prototype</span>
+        <h1 class="govuk-heading-xl">GOV.UK Digital Service Platforms</h1>
+
+        <h2 class="govuk-heading-l">Shortcuts</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="front-door.html">Front door page</a></li>
+          <li><a href="application/overview">Signed in overview</a></li>
+          <li><a href="application/all">Dashboard</a></li>
+        </ul>
       </div>
     </main>
   {% endblock %}
