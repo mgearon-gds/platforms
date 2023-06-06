@@ -26,8 +26,8 @@
     <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
       {% set html %}
         <p class="govuk-notification-banner__heading">
-        There was an increase of 70% of people visiting the Fishing Permit Application Form guidance page in the last 7 days
-        <a class="govuk-notification-banner__link" href="#">View content</a>.
+        There was an increase of 70% of people visiting the Fishing Permit Application Form guidance page in the last 7 days. 
+        <a class="govuk-notification-banner__link" href="report">View insights</a>.
         </p>
       {% endset %}
       {{ govukNotificationBanner({
@@ -45,11 +45,11 @@
           type: 'success'
         }) }}
       {% endif %}
-      <span class="govuk-caption-l">Case manager</span>
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Fishing Permit Application Form</h1>
+      <span class="govuk-caption-xl">Case manager</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Fishing Permit Application Form</h1>
       {{ govukButton({
-        text: "Add new case",
-        href: "add-new-word"
+        text: "Add new application",
+        href: "/holding-page.html"
       }) }}
     </div>
   </div>

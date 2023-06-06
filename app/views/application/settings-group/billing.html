@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "overview"
+      },
+      {
+        text: "Fishing Permit Application Form",
+        href: "all"
+      },
+      {
+        text: "Transactions",
+        href: "#"
+      }
+    ]
+  }) }}
+  {% include "includes/second-nav.html" %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Settings</h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <ul class="govuk-list govuk-list--spaced">
+  <li>
+    <a class="govuk-link" href="#">Group settings</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">API's</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Staff access</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Visibility</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="settings-group/billing.html">Billing</a>
+  </li>
+</ul>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Billing</h2>
+    <p class="govuk-body">The current tier this group is on is Standard, with an estimated cost of £4,500 per quarter. You can change the tier at any time.</p>
+    <p class="govuk-body-s"><a href="#" class="govuk-link govuk-link--no-visited-state">Change tier</a></p>
+
+    <h3 class="govuk-heading-m">Usage for this quarter</h3>
+    <p class="govuk-body">For the current year the service has used:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Sent 300 out of 1,500 letters</li>
+  <li>oranges</li>
+  <li>pears</li>
+</ul>
+
+    {{ govukTable({
+  caption: "Past payments",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Date"
+    },
+    {
+      text: "Amount"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "1 January – 31 March 2023"
+      },
+      {
+        text: "£4,500"
+      }
+    ],
+    [
+      {
+        text: "1 October – 31 December 2022"
+      },
+      {
+        text: "£4,500"
+      }
+    ],
+    [
+      {
+        text: "1 July – 30 September 2022"
+      },
+      {
+        text: "£4,500"
+      }
+    ]
+  ]
+}) }}
+ 
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout-signin.html" %}
+{% block pageTitle %}
+  Holding page - {{serviceName}}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">This has not been prototyped</h1>
+      <p class="govuk-body">
+        If you've got an idea of what this page should look like or want to discuss it with the team then message us on Slack or send us an email
+        <form action="/application/sign-in" method="post">
+      {{ govukButton({
+        text: "Send email",
+        href: "mailto:buildaservice@digital.cabinet-office.gov.uk"
+      }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

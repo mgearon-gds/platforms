@@ -16,35 +16,33 @@
     </div>
   </div>
   <div class="govuk-grid-row">
-
-      <div class="govuk-grid-column-two-thirds">
-
-        {{ govukSummaryList({
-    rows: [
-      {
-        key: {
-          text: "Email"
-        },
-        value: {
-          html: "michael.gearon@digital.cabinet-office.gov.uk"
-        }
-      },
-      {
-        key: {
-          text: "Mobile number"
-        },
-        value: {
-          text: "	+447557050000"
-        },
-        actions: {
-          items: [
-            {
-              href: "#",
-              text: "Change",
-              visuallyHiddenText: "date of birth"
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              html: "michael.gearon@digital.cabinet-office.gov.uk"
             }
-          ]
-        }
+          },
+          {
+            key: {
+              text: "Mobile number"
+            },
+            value: {
+              text: "	+447557050000"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+          }
       },
       {
         key: {
