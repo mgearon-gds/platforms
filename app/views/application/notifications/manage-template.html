@@ -4,28 +4,14 @@
   - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "overview"
-      },
-      {
-        text: "Fishing Permit Application Form",
-        href: "all"
-      },
-      {
-        text: "Transactions",
-        href: "#"
-      }
-    ]
-  }) }}
+  {% set serviceArea = "Notifications" %}
+  {% include "includes/service-breadcrumb.html" %}
   {% include "includes/second-nav.html" %}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">Notifications</h1>
+      <h1 class="govuk-heading-xl">Notifications</h1>
     </div>
   </div>
   <div class="govuk-grid-row">

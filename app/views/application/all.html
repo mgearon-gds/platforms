@@ -3,22 +3,8 @@
   Overview - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "overview"
-      },
-      {
-        text: "Fishing Permit Application Form",
-        href: "all"
-      },
-      {
-        text: "Transactions",
-        href: "#"
-      }
-    ]
-  }) }}
+  {% set serviceArea = "Case manager" %}
+  {% include "includes/service-breadcrumb.html" %}
   {% include "includes/second-nav.html" %}
 {% endblock %}
 {% block content %}
