@@ -36,11 +36,11 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
 
-            <h2 class="govuk-heading-m">About the group</h2>
+            <h2 class="govuk-heading-l">About the group</h2>
             {{ govukTextarea({
   name: "more-detail",
   id: "more-detail",
-  value: "Emegency service created to help people bring pets to the UK from Ukraine. This is a spin off service from the bringing your pet dog, cat or ferret to Great Britain.",
+  value: "Application form to purchase a River Thames lock and weir fishing permit.",
   label: {
     text: "What is this group used for?"
   },
@@ -48,8 +48,8 @@
     text: "Include enough information to make it clear what this group is used for."
   }
 }) }}
-      <h2 class="govuk-heading-m">Connected platforms</h2>
-      <ul class="govuk-list">
+      <h2 class="govuk-heading-l">Connected platforms</h2>
+      <ul class="govuk-list govuk-list--bullet">
         <li>
           <a class="govuk-link" href="#">Case manager</a>
         </li>
@@ -62,12 +62,14 @@
         <li>
           <a class="govuk-link" href="#">Notifications</a>
         </li>
-        
-      </ul>
+              </ul>
+        <h3 class="govuk-heading-m">Third-party platforms</h3>
+        <p class="govuk-body govuk-!-font-weight-bold">This service does not connect to any third-party platforms</p>
+
       {{ govukButton({
   text: "Add new connection"
 }) }}
-<h2 class="govuk-heading-m">API Keys</h2>
+<h2 class="govuk-heading-l">API Keys</h2>
 <h3 class="govuk-heading-s">Payment API</h3>
         <div class="message-area">
             <p class="govuk-body message-text govuk-!-margin-bottom-6">2f65e269-31bc-41b3-afd6-f059be9b5234</p>
@@ -81,7 +83,7 @@
   <h2 class="govuk-heading-m">Manage users</h2>
   
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-8">Connect Platforms</h2>
+    <h2 class="govuk-heading-l govuk-!-margin-top-8">Connect Platforms</h2>
     <p class="govuk-body">
       Rather than using email to communicate, you can use Connect Platforms to work alongside people from other companies in the same Platforms group. When you work with other companies in Platforms, people can only access the groups that they’ve been invited to join.
     </p>
@@ -104,7 +106,7 @@
     }
   ]
 }) }}
-    <h2 class="govuk-heading-m govuk-!-margin-top-8">Set visibility to the organisation</h2>
+    <h2 class="govuk-heading-l govuk-!-margin-top-8">Set visibility to the organisation</h2>
     <p class="govuk-body">
       You can make a group public or private, by default all groups are set to public. Administrators will be able to see both public and private groups.
     </p>

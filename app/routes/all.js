@@ -529,4 +529,11 @@ module.exports = function (router) {
       pagination: pagination
     })
   })
+
+  router.get('/application/word', (req, res) => {
+    res.render('application/word', {
+      name:  req.query.word
+    })
+  })
 }
+

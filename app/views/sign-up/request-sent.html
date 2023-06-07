@@ -1,0 +1,42 @@
+{% extends "layout-signin.html" %}
+{% block pageTitle %}
+  Request sent - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/front-door"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-xl">Request sent</h1>
+      <p class="govuk-body">
+        We sent a message to the Planning team to ask for you to join them.
+        </p>
+              <p class="govuk-body">
+        We'll let you know when they respond.
+        </p>
+        {{error}}
+        <form action="/application/sign-up" method="post">
+        <p class="govuk-body">
+{{ govukButton({
+  text: "Join another team",
+  classes: "govuk-button--secondary"
+}) }}
+</p>
+    <p class="govuk-body">
+      {{ govukButton({
+        text: "Create a team",
+        href: "join-a-team"
+      }) }}
+      </p>
+      </form>
+      <p>
+        <a href="reset-password.html" class="govuk-link block govuk-body govuk-!-font-size-9">Forgot your password?</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
