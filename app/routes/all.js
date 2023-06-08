@@ -534,6 +534,19 @@ module.exports = function (router) {
     res.render('application/word', {
       name:  req.query.word
     })
+
   })
+
+    router.get('/application/log', (req, res) => {
+      res.render('application/log', {
+        name:  req.query.word
+      })
+  })
+
+  router.get('/application/payment', (req, res) => {
+    res.render('application/payment', {
+      name:  req.query.word
+    })
+})
 }
 

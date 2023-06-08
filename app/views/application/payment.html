@@ -3,11 +3,17 @@
   {{word}}
   - {{serviceName}}
 {% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back to all cases",
+  href: "all.html"
+}) }}
+{% endblock %}
 {% block content %}
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">Case number: {{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{word}}</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{name}}</h1>
       <p class="govuk-body">
         Sarah Phillps is currently assigned to the case — <a href="change-user">change <span class="govuk-visually-hidden">assignee</span></a>
       </p>
@@ -18,16 +24,16 @@
       <nav>
         <ul class="govuk-list govuk-list--spaced">
           <li>
-            <a class="govuk-link" href="word?word={{word}}">Overview</a>
+            <a class="govuk-link" href="word?word={{name}}">Overview</a>
           </li>
           <li>
-            <a class="govuk-link" href="log?word={{word}}">Activity log</a>
+            <a class="govuk-link" href="log?word={{name}}">Activity log</a>
           </li>
           <li>
-            <a class="govuk-link" href="payment?word={{word}}">Payment</a>
+            <a class="govuk-link" href="payment?word={{name}}">Payment</a>
           </li>
           <li>
-            <a class="govuk-link" href="payment?word={{word}}">Contact customer</a>
+            <a class="govuk-link" href="payment?word={{name}}">Contact customer</a>
           </li>
         </ul>
       </nav>

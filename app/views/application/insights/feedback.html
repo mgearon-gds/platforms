@@ -4,78 +4,20 @@
   - GOV.UK Case Management
 {% endblock %}
 {% block beforeContent %}
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Home",
-      href: "overview"
-    },
-    {
-      text: "Fishing Permit Application Form",
-      href: "all"
-    },
-    {
-      text: "Transactions",
-      href: "#"
-    }
-  ]
-}) }}
-<nav class="second-nav">
-<ul class="govuk-!-padding-bottom-4 govuk-!-padding-top-4">
-    <li>
-      <a href="/application/all" class="govuk-link">Cases</a>
-      </li>
-    <li>
-      <a href="/application/forms/form-designer/form-home" class="govuk-link">Form</a>
-      </li>
-      <li>
-        <a href="/application/payments" class="govuk-link">Transactions</a>
-        </li>
-        <li>
-          <a href="/application/notifications/notify" class="govuk-link">Notifications</a>
-          </li>
-          <li>
-            <a href="/application/published-content" class="govuk-link">Pages</a>
-            </li>
-          <li>
-            <a href="/application/report" class="govuk-link">Insights</a>
-            </li>
-
-
-        <li>
-          <a href="/application/settings" class="govuk-link">Settings</a>
-          </li>
-  </ul>
-  </nav>
+  {% set serviceArea = "Insights" %}
+  {% include "includes/service-breadcrumb.html" %}
+  {% include "includes/second-nav.html" %}
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl">Insights</h1>
+    <span class="govuk-caption-xl">Fishing Permit Application Form</span>
+    <h1 class="govuk-heading-xl">Insights</h1>
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <ul class="govuk-list govuk-list--spaced">
-      <li>
-        <a class="govuk-link" href="report.html">Overall</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="feedback.html">Feedback</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#">Notifications</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#">Payments</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#">Case Management</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="#">Forms</a>
-      </li>
-    </ul>
+        {% include "includes/insights-sidebar.html" %}
   </div>
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Page 1</span>

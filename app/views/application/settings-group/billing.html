@@ -12,7 +12,8 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl">Settings</h1>
+    <span class="govuk-caption-xl">Fishing Permit Application Form</span>
+    <h1 class="govuk-heading-xl">Settings</h1>
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -21,7 +22,7 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">Billing</h2>
-    <p class="govuk-body">The current tier this group is on is Standard, with an estimated cost of £4,500 per quarter. You can change the tier at any time.</p>
+    <p class="govuk-body">The current tier this group is on is <a href="/marketing/pricing">Standard</a>, with an estimated cost of £4,500 per quarter. You can change the tier at any time.</p>
     <p class="govuk-body-s"><a href="#" class="govuk-link govuk-link--no-visited-state">Change tier</a></p>
     <h3 class="govuk-heading-m">Usage for this quarter</h3>
     <p class="govuk-body">For the current year the service has used:</p>
@@ -31,48 +32,47 @@
       <li>Processed 300 transactions</li>
     </ul>
     {{ govukTable({
-  caption: "Past payments",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    {
-      text: "Date"
-    },
-    {
-      text: "Amount"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "1 January – 31 March 2023"
-      },
-      {
-        text: "£4,500"
-      }
-    ],
-    [
-      {
-        text: "1 October – 31 December 2022"
-      },
-      {
-        text: "£4,500"
-      }
-    ],
-    [
-      {
-        text: "1 July – 30 September 2022"
-      },
-      {
-        text: "£4,500"
-      }
+      caption: "Past payments",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Date"
+        },
+        {
+          text: "Amount"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "1 January – 31 March 2023"
+          },
+          {
+            text: "£4,500"
+          }
+        ],
+        [
+          {
+            text: "1 October – 31 December 2022"
+          },
+          {
+          text: "£4,500"
+        }
+      ],
+      [
+        {
+          text: "1 July – 30 September 2022"
+        },
+        {
+          text: "£4,500"
+        }
+      ]
     ]
-  ]
-}) }}
-{{ govukButton({
-  text: "Manage payment details"
-}) }}
- 
-    </div>
+  }) }}
+  {{ govukButton({
+    text: "Manage payment details"
+  }) }}
   </div>
+</div>
 {% endblock %}
