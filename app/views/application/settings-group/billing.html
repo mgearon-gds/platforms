@@ -4,49 +4,19 @@
   - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "overview"
-      },
-      {
-        text: "Fishing Permit Application Form",
-        href: "all"
-      },
-      {
-        text: "Transactions",
-        href: "#"
-      }
-    ]
-  }) }}
+  {% set serviceArea = "Settings" %}
+  {% include "includes/service-breadcrumb.html" %}
   {% include "includes/second-nav.html" %}
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l">Settings</h1>
+          <h1 class="govuk-heading-xl">Settings</h1>
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <ul class="govuk-list govuk-list--spaced">
-  <li>
-    <a class="govuk-link" href="#">Group settings</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">API's</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">Staff access</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">Visibility</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="settings-group/billing.html">Billing</a>
-  </li>
-</ul>
+    {% include "includes/settings-sidebar.html" %}
   </div>
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">Billing</h2>

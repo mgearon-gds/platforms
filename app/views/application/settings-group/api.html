@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Service Performance
+  - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+  {% set serviceArea = "Settings" %}
+  {% include "includes/service-breadcrumb.html" %}
+  {% include "includes/second-nav.html" %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Settings</h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+ {% include "includes/settings-sidebar.html" %}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">API Keys</h2>
+<h3 class="govuk-heading-s">Payment API</h3>
+        <div class="message-area">
+            <p class="govuk-body message-text govuk-!-margin-bottom-6">2f65e269-31bc-41b3-afd6-f059be9b5234</p>
+        </div>
+<h3 class="govuk-heading-s">Notifications API</h3>
+            <p class="govuk-body message-text govuk-!-margin-bottom-6">b0d2441a-0b9a-49fa-9094-06913bad3bd1</p>
+
+<h3 class="govuk-heading-s">Case worker API</h3>
+            <p class="govuk-body message-text govuk-!-margin-bottom-6">5cda1b1e-3f5d-40c6-9c3a-7b1374adda68</p>
+ 
+    </div>
+  </div>
+{% endblock %}

@@ -16,23 +16,7 @@
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <ul class="govuk-list govuk-list--spaced">
-  <li>
-    <a class="govuk-link" href="#">Group settings</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">API's</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">Staff access</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">Visibility</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="settings-group/billing.html">Billing</a>
-  </li>
-</ul>
+  {% include "includes/settings-sidebar.html" %}
   </div>
   <div class="govuk-grid-column-two-thirds">
 
@@ -48,6 +32,8 @@
     text: "Include enough information to make it clear what this group is used for."
   }
 }) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
       <h2 class="govuk-heading-l">Connected platforms</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li>
@@ -69,19 +55,8 @@
       {{ govukButton({
   text: "Add new connection"
 }) }}
-<h2 class="govuk-heading-l">API Keys</h2>
-<h3 class="govuk-heading-s">Payment API</h3>
-        <div class="message-area">
-            <p class="govuk-body message-text govuk-!-margin-bottom-6">2f65e269-31bc-41b3-afd6-f059be9b5234</p>
-        </div>
-<h3 class="govuk-heading-s">Notifications API</h3>
-            <p class="govuk-body message-text govuk-!-margin-bottom-6">b0d2441a-0b9a-49fa-9094-06913bad3bd1</p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-<h3 class="govuk-heading-s">Case worker API</h3>
-            <p class="govuk-body message-text govuk-!-margin-bottom-6">5cda1b1e-3f5d-40c6-9c3a-7b1374adda68</p>
-
-  <h2 class="govuk-heading-m">Manage users</h2>
-  
 
     <h2 class="govuk-heading-l govuk-!-margin-top-8">Connect Platforms</h2>
     <p class="govuk-body">
@@ -106,6 +81,11 @@
     }
   ]
 }) }}
+{{ govukButton({
+  text: "Update"
+}) }}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
     <h2 class="govuk-heading-l govuk-!-margin-top-8">Set visibility to the organisation</h2>
     <p class="govuk-body">
       You can make a group public or private, by default all groups are set to public. Administrators will be able to see both public and private groups.
@@ -135,6 +115,9 @@
       }
     }
   ]
+}) }}
+{{ govukButton({
+  text: "Update"
 }) }}
     </div>
   </div>

@@ -10,6 +10,7 @@ module.exports = function (router) {
     res.render('index')
   })
   router.all('*', function (req, res, next) {
+    
     if (typeof req.session.cases === 'undefined') {
       return res.redirect('/')
     }

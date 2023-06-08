@@ -5,58 +5,53 @@
 {% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
-  href: "/front-door"
+  href: "/sign-up/sign-up"
 }) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Join a team</h1>
-      <p class="govuk-body">
-        Syldavia Council is already using Digital Service Platforms.
-        </p>
-        <p class="govuk-body">
-        Start by creating or joining a team (you can join more later):
-        </p>
-         <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        <p class="govuk-body">Parking</p>
-      </div>
-      <div class="govuk-grid-column-one-half">
-   {{ govukButton({
-  text: "Ask to join",
-  classes: "govuk-button--secondary",
-  href: "request-sent"
-}) }}
+      <p class="govuk-body">Department for Environment Food & Rural Affairs is already using Digital Service Platforms.</p>
+      <p class="govuk-body">Start by creating or joining a team (you can join more later):</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <p class="govuk-body">Fishing Permit Application Form</p>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          {{ govukButton({
+            text: "Ask to join",
+            classes: "govuk-button--secondary",
+            href: "request-sent"
+          }) }}
       </div>
     </div>
-             <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
-        <p class="govuk-body">Planning</p>
+        <p class="govuk-body">Apply to protect a wine name or aromatised wine name</p>
       </div>
       <div class="govuk-grid-column-one-half">
-   {{ govukButton({
-  text: "Ask to join",
-  classes: "govuk-button--secondary"
-}) }}
-      </div>
-    </div>
-             <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        <p class="govuk-body">Tax</p>
-      </div>
-      <div class="govuk-grid-column-one-half">
-   {{ govukButton({
-  text: "Ask to join",
-  classes: "govuk-button--secondary"
-}) }}
-      </div>
-    </div>
         {{ govukButton({
-  text: "Create a team",
-  href: "/sign-up/create-a-team"
-}) }}
+          text: "Ask to join",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-body">Apply to renew a water abstraction licence</p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        {{ govukButton({
+          text: "Ask to join",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </div>
+    {{ govukButton({
+      text: "Create a team",
+      href: "/sign-up/create-a-team"
+      }) }}
     </div>
   </div>
-
 {% endblock %}
