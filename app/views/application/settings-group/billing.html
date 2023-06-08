@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Service Performance
+  Billing for Fishing Permit Application Form
+
   - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
@@ -67,6 +68,9 @@
       }
     ]
   ]
+}) }}
+{{ govukButton({
+  text: "Manage payment details"
 }) }}
  
     </div>
