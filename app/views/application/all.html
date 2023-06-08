@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Overview - {{serviceName}}
+  Case manager for Fishing Permit Application Form - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
   {% set serviceArea = "Case manager" %}
@@ -15,9 +15,11 @@
         There was an increase of 70% of people visiting the Fishing Permit Application Form guidance page in the last 7 days. 
         <a class="govuk-notification-banner__link" href="report">View insights</a>.
         </p>
+        <p class="govuk-body"><a href="" id="hide-insight" class="govuk-link govuk-link--no-visited-state">Hide notification</a></p>
       {% endset %}
       {{ govukNotificationBanner({
-        html: html
+        html: html,
+        classes: "govuk-insight"
       }) }}
       {% if status == 'success' %}
         {% set html %}
@@ -31,8 +33,8 @@
           type: 'success'
         }) }}
       {% endif %}
-      <span class="govuk-caption-xl">Case manager</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Fishing Permit Application Form</h1>
+      <span class="govuk-caption-xl">Fishing Permit Application Form</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Case manager</h1>
       {{ govukButton({
         text: "Add new application",
         href: "/holding-page.html"

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
   Service Performance
-  - GOV.UK Case Management
+  - {{serviceName}}
 {% endblock %}
 {% block beforeContent %}
   {% set serviceArea = "Insights" %}
@@ -11,7 +11,8 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl">Insights</h1>
+    <span class="govuk-caption-xl">Fishing Permit Application Form</span>
+    <h1 class="govuk-heading-xl">Insights</h1>
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -24,16 +25,16 @@
         <a class="govuk-link" href="feedback.html">Feedback</a>
       </li>
       <li>
-        <a class="govuk-link" href="#">Notifications</a>
+        <a class="govuk-link" href="/holding-page">Notifications</a>
       </li>
       <li>
-        <a class="govuk-link" href="#">Payments</a>
+        <a class="govuk-link" href="/holding-page">Payments</a>
       </li>
       <li>
-        <a class="govuk-link" href="#">Case Management</a>
+        <a class="govuk-link" href="/holding-page">Case Management</a>
       </li>
       <li>
-        <a class="govuk-link" href="#">Forms</a>
+        <a class="govuk-link" href="/holding-page">Forms</a>
       </li>
     </ul>
   </div>

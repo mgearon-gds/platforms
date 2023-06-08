@@ -8,12 +8,18 @@
       <h1 class="govuk-heading-xl">This has not been prototyped</h1>
       <p class="govuk-body">
         If you've got an idea of what this page should look like or want to discuss it with the team then message us on Slack or send us an email
-        <form action="/application/sign-in" method="post">
-      {{ govukButton({
-        text: "Send email",
-        href: "mailto:buildaservice@digital.cabinet-office.gov.uk"
-      }) }}
-      </form>
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Go back",
+            href: "javascript:history.back()"
+          }) }}
+
+          {{ govukButton({
+            text: "Send email",
+            href: "mailto:buildaservice@digital.cabinet-office.gov.uk",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
     </div>
   </div>
 {% endblock %}
