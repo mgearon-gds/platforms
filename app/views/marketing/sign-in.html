@@ -16,7 +16,9 @@
 </div>
 {% endblock %}
 {% block content %}
-
+{% if errorMessage %}
+  <div class="error-message">{{ errorMessage }}</div>
+{% endif %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h2 class="govuk-heading-l">GOV.UK services</h2>

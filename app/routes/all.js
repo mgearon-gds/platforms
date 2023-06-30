@@ -2,23 +2,49 @@ var arraySort = require('array-sort')
 
 module.exports = function (router) {
 
-  router.post('/application/create/type', function (req, res) {
-    res.redirect('/application/create/name-of-the-service')
-  })
-  router.post('/application/create/name-of-the-service', function (req, res) {
-      res.redirect('/application/create/list')
-  })
+  router.post('/application/create/type', (req, res) => {
+    const selectedCheckboxes = req.body['what-does-the-service-need'];
+    if (selectedCheckboxes === '_unchecked') {
+      const errorMessage = 'Select at least one option';
+      return res.render('application/create/type', { error: errorMessage });
+    }
+    return res.redirect('/application/create/name-of-the-service');
+  });
 
-  router.post('/application/sign-in', function (req, res) {
-    const { email, password} = req.body;
-    if (!email || !password){
-      return res.redirect('/application/sign-in'), {
-        error: "Email and password are required"
-      }
+  router.post('/application/create/name-of-the-service', (req, res) => {
+    const serviceName = req.body['name-of-the-service'];
+  
+    if (!serviceName || serviceName.trim().length === 0) {
+      // If the input is empty or contains only whitespace
+      const errorSummary = [
+        {
+          text: 'You must fill in the name of the service',
+          href: '#name-of-the-service'
+        }
+      ];
+      // Render the create application form view with the error summary
+      res.render('application/create/name-of-the-service', { errorSummary });
     } else {
+      // Redirect to the application create list page
+      res.redirect('/application/create/list');
+    }
+  });
+
+  router.post('/application/sign-in', (req, res) => {
+    const { email, password } = req.body;
+    let errors = [];
+    if (!email) {
+      errors.push({ text: 'Enter your email.', href: '#email' });
+    }
+    if (!password) {
+      errors.push({ text: 'Enter your password.', href: '#password' });
+    }
+    if (errors.length > 0) {
+      return res.render('application/sign-in', { errors });
+    } else{
       res.redirect('/application/overview')
     }
-  })
+  });
   // ALL CASES
   router.get('/application/all', function (req, res) {
     // sortedCases
