@@ -17,15 +17,15 @@
   items: [
     {
       text: "Home",
-      href: "#"
+      href: "https://www.gov.uk/"
     },
     {
-      text: "Passports, travel and living abroad",
-      href: "#"
+      text: "Driving and transport",
+      href: "https://www.gov.uk/browse/driving"
     },
     {
-      text: "Travel abroad",
-      href: "#"
+      text: "Number plates, vehicle registration and log books",
+      href: "https://www.gov.uk/browse/driving/number-plate"
     }
   ]
 }) }}
@@ -34,14 +34,32 @@
     <main class="govuk-main-wrapper" id="main-content" role="main">
 
   {% block content %}
+      <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                                <h1 class="govuk-heading-xl">Apply for a vehicle registration certificate</h1>
 
+                    </div>
+        </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-xl">Apply for a vehicle registration certificate</h1>
             <p class="govuk-body-l">Use this service to apply for a vehicle registration certificate (V5C).</p>
+            <p class="govuk-body">Do not fill in this form if your vehicle has been categorised as A or B salvage as we wil not issue a vehicle registration certificate (V5C). These vehicles should not be driven on the road. You can get more informationon salvage categories from the insurance company.</p>
             <h2 class="govuk-heading-m">How long it takes</h2>
+            <p class="govuk-body">You should recieve the V5C within:</p>
+            <ul class="govuk-list govuk-list--bullet">
+  <li>2 weeks if you are already recorded as the registered keeper, or</li>
+  <li>4 weeks if there has been a change of keeper.</li>
+</ul>
+<p class="govuk-body">However, if you do not receive it in this time, please allow 6 weeks before contacting us.</p>
             <h2 class="govuk-heading-m">Before you start</h2>
-            <p class="govuk-body">Do not fill in this form if your vehicle has been categorised as A or B salvage as w ewil not issue a vehicle registration certificate (V5C). These vehicles should not be driven on the road. You can get more informationon salvage categories from the insurance company.</p>
+            <p class="govuk-body">You will need the:</p>
+            <ul class="govuk-list govuk-list--bullet">
+  <li>Vehicle registration</li>
+  <li>VIN, chassis or frame number of the vehicle</li>
+</ul>
+
+<p class="govuk-body">The service usually costs £25. You can pay by credit or debit card.</p>
+
             {{ govukButton({
                 text: "Start now",
                 href: "https://submit.forms.service.gov.uk/preview-draft/389/apply-for-a-vehicle-registration-certificate/1013",
@@ -49,19 +67,25 @@
             }) }}
         </div>
               <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">Related content</h3>
-        <ul class="govuk-list">
+        <h3 class="govuk-heading-s govuk-related-content govuk-!-padding-top-2">Related content</h3>
+        <ul class="govuk-list govuk-list-small">
   <li>
-    <a class="govuk-link" href="#">Benefits calculators</a>
+    <a class="govuk-link" href="https://www.gov.uk/change-address-v5c">Change your address on your vehicle log book (V5C)</a>
   </li>
   <li>
-    <a class="govuk-link" href="#">Benefit overpayments</a>
+    <a class="govuk-link" href="https://www.gov.uk/change-vehicle-details-registration-certificate">Change vehicle details on a V5C registration certificate (log book)</a>
   </li>
   <li>
-    <a class="govuk-link" href="#">Benefit fraud</a>
+    <a class="govuk-link" href="https://www.gov.uk/vehicle-registration">Vehicle registration</a>
   </li>
   <li>
-    <a class="govuk-link" href="#">More</a>
+    <a class="govuk-link" href="https://www.gov.uk/buy-a-vehicle">Buy a vehicle: step by step</a>
+  </li>
+    <li>
+    <a class="govuk-link" href="https://www.gov.uk/vehicle-tax">Tax your vehicle</a>
+  </li>
+      <li>
+    <a class="govuk-link" href="https://www.gov.uk/responsibilities-selling-vehicle">Selling a vehicle</a>
   </li>
 </ul>
       </div>
